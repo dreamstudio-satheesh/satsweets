@@ -18,6 +18,7 @@
     <div class="row">
 
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#new-project-modal">Open Modal</button>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#new-user-modal">Open Modal</button>
         <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#new-task-modal">Open Modal</button>
         <div class="col-12 table-responsive">
             <table class="table table-hover table-light">
