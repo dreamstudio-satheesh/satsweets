@@ -53,8 +53,8 @@
                  
                         <div class="col-lg-12">
                             <div class="d-flex flex-wrap align-items-ceter justify-content-center mt-2">
-                                <div class="btn btn-primary mr-3" >Save</div>
-                                <div class="btn btn-primary" data-dismiss="modal">Cancel</div>
+                                <button type="submit" class="btn btn-primary mr-3">Save</button>
+                                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                 </form>
                             </div>
                         </div>
