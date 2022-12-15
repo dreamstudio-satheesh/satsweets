@@ -20,6 +20,21 @@ class ProductController extends Controller
         return view('products.index', compact('products'));
     }
 
+
+    public function cart()
+    {
+        $products = Product::all();
+        $categories = Category::all();
+        return view('products.cart', compact('categories','products'));
+    }
+
+    public function cartshow()
+    {
+       
+        $categories = Category::all();
+        return view('products.cart', compact('categories'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

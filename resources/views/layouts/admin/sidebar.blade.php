@@ -18,6 +18,13 @@
                     </a>
                 </li>
 
+                <li class="">
+                    <a href="{{ url('cart') }}" class="svg-icon">
+                        <i class="fa fa-file" aria-hidden="true"></i>
+                        <span class="ml-4">Products</span>
+                    </a>
+                </li>
+
 
                 <li class="">
                     <a href="{{ url('invoices') }}" class="svg-icon">
@@ -30,7 +37,7 @@
                 <li class="">
                     <a href="{{ url('products') }}" class="svg-icon">
                         <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Products</span>
+                        <span class="ml-4">Manage Products</span>
                     </a>
                 </li>
 

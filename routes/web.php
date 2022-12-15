@@ -62,6 +62,8 @@ Route::group([
     });
     // User routes
     
+     Route::get('cart', [App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
+     Route::get('/cart/{category}', [App\Http\Controllers\ProductController::class, 'cartshow'])->name('cart.view');
 
     //lines
     Route::resource('vendors', App\Http\Controllers\vendorController::class);
