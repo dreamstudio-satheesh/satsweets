@@ -53,16 +53,16 @@
         <div class="modal-dialog  modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header d-block text-center pb-3 border-bttom">
-                    <h3 class="modal-title" id="exampleModalCenterTitle01">New Line</h3>
+                    <h3 class="modal-title" id="exampleModalCenterTitle01">New Category</h3>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group mb-3">
-                                <form action="{{ route('lines.store') }}" method="post">
+                                <form action="{{ route('categories.store') }}" method="post">
                                     @csrf
-                                <label for="exampleInputText01" class="h5">Delivery Area*</label>
-                                <input id="name" name="name" type="text" class="form-control" placeholder="Delivery Area" />
+                                <label for="exampleInputText01" class="h5">Category Name*</label>
+                                <input id="name" name="name" type="text" class="form-control" placeholder="Category" />
                             </div>
                         </div>
                  
