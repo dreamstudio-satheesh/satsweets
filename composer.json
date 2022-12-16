@@ -12,6 +12,7 @@
         "barryvdh/laravel-ide-helper": "^2.10",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "ladumor/laravel-pwa": "^0.0.3",
         "laravel/framework": "^9.26",
         "laravel/passport": "^10.3",
         "laravel/tinker": "^2.5",

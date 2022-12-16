@@ -22,6 +22,11 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+        <!-- PWA  -->
+        <meta name="theme-color" content="#6777ef"/>
+        <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+        <link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 
 <body class=" color-light ">
@@ -71,6 +76,15 @@
     <script src="{{ asset('webkit/assets/js/app.js') }}"></script>
 
     <script src="{{ asset('webkit/assets/vendor/moment.min.js') }}"></script>
+
+    <script src="{{ asset('/sw.js') }}"></script>
+<script>
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script>
 </body>
 
 </html>
