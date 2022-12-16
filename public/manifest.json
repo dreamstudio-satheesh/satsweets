@@ -3,7 +3,7 @@
     "background_color": "#F8F7F7",
     "display": "fullscreen",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "https://satsweets.com/",
     "name": "SAT Sweets",
     "short_name": "satsweets",
     "description": "SAT sweets onlie billing software",
