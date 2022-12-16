@@ -1,7 +1,7 @@
 {
     "name": "SAT Sweets",
     "short_name": "sat",
-    "start_url": "/index.php",
+    "start_url": "https://satsweets.com/index.php",
     "background_color": "#6777ef",
     "description": "Sat Sweets Billing Software",
     "display": "fullscreen",
