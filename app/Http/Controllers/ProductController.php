@@ -23,7 +23,8 @@ class ProductController extends Controller
 
     public function cart()
     {
-        $products = Product::all();
+        
+        $products = Product::latest()->get();        
         $categories = Category::all();
         return view('products.cart', compact('categories','products'));
     }
@@ -56,22 +57,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->has('photo')) {
-            $ext = $request->file('photo')->getClientOriginalExtension();
-            $photo = $request->file('photo')->storeAs('products', uniqid() . "." . $ext, 'public');               
-            }
-            else{
-                $photo='products/default.png';
-            }
+        $product = Product::create([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'stocks'=>$request->stocks,
+            'category_id'=>$request->category_id,
+            'guard_name'=>'web'
+        ]);    
 
-            Product::create([
-                'name'=>$request->name,
-                'price'=>$request->price,
-                'stocks'=>$request->stocks,
-                'photo'=> $photo,
-                'category_id'=>$request->category_id,
-                'guard_name'=>'web'
-            ]);
+        if ($request->has('photo') && $request->file('photo')->isValid()) {
+
+            $product->addMediaFromRequest('photo')->toMediaCollection('products');               
+        }     
 
         return redirect()->route('products.index')->withSuccess('product added');
     }

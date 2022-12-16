@@ -33,7 +33,7 @@
                         <tr>
                             <td scope="row">{{ $product->id }}</td>
                             <td>{{ $product->name }}</td>
-                          <td><img src=" {{ url('url', []) }}/  {{ $product->photo }}" alt=""></td>
+                            <td><img src="{{$product->getFirstMediaUrl('products', 'thumb')}}"  width="120px"></td>
                             <td><a href="{{ route('products.edit', $product->id) }}"
                                     class="btn btn-primary btn-sm">edit</a>
                             </td>

@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();            
-            $table->string('photo')->default('products/default.png');
+            $table->string('name')->unique();   
             $table->smallInteger('stocks')->default(1);
             $table->float('price', 8, 2);
             $table->timestamps();
