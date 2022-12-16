@@ -4,7 +4,7 @@
             <div class="iq-navbar-logo d-flex align-items-center justify-content-between">
                 <i class="ri-menu-line wrapper-menu"></i>
                 <a href="" class="header-logo">
-                    <h4 class="logo-title text-uppercase">InnoWaysIT</h4>
+                    <h4 class="logo-title text-uppercase">SAT Sweets</h4>
                 </a>
             </div>
             <div class="navbar-breadcrumb">
