@@ -29,11 +29,11 @@ class ProductController extends Controller
         return view('products.cart', compact('categories','products'));
     }
 
-    public function cartshow()
+    public function cartshow(Category $category)
     {
-       
+        $products = Product::latest()->get();   
         $categories = Category::all();
-        return view('products.cart', compact('categories'));
+        return view('products.cart', compact('categories','products'));
     }
 
     /**
