@@ -37,6 +37,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         Category::create([
             'name'=>$request->name, 'guard_name'=>'web'
         ]);
@@ -75,6 +78,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         $category->update(['name'=>$request->name]);
         
         return redirect()->back()->withSuccess('Updated');

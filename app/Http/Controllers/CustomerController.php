@@ -39,6 +39,10 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'line_id' => 'required',
+        ]);
         Customer::create([
             'name'=>$request->name,
             'address'=>$request->address,
@@ -84,6 +88,10 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'line_id' => 'required',
+        ]);
         $customer->update([
             'name'=>$request->name,
             'address'=>$request->address,

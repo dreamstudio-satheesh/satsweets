@@ -38,7 +38,9 @@ class LineController extends Controller
      */
     public function store(Request $request)
     {
-         // return $request->all();
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
          Line::create([
             'name'=>$request->name, 'guard_name'=>'web'
         ]);
@@ -77,7 +79,9 @@ class LineController extends Controller
      */
     public function update(Request $request, Line $line)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
         $line->update(['name'=>$request->name]);
         
         return redirect()->back()->withSuccess('Updated');
