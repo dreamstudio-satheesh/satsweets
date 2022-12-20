@@ -1,52 +1,145 @@
 @extends('layouts.admin')
 
 
+@push('styles')
+<style>
+
+</style>
+    
+@endpush
+
+
 @section('content')
     <div class="card m-2 p-4">
     
         <div class="row my-2">
             <div class="col-12">
-                @foreach ($categories as $category)
-                <div class="btn btn-outline-primary"> <a href="{{ route('cart.view', $category->id )}}">{{ $category->name }}     </a> </div>
-                @endforeach
+                <table class="table table-hover shopping-cart-wrap">
+                    <thead class="text-muted">
+                    <tr>
+                      <th scope="col">Product</th>
+                      <th scope="col" width="120">Quantity</th>
+                      <th scope="col" width="120">Price</th>
+                      <th scope="col" width="200" class="text-right">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                    <figure class="media">
+                        <div class="img-wrap"><img src="http://bootstrap-ecommerce.com/main/images/items/2.jpg" class="img-thumbnail img-sm"></div>
+                        <figcaption class="media-body">
+                            <h6 class="title text-truncate">Product name goes here </h6>
+                            <dl class="param param-inline small">
+                              <dt>Size: </dt>
+                              <dd>XXL</dd>
+                            </dl>
+                            <dl class="param param-inline small">
+                              <dt>Color: </dt>
+                              <dd>Orange color</dd>
+                            </dl>
+                        </figcaption>
+                    </figure> 
+                        </td>
+                        <td> 
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>	
+                                <option>3</option>	
+                                <option>4</option>	
+                            </select> 
+                        </td>
+                        <td> 
+                            <div class="price-wrap"> 
+                                <var class="price">USD 145</var> 
+                                <small class="text-muted">(USD5 each)</small> 
+                            </div> <!-- price-wrap .// -->
+                        </td>
+                        <td class="text-right"> 
+                        <a title="" href="" class="btn btn-outline-success" data-toggle="tooltip" data-original-title="Save to Wishlist"> <i class="fa fa-heart"></i></a> 
+                        <a href="" class="btn btn-outline-danger"> × Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <figure class="media">
+                        <div class="img-wrap"><img src="http://bootstrap-ecommerce.com/main/images/items/1.jpg" class="img-thumbnail img-sm"></div>
+                        <figcaption class="media-body">
+                            <h6 class="title text-truncate">Product name goes here </h6>
+                            <dl class="param param-inline small">
+                              <dt>Size: </dt>
+                              <dd>XXL</dd>
+                            </dl>
+                            <dl class="param param-inline small">
+                              <dt>Color: </dt>
+                              <dd>Orange color</dd>
+                            </dl>
+                        </figcaption>
+                    </figure> 
+                        </td>
+                        <td> 
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>	
+                                <option>3</option>	
+                                <option>4</option>	
+                            </select> 
+                        </td>
+                        <td> 
+                            <div class="price-wrap"> 
+                                <var class="price">USD 35</var> 
+                                <small class="text-muted">(USD10 each)</small> 
+                            </div> <!-- price-wrap .// -->
+                        </td>
+                        <td class="text-right"> 
+                        <a title="" href="" class="btn btn-outline-success" data-toggle="tooltip" data-original-title="Save to Wishlist"> <i class="fa fa-heart"></i></a> 
+                        <a href="" class="btn btn-outline-danger btn-round"> × Remove</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <figure class="media">
+                        <div class="img-wrap"><img src="http://bootstrap-ecommerce.com/main/images/items/2.jpg" class="img-thumbnail img-sm"></div>
+                        <figcaption class="media-body">
+                            <h6 class="title text-truncate">Product name goes here </h6>
+                            <dl class="param param-inline small">
+                              <dt>Size: </dt>
+                              <dd>XXL</dd>
+                            </dl>
+                            <dl class="param param-inline small">
+                              <dt>Color: </dt>
+                              <dd>Orange color</dd>
+                            </dl>
+                        </figcaption>
+                    </figure> 
+                        </td>
+                        <td> 
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>	
+                                <option>3</option>	
+                                <option>4</option>	
+                            </select> 
+                        </td>
+                        <td> 
+                            <div class="price-wrap"> 
+                                <var class="price">USD 45</var> 
+                                <small class="text-muted">(USD15 each)</small> 
+                            </div> <!-- price-wrap .// -->
+                        </td>
+                        <td class="text-right"> 
+                            <a title="" href="" class="btn btn-outline-success" data-toggle="tooltip" data-original-title="Save to Wishlist"> <i class="fa fa-heart"></i></a> 
+                            <a href="" class="btn btn-outline-danger btn-round"> × Remove</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                    </table>
             </div>
 
         </div>
     </div>
 
 
-    <div class="row">
-
-        
-        <div class="col-12 table-responsive">
-            <table class="table table-hover table-light">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>#</th>
-                        <th>Product</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($products as $product)
-                        <tr>
-                            <td scope="row">{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td><img src="{{$product->getFirstMediaUrl('products', 'thumb')}}"  width="120px"></td>
-                            <td><a href="{{ route('products.edit', $product->id) }}"
-                                    class="btn btn-primary btn-sm">edit</a>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="3">No products found</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-    </div>
 
 
 @endsection

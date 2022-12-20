@@ -19,9 +19,17 @@
                 </li>
 
                 <li class="">
-                    <a href="{{ url('cart') }}" class="svg-icon">
+                    <a href="{{ url('shop') }}" class="svg-icon">
                         <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Products</span>
+                        <span class="ml-4">Shop</span>
+                    </a>
+                </li>
+
+
+                <li class="">
+                    <a href="{{ url('products') }}" class="svg-icon">
+                        <i class="fa fa-file" aria-hidden="true"></i>
+                        <span class="ml-4">Items</span>
                     </a>
                 </li>
 
@@ -33,13 +41,6 @@
                     </a>
                 </li>
 
-
-                <li class="">
-                    <a href="{{ url('products') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Manage Products</span>
-                    </a>
-                </li>
 
 
 

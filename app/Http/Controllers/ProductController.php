@@ -21,12 +21,17 @@ class ProductController extends Controller
     }
 
 
-    public function cart()
+    public function shop()
     {
         
         $products = Product::latest()->get();        
         $categories = Category::all();
-        return view('products.cart', compact('categories','products'));
+        return view('products.shop', compact('categories','products'));
+    }
+
+    public function cart()
+    {
+        return view('products.cart');
     }
 
     public function cartshow(Category $category)
