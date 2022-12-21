@@ -1,132 +1,118 @@
-<div class="iq-sidebar  sidebar-default ">
-    <div class="iq-sidebar-logo d-flex align-items-center">
-        <a href="" class="header-logo">
-            {{-- <img src="{{ asset('webkit/assets/images/logo.svg') }}" alt="logo"> --}}
-            <h3 class="logo-title light-logo text-capitalize">{{ config('app.name') }}</h3>
-        </a>
-        <div class="iq-menu-bt-sidebar ml-0">
-            <i class="las la-bars wrapper-menu"></i>
-        </div>
-    </div>
-    <div class="data-scrollbar" data-scroll="1">
-        <nav class="iq-sidebar-menu">
-            <ul id="iq-sidebar-toggle" class="iq-menu">
-                <li class="">
-                    <a href="{{ route('home') }}" class="svg-icon">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        <span class="ml-4">Home</span>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a href="{{ url('shop') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Shop</span>
-                    </a>
-                </li>
-
-
-                <li class="">
-                    <a href="{{ url('products') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Items</span>
-                    </a>
-                </li>
-
-
-                <li class="">
-                    <a href="{{ url('invoices') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Invoices</span>
-                    </a>
-                </li>
-
-
-
-
-                <li class="">
-                    <a href="{{ url('customers') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Customers</span>
-                    </a>
-                </li>
-
-                
-                <li class="">
-                    <a href="{{ url('categories') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Categories</span>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a href="{{ url('lines') }}" class="svg-icon">
-                        <i class="fa fa-file" aria-hidden="true"></i>
-                        <span class="ml-4">Lines</span>
-                    </a>
-                </li>
-
-
-             
-
-
-
-
-                @role('ADMIN')
-                    
-
-                    <li class=" ">
-                        <a href="#admin" class="collapsed" data-toggle="collapse" aria-expanded="false">
-                            <svg class="svg-icon" id="p-dash10" width="20" height="20"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="8.5" cy="7" r="4"></circle>
-                                <polyline points="17 11 19 13 23 9"></polyline>
-                            </svg>
-                            <span class="ml-4">Administration</span>
-                            <i class="las la-angle-right iq-arrow-right arrow-active"></i>
-                            <i class="las la-angle-down iq-arrow-right arrow-hover"></i>
-                        </a>
-                        <ul id="admin" class="iq-submenu collapse" data-parent="#admin">
-
-                            <li class="">
-                                <a href="{{ route('admin.roles.index') }}">
-                                    <i class="las la-minus"></i><span>Role List</span>
-                                </a>
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-inner slimscroll">
+                    <div id="sidebar-menu" class="sidebar-menu">
+                        <ul>
+                            <li class="{{ (request()->is('home')) ? 'active' : '' }}">
+                                <a href="{{ url('home') }}" ><img src="{{ asset('assets/img/icons/dashboard.svg') }}" alt="img"><span> Dashboard</span> </a>
                             </li>
-
-                            <li class="">
-                                <a href="{{ route('admin.permissions.index') }}">
-                                    <i class="las la-minus"></i><span>Permission List</span>
-                                </a>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/product.svg') }}" alt="img"><span> Product</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="productlist.html">Product List</a></li>
+                                    <li><a href="addproduct.html">Add Product</a></li>
+                                    <li><a href="categorylist.html">Category List</a></li>
+                                    <li><a href="addcategory.html">Add Category</a></li>
+                                    <li><a href="SubCategorylist.html">Sub Category List</a></li>
+                                    <li><a href="subaddcategory.html">Add Sub Category</a></li>
+                                    <li><a href="brandlist.html">Brand List</a></li>
+                                    <li><a href="addbrand.html">Add Brand</a></li>
+                                    <li><a href="importproduct.html">Import Products</a></li>
+                                    <li><a href="barcode.html">Print Barcode</a></li>
+                                </ul>
                             </li>
-
-                            <li class="">
-                                <a href="{{ route('admin.users.index') }}">
-                                    <i class="las la-minus"></i><span>User List</span>
-                                </a>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/sales1.svg') }}" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="saleslist.html">Sales List</a></li>
+                                    <li><a href="pos.html">POS</a></li>
+                                    <li><a href="pos.html">New Sales</a></li>
+                                    <li><a href="salesreturnlists.html">Sales Return List</a></li>
+                                    <li><a href="createsalesreturns.html">New Sales Return</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/purchase1.svg') }}" alt="img"><span> Purchase</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="purchaselist.html">Purchase List</a></li>
+                                    <li><a href="addpurchase.html">Add Purchase</a></li>
+                                    <li><a href="importpurchase.html">Import Purchase</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/expense1.svg') }}" alt="img"><span> Expense</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="expenselist.html">Expense List</a></li>
+                                    <li><a href="createexpense.html">Add Expense</a></li>
+                                    <li><a href="expensecategory.html">Expense Category</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/quotation1.svg') }}" alt="img"><span> Quotation</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="quotationList.html">Quotation List</a></li>
+                                    <li><a href="addquotation.html">Add Quotation</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="salesreturnlist.html">Sales Return List</a></li>
+                                    <li><a href="createsalesreturn.html">Add Sales Return </a></li>
+                                    <li><a href="purchasereturnlist.html">Purchase Return List</a></li>
+                                    <li><a href="createpurchasereturn.html">Add Purchase Return </a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/users1.svg') }}" alt="img"><span> People</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="customerlist.html">Customer List</a></li>
+                                    <li><a href="addcustomer.html">Add Customer  </a></li>
+                                    <li><a href="supplierlist.html">Supplier List</a></li>
+                                    <li><a href="addsupplier.html">Add Supplier </a></li>
+                                    <li><a href="userlist.html">User List</a></li>
+                                    <li><a href="adduser.html">Add User</a></li>
+                                    <li><a href="storelist.html">Store List</a></li>
+                                    <li><a href="addstore.html">Add Store</a></li>
+                                </ul>
+                            </li>														
+                            <li class="submenu">
+                                <a href="javascript:void(0);" class="{{ (request()->segment(1) =='lines') ? 'active subdrop' : '' }}"><img src="{{ asset('assets/img/icons/places.svg') }}" alt="img"><span> Places</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a class="{{ (request()->is('lines')) ? 'active' : '' }}" href="{{ url('lines') }}">Lines</a></li>
+                                    <li><a class="{{ (request()->is('lines/create')) ? 'active' : '' }}"" href="{{ url('lines/create') }}">New Line</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg') }}" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="purchaseorderreport.html">Purchase order report</a></li>
+                                    <li><a href="inventoryreport.html">Inventory Report</a></li>
+                                    <li><a href="salesreport.html">Sales Report</a></li>
+                                    <li><a href="invoicereport.html">Invoice Report</a></li>
+                                    <li><a href="purchasereport.html">Purchase Report</a></li>
+                                    <li><a href="supplierreport.html">Supplier Report</a></li>
+                                    <li><a href="customerreport.html">Customer Report</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/users1.svg') }}" alt="img"><span> Users</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="newuser.html">New User </a></li>
+                                    <li><a href="userlists.html">Users List</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="generalsettings.html">General Settings</a></li>
+                                    <li><a href="emailsettings.html">Email Settings</a></li>
+                                    <li><a href="paymentsettings.html">Payment Settings</a></li>
+                                    <li><a href="currencysettings.html">Currency Settings</a></li>
+                                    <li><a href="grouppermissions.html">Group Permissions</a></li>
+                                    <li><a href="taxrates.html">Tax Rates</a></li>
+                                </ul>
                             </li>
                         </ul>
-                    </li>
-
-          
-                @endrole
-
-               
-
-
-                <li class="">
-                    <a href="{{ route('profile.show', auth()->user()->id) }}" class="svg-icon text-danger">
-                        <i class="fas fa-sign-out-alt fa-rotate-180 svg-icon"></i>
-                        <span class="ml-4">Log out</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-
-
-        <div class="pt-5 pb-2"></div>
-    </div>
-</div>
+                    </div>
+                </div>
+            </div>

@@ -36,6 +36,8 @@ Auth::routes([
   ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/test', [App\Http\Controllers\HomeController::class, 'index'])->name('test');
+
 
 // theme routes
 Route::view('blank', 'webkit')->name('webkit');

@@ -1,90 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<meta name="description" content="POS -  Admin panel">
+		<meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
+		<meta name="author" content="dreamhost -  Admin panel">
+		<meta name="robots" content="noindex, nofollow">
+		<title>@yield('title', config('app.name'))</title>
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}">
+		
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+		
+		<!-- animation CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@yield('title', config('app.name'))</title>
+        @stack('styles')
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('webkit/assets/images/favicon.ico') }}" />
-    <link rel="stylesheet" href="{{ asset('webkit/assets/css/backend-plugin.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('webkit/assets/css/backend.css?v=1.0.0') }}">
-    <link rel="stylesheet"
-        href="{{ asset('webkit/assets/vendor/line-awesome/dist/line-awesome/css/line-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('webkit/assets/vendor/remixicon/fonts/remixicon.css') }}">
+		<!-- Datatable CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
+		
+		<!-- Fontawesome CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/fontawesome.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome/css/all.min.css') }}">
+		
+		<!-- Main CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+		
+	</head>
+	<body>
+		<div id="global-loader" >
+			<div class="whirly-loader"> </div>
+		</div>
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
 
-    <link rel="stylesheet" href="{{ asset('webkit/assets/vendor/tui-calendar/tui-calendar/dist/tui-calendar.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('webkit/assets/vendor/tui-calendar/tui-date-picker/dist/tui-date-picker.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('webkit/assets/vendor/tui-calendar/tui-time-picker/dist/tui-time-picker.css') }}">
+			<!-- Header -->
+			@include('layouts.admin.navbar')
+			<!-- Header -->
+			
+			<!-- Sidebar -->
+			@include('layouts.admin.sidebar')
+			<!-- /Sidebar -->
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+			<div class="page-wrapper">
+				@yield('content')
+			</div>
+		</div>
+		<!-- /Main Wrapper -->
+		
+		<!-- jQuery -->
+		<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
 
-        <!-- PWA  -->
-        <meta name="theme-color" content="#6777ef"/>
-        <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
-        <link rel="manifest" href="{{ asset('/manifest.json') }}">
-</head>
+		<!-- Feather Icon JS -->
+		<script src="{{ asset('assets/js/feather.min.js') }}"></script>
 
-<body class=" color-light ">
-    <!-- loader Start -->
-    <div id="loading">
-        <div id="loading-center"></div>
-    </div>
-    <!-- loader END -->
-    <!-- Wrapper Start -->
-    <div class="wrapper">
+		<!-- Slimscroll JS -->
+		<script src="{{ asset('assets/js/jquery.slimscroll.min.js') }}"></script>
 
-        @include('layouts.admin.sidebar')
+		<!-- Datatable JS -->
+		<script src="{{ asset('assets/js/jquery.dataTables.min.js') }}"></script>
+		<script src="{{ asset('assets/js/dataTables.bootstrap4.min.js') }}"></script>
+		
+		<!-- Bootstrap Core JS -->
+		<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-        @include('layouts.admin.navbar')
-
-        <div class="content-page">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        @yield('content')
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Wrapper End-->
-
-
-
-    @include('layouts.admin.footer')
-
-    <!-- Backend Bundle JavaScript -->
-    <script src="{{ asset('webkit/assets/js/backend-bundle.min.js') }}"></script>
-
-    <!-- Table Treeview JavaScript -->
-    <script src="{{ asset('webkit/assets/js/table-treeview.js') }}"></script>
-
-    <!-- Chart Custom JavaScript -->
-    <script src="{{ asset('webkit/assets/js/customizer.js') }}"></script>
-
-    <!-- Chart Custom JavaScript -->
-    <script async src="{{ asset('webkit/assets/js/chart-custom.js') }}"></script>
-    <!-- Chart Custom JavaScript -->
-    <script async src="{{ asset('webkit/assets/js/slider.js') }}"></script>
-
-    <!-- app JavaScript -->
-    <script src="{{ asset('webkit/assets/js/app.js') }}"></script>
-
-    <script src="{{ asset('webkit/assets/vendor/moment.min.js') }}"></script>
-
-    <script src="{{ asset('/sw.js') }}"></script>
-<script>
-    if (!navigator.serviceWorker.controller) {
-        navigator.serviceWorker.register("/sw.js").then(function (reg) {
-            console.log("Service worker has been registered for scope: " + reg.scope);
-        });
-    }
-</script>
-</body>
-
+        @stack('scripts')
+		
+		<!-- Custom JS -->
+		<script src="{{ asset('assets/js/script.js') }}"></script>
+		
+	</body>
 </html>
