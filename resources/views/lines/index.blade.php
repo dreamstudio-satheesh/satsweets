@@ -1,66 +1,154 @@
 @extends('layouts.admin')
 
 
+@push('styles')
+
+        <!-- Select2 CSS -->
+        <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+        <!-- Datetimepicker CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    
+@endpush
+
+@push('scripts')
+
+        <!-- Select2 JS -->
+        <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+        <!-- Datetimepicker JS -->
+        <script src="assets/js/moment.min.js"></script>
+        <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+        <!-- Sweetalert 2 -->
+        <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+    
+@endpush
+
 @section('content')
-
-    <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Lines</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-
-    <div class="card m-2 p-4">
-        <div class="row justify-content-end">
-            <div class="mx-3">
-                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#new-line-modal">New line</a>
-            </div>
-        </div>
-        <div class="row my-2">
-            <div class="col-12">
-                @forelse($lines as $line)
-                    <div class="btn btn-outline-primary"> <a href="{{ route('lines.edit', $line->id) }}">{{ $line->name }}</a> </div>
-                @empty
-                    <div class="alert alert-light" role="alert">
-                        No lines found
-                    </div>
-                @endforelse
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" role="dialog" aria-modal="true" id="new-line-modal">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header d-block text-center pb-3 border-bttom">
-                    <h3 class="modal-title" id="exampleModalCenterTitle01">New Line</h3>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group mb-3">
-                                <form action="{{ route('lines.store') }}" method="post">
-                                    @csrf
-                                <label for="exampleInputText01" class="h5">Delivery Area*</label>
-                                <input id="name" name="name" type="text" class="form-control" placeholder="Delivery Area" />
-                            </div>
+                <div class="content">
+                    <div class="page-header">
+                        <div class="page-title">
+                            <h4>Delevery Area List</h4>
+                            <h6>Manage your lines</h6>
                         </div>
-                 
-                        <div class="col-lg-12">
-                            <div class="d-flex flex-wrap align-items-ceter justify-content-center mt-2">
-                                <button type="submit" class="btn btn-primary mr-3">Save</button>
-                                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                                </form>
-                            </div>
+                        <div class="page-btn">
+                            <a href="{{ url('lines/create') }}" class="btn btn-added">
+                                <img src="assets/img/icons/plus.svg" alt="img" class="me-2">New Line
+                            </a>
                         </div>
                     </div>
+                    
+
+                    <!-- /product list -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-top">
+                                <div class="search-set">
+                                    <div class="search-path">
+                                        <a class="btn btn-filter" id="filter_search">
+                                            <img src="assets/img/icons/filter.svg" alt="img">
+                                            <span><img src="assets/img/icons/closes.svg" alt="img"></span>
+                                        </a>
+                                    </div>
+                                    <div class="search-input">
+                                        <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
+                                    </div>
+                                </div>
+                                <div class="wordset">
+                                    <ul>
+                                        <li>
+                                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+                                        </li>
+                                        <li>
+                                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
+                                        </li>
+                                        <li>
+                                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="assets/img/icons/printer.svg" alt="img"></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- /Filter -->
+                            <div class="card" id="filter_inputs">
+                                <div class="card-body pb-0">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <select class="select">
+                                                    <option>Choose Area</option>
+                                                    <option>..</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="col-lg-2 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <select class="select">
+                                                    <option>Choose Status</option>
+                                                    <option>Disable</option>
+                                                    <option>Enable</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                                            <div class="form-group">
+                                                <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /Filter -->
+                            <div class="table-responsive">
+                                <table class="table  datanew">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                <label class="checkboxs">
+                                                    <input type="checkbox">
+                                                    <span class="checkmarks"></span>
+                                                </label>
+                                            </th>
+                                            <th>Area Name</th>
+                                            <th>Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($lines as $line)
+                                        <tr>
+                                            <td>
+                                                <label class="checkboxs">
+                                                    <input type="checkbox">
+                                                    <span class="checkmarks"></span>
+                                                </label>
+                                            </td>
+                                            <td>{{ $line->name }}</td>
+                                            <td>
+                                                <div class="status-toggle d-flex justify-content-between align-items-center">
+                                                    <input type="checkbox" id="user2" class="check" checked="">
+                                                    <label for="user2" class="checktoggle">checkbox</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                
+                                                <a class="me-3" href="{{ route('lines.edit', $line->id) }}">
+                                                    <img src="assets/img/icons/edit.svg" alt="img">
+                                                </a>
+                                                <a class="me-3 confirm-text" href="javascript:void(0);">
+                                                    <img src="assets/img/icons/delete.svg" alt="img">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                                                      
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /product list -->
                 </div>
-            </div>
-        </div>
-    </div>
 @endsection

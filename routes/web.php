@@ -1,8 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ProfileController;
@@ -24,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',  [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm']);
 
 
+Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logout']);
+
+
 
 Auth::routes([
 
@@ -36,10 +38,10 @@ Auth::routes([
   ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/test', [App\Http\Controllers\HomeController::class, 'index'])->name('test');
 
-// theme routes
-Route::view('blank', 'webkit')->name('webkit');
-Route::view('mazer','mazer')->name('mazer');
+
+
 
 
 

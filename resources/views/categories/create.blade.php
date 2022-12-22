@@ -1,36 +1,56 @@
 @extends('layouts.admin')
 
+@push('styles')
+
+        <!-- Select2 CSS -->
+        <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+        <!-- Datetimepicker CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    
+@endpush
 
 @section('content')
 
-    <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Categories</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">New Categories</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-
-    <div class="card m-2 p-4">
-        <form action="{{ route('categories.store') }}" method="post">
-            @csrf
-            <div class="row justify-content-end">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="mb-3">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" class="form-control" placeholder="Category" />
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
+        <div class="content">
+					<div class="page-header">
+						<div class="page-title">
+							<h4>Product Add Category</h4>
+							<h6>Create new product Category</h6>
+						</div>
+					</div>
+					<!-- /add -->
+					<div class="card">
+						<div class="card-body">
+							<div class="row">
+                                <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+								<div class="col-lg-6 col-sm-6 col-12">
+									<div class="form-group">
+										<label>Category Name *</label>
+										<input name="name" type="text" >
+									</div>
+								</div>
+								<div class="col-lg-12">
+									<div class="form-group">
+										<label>	Product Image</label>
+										<div class="image-upload">
+											<input type="file" name="photo">
+											<div class="image-uploads">
+												<img src="{{ asset('assets/img/icons/upload.svg') }}" alt="img">
+												<h4>Drag and drop a file to upload</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-12">
+                                    <button type="submit" class="btn btn-submit me-2">Submit</button>
+                                    <a onclick="history.back()"  class="btn btn-cancel">Cancel</a>
+								</div>
+                            </form>
+							</div>
+						</div>
+					</div>
+					<!-- /add -->
+				</div>
 @endsection

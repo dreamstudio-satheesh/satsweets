@@ -19,9 +19,7 @@
     <div class="card mx-2 my-2 p-4">
         <form action="{{ route('admin.users.store') }}" method="post">
             @csrf
-            <div class="row justify-content-end">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+           
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
@@ -72,6 +70,11 @@
                         </div>
                     </div>
                 @endforeach
+            </div>
+            
+            <div class="col-lg-12">
+                <button  type="submit" class="btn btn-submit me-2">Submit</button>
+                <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
             </div>
         </form>
     </div>
