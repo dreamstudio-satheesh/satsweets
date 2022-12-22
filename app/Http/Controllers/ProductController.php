@@ -102,7 +102,10 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+
+        
+        return view('products.edit', compact('categories','product'));
     }
 
     /**
@@ -114,7 +117,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        $product->update(['name'=>$request->name]);
+        
+        return redirect('products')->withSuccess('Updated');
     }
 
     /**

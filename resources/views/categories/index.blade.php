@@ -1,82 +1,143 @@
 @extends('layouts.admin')
 
+@push('styles')
+
+        <!-- Select2 CSS -->
+        <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+        <!-- Datetimepicker CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+    
+@endpush
+
+@push('scripts')
+
+        <!-- Select2 JS -->
+        <script src="assets/plugins/select2/js/select2.min.js"></script>
+
+        <!-- Datetimepicker JS -->
+        <script src="assets/js/moment.min.js"></script>
+        <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+
+        <!-- Sweetalert 2 -->
+        <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+    
+@endpush
 
 @section('content')
 
-    <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Categories</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
-
-    <div class="row my-2 justify-content-end">
-        <div class="mx-3">
-            <a href="{{ route('categories.create') }}"  data-toggle="modal" data-target="#new-category-modal" class="btn btn-primary btn-sm">New Category</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 table-responsive">
-            <table class="table table-hover table-light">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Category</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($categories as $category)
-                        <tr>
-                            <td scope="row">{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
-                            <td><a href="{{ route('categories.edit', $category->id) }}"
-                                    class="btn btn-primary btn-sm">edit</a>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="3">No categories found</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
-    <div class="modal fade" role="dialog" aria-modal="true" id="new-category-modal">
-        <div class="modal-dialog  modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header d-block text-center pb-3 border-bttom">
-                    <h3 class="modal-title" id="exampleModalCenterTitle01">New Category</h3>
+        <div class="content">
+            <div class="page-header">
+                <div class="page-title">
+                    <h4>Category list</h4>
+                    <h6>View/Search product Category</h6>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group mb-3">
-                                <form action="{{ route('categories.store') }}" method="post">
-                                    @csrf
-                                <label for="exampleInputText01" class="h5">Category Name*</label>
-                                <input id="name" name="name" type="text" class="form-control" placeholder="Category" />
+                <div class="page-btn">
+                    <a href="{{ url('categories/create') }}" class="btn btn-added">
+                        <img src="assets/img/icons/plus.svg"  class="me-1" alt="img">Add  Category
+                    </a>
+                </div>
+            </div>
+            
+
+            <!-- /product list -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-top">
+                        <div class="search-set">
+                            <div class="search-path">
+                                <a class="btn btn-filter" id="filter_search">
+                                    <img src="assets/img/icons/filter.svg" alt="img">
+                                    <span><img src="assets/img/icons/closes.svg" alt="img"></span>
+                                </a>
+                            </div>
+                            <div class="search-input">
+                                <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
                             </div>
                         </div>
-                 
-                        <div class="col-lg-12">
-                            <div class="d-flex flex-wrap align-items-ceter justify-content-center mt-2">
-                                <button type="submit" class="btn btn-primary mr-3">Save</button>
-                                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                                </form>
+                        <div class="wordset">
+                            <ul>
+                                <li>
+                                    <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+                                </li>
+                                <li>
+                                    <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
+                                </li>
+                                <li>
+                                    <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="assets/img/icons/printer.svg" alt="img"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /Filter -->
+                    <div class="card" id="filter_inputs">
+                        <div class="card-body pb-0">
+                            <div class="row">
+                                <div class="col-lg-2 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <select class="select">
+                                            <option>Choose Category</option>
+                                            <option>Computers</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1 col-sm-6 col-12 ms-auto">
+                                    <div class="form-group">
+                                        <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /Filter -->
+                    <div class="table-responsive">
+                        <table class="table  datanew">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <label class="checkboxs">
+                                            <input type="checkbox" id="select-all">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </th>
+                                    <th>Category name</th>
+                                    <th>Created By</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($categories as $category)
+                                <tr>
+                                    <td>
+                                        <label class="checkboxs">
+                                            <input type="checkbox">
+                                            <span class="checkmarks"></span>
+                                        </label>
+                                    </td>
+                                    <td class="productimgname">
+                                        <a href="javascript:void(0);" class="product-img">
+                                            <img src="assets/img/product/noimage.png" alt="product">
+                                        </a>
+                                        <a href="javascript:void(0);">{{ $category->name }}</a>
+                                    </td>
+                                    <td>Admin</td>
+                                    <td>
+                                        <a class="me-3" href="{{ route('categories.edit', $category->id) }}">
+                                            <img src="assets/img/icons/edit.svg" alt="img">
+                                        </a>
+                                        <a class="me-3 confirm-text" href="javascript:void(0);">
+                                            <img src="assets/img/icons/delete.svg" alt="img">
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+            <!-- /product list -->
         </div>
-    </div>
 
 @endsection

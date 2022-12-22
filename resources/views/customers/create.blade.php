@@ -3,25 +3,11 @@
 
 @section('content')
 
-    <div class="row">
-        <div class="col-12">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{ route('customers.index') }}">Customers</a>
-                    </li>
-                    <li class="breadcrumb-item active" aria-current="page">New Customer</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
 
     <div class="card m-2 p-4">
         <form action="{{ route('customers.store') }}" method="post">
             @csrf
-            <div class="row justify-content-end">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+            
             <div class="row">
                 <div class="col-12">
                     <div class="mb-3">
@@ -80,6 +66,11 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                </div>
+
+                <div class="col-lg-12">
+                    <button type="submit" class="btn btn-submit me-2">Submit</button>
+                    <a onclick="history.back()"  class="btn btn-cancel">Cancel</a>
                 </div>
                 
             </div>

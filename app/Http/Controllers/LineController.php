@@ -84,7 +84,7 @@ class LineController extends Controller
         ]);
         $line->update(['name'=>$request->name]);
         
-        return redirect()->back()->withSuccess('Updated');
+        return redirect('lines')->withSuccess('Updated');
     }
 
     /**
