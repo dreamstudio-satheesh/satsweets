@@ -21,25 +21,7 @@ class ProductController extends Controller
     }
 
 
-    public function shop()
-    {
-        
-        $products = Product::latest()->get();        
-        $categories = Category::all();
-        return view('products.shop', compact('categories','products'));
-    }
-
-    public function cart()
-    {
-        return view('products.cart');
-    }
-
-    public function cartshow(Category $category)
-    {
-        $products = Product::latest()->get();   
-        $categories = Category::all();
-        return view('products.cart', compact('categories','products'));
-    }
+ 
 
     /**
      * Show the form for creating a new resource.
