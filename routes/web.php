@@ -66,9 +66,9 @@ Route::group([
     });
     // User routes
     
-     Route::get('shop', [App\Http\Controllers\ProductController::class, 'shop'])->name('shop');
-     Route::get('cart', [App\Http\Controllers\ProductController::class, 'cart'])->name('cart');
-     Route::get('/cart/{category}', [App\Http\Controllers\ProductController::class, 'cartshow'])->name('cart.view');
+     Route::get('shop', [App\Http\Controllers\CartController::class, 'shop'])->name('shop');
+     Route::get('cart', [App\Http\Controllers\CartController::class, 'cart'])->name('cart');
+     Route::get('/cart/{category}', [App\Http\Controllers\CartController::class, 'cartshow'])->name('cart.view');
 
     //lines
     Route::resource('vendors', App\Http\Controllers\vendorController::class);
