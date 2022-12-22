@@ -40,9 +40,14 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
         ]);
-        Category::create([
+        $category =  Category::create([
             'name'=>$request->name, 'guard_name'=>'web'
         ]);
+
+        if ($request->has('photo') && $request->file('photo')->isValid()) {
+
+            $category->addMediaFromRequest('photo')->toMediaCollection('categories');               
+        }     
 
         return redirect()->route('categories.index')->withSuccess('category added');
     }

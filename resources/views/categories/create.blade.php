@@ -28,7 +28,7 @@
 								<div class="col-lg-6 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Category Name *</label>
-										<input name="name" type="text" >
+										<input name="name" type="text" required>
 									</div>
 								</div>
 								<div class="col-lg-12">

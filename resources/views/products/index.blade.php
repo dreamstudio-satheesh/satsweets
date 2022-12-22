@@ -102,7 +102,8 @@
                                         </label>
                                     </th>
                                     <th>Product name</th>
-                                    <th>Created By</th>
+                                    <th>Price</th>
+                                    <th>Stock</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -117,11 +118,17 @@
                                     </td>
                                     <td class="productimgname">
                                         <a href="javascript:void(0);" class="product-img">
-                                            <img src="assets/img/product/noimage.png" alt="product">
+                                            
+                                            @if ( !empty( $product->getFirstMediaUrl('products') ) )                                          
+                                            <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">                                        
+                                            @else
+                                            <img src="assets/img/product/noimage.png">
+                                            @endif 
                                         </a>
                                         <a href="javascript:void(0);">{{ $product->name }}</a>
                                     </td>
-                                    <td>Admin</td>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->stocks }}</td>
                                     <td>
                                         <a class="me-3" href="{{ route('products.edit', $product->id) }}">
                                             <img src="assets/img/icons/edit.svg" alt="img">

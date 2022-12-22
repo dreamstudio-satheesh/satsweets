@@ -117,7 +117,11 @@
                                     </td>
                                     <td class="productimgname">
                                         <a href="javascript:void(0);" class="product-img">
+                                            @if ( !empty( $category->getFirstMediaUrl('categories') ) )                                          
+                                            <img src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
+                                            @else
                                             <img src="assets/img/product/noimage.png" alt="product">
+                                            @endif 
                                         </a>
                                         <a href="javascript:void(0);">{{ $category->name }}</a>
                                     </td>

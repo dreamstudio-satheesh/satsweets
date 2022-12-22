@@ -43,7 +43,7 @@
 								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Name</label>
-										<input name="name" type="text" >
+										<input name="name" type="text" required>
 									</div>
 								</div>
                                 <div class="col-lg-3 col-sm-6 col-12">
@@ -59,13 +59,13 @@
                                 <div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Price</label>
-										<input name="price" type="text" >
+										<input name="price" type="text" required>
 									</div>
 								</div>
                                 <div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Stocks</label>
-										<input name="stocks" type="text" >
+										<input name="stocks" type="text" required>
 									</div>
 								</div>
                             </div>

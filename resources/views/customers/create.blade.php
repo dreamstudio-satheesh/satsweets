@@ -12,7 +12,7 @@
                 <div class="col-12">
                     <div class="mb-3">
                         <label for="name">Store Name</label>
-                        <input id="name" name="name" type="text" class="form-control" placeholder="Name" />
+                        <input id="name" name="name" type="text" class="form-control" placeholder="Name" required/>
                     </div>
                 </div>
                 <div class="mb-3 col-12">

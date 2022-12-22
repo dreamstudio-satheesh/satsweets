@@ -20,7 +20,7 @@
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="form-group">
                                 <label>Delevery Location *</label>
-                                <input type="text"  name="name">
+                                <input type="text"  name="name" required>
                             </div>
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12">
