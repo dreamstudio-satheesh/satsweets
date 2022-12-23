@@ -21,4 +21,10 @@ class Category extends Model implements HasMedia
               ->sharpen(10);
     }
 
+
+    public function products()
+   {
+       return $this->hasMany(Product::class);
+   }
+
 }

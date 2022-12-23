@@ -20,4 +20,10 @@ class Product extends Model implements HasMedia
               ->height(250)
               ->sharpen(10);
     }
+
+
+    public function categories()
+   {
+       return $this->belongsTo(Category::class);
+   }
 }

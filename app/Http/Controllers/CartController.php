@@ -10,10 +10,9 @@ class CartController extends Controller
 {
     public function shop()
     {
-        
-        $products = Product::latest()->get();        
-        $categories = Category::all();
-        return view('cart.shop', compact('categories','products'));
+           
+        $categories = Category::with('products')->orderBy('id')->get();
+        return view('cart.shop', compact('categories'));
     }
 
     public function cart()
