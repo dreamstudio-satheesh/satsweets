@@ -4,25 +4,25 @@
 @push('styles')
 
         <!-- Select2 CSS -->
-        <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="{{ url('') }}/assets/plugins/select2/css/select2.min.css">
 
         <!-- Datetimepicker CSS -->
-        <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+        <link rel="stylesheet" href="{{ url('') }}/assets/css/bootstrap-datetimepicker.min.css">
     
 @endpush
 
 @push('scripts')
 
         <!-- Select2 JS -->
-        <script src="assets/plugins/select2/js/select2.min.js"></script>
+        <script src="{{ url('') }}/assets/plugins/select2/js/select2.min.js"></script>
 
         <!-- Datetimepicker JS -->
-        <script src="assets/js/moment.min.js"></script>
-        <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="{{ url('') }}/assets/js/moment.min.js"></script>
+        <script src="{{ url('') }}/assets/js/bootstrap-datetimepicker.min.js"></script>
 
         <!-- Sweetalert 2 -->
-        <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+        <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+        <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalerts.min.js"></script>
     
 @endpush
 
@@ -35,7 +35,7 @@
                         <h6>Manage your sales</h6>
                 </div>
                 <div class="page-btn">
-                        <a href="newsales" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-1">Add Sales</a>
+                        <a href="newsales" class="btn btn-added"><img src="{{ url('') }}/assets/img/icons/plus.svg" alt="img" class="me-1">Add Sales</a>
                 </div>
         </div>
         
@@ -47,24 +47,24 @@
                                 <div class="search-set">
                                         <div class="search-path">
                                                 <a class="btn btn-filter" id="filter_search">
-                                                        <img src="assets/img/icons/filter.svg" alt="img">
-                                                        <span><img src="assets/img/icons/closes.svg" alt="img"></span>
+                                                        <img src="{{ url('') }}/assets/img/icons/filter.svg" alt="img">
+                                                        <span><img src="{{ url('') }}/assets/img/icons/closes.svg" alt="img"></span>
                                                 </a>
                                         </div>
                                         <div class="search-input">
-                                                <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
+                                                <a class="btn btn-searchset"><img src="{{ url('') }}/assets/img/icons/search-white.svg" alt="img"></a>
                                         </div>
                                 </div>
                                 <div class="wordset">
                                         <ul>
                                                 <li>
-                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="{{ url('') }}/assets/img/icons/pdf.svg" alt="img"></a>
                                                 </li>
                                                 <li>
-                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
+                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="{{ url('') }}/assets/img/icons/excel.svg" alt="img"></a>
                                                 </li>
                                                 <li>
-                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="assets/img/icons/printer.svg" alt="img"></a>
+                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="{{ url('') }}/assets/img/icons/printer.svg" alt="img"></a>
                                                 </li>
                                         </ul>
                                 </div>
@@ -93,7 +93,7 @@
                                                 </div>
                                                 <div class="col-lg-3 col-sm-6 col-12">
                                                         <div class="form-group">
-                                                                <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
+                                                                <a class="btn btn-filters ms-auto"><img src="{{ url('') }}/assets/img/icons/search-whites.svg" alt="img"></a>
                                                         </div>
                                                 </div>
                                         </div>
@@ -145,22 +145,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -187,22 +187,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -229,22 +229,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -271,22 +271,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -312,22 +312,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -354,22 +354,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -396,22 +396,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -438,22 +438,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -480,22 +480,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -522,22 +522,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>
@@ -564,22 +564,22 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/download.svg" class="me-2" alt="img">Download pdf</a>
                                                                         </li>	
                                                                         <li>
-                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
+                                                                                <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('') }}/assets/img/icons/delete1.svg" class="me-2" alt="img">Delete Sale</a>
                                                                         </li>								
                                                                 </ul>
                                                         </td>

@@ -4,22 +4,22 @@
 @push('styles')
 
         <!-- Select2 CSS -->
-        <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+        <link rel="stylesheet" href="{{ url('') }}/assets/plugins/select2/css/select2.min.css">
     
 @endpush
 
 @push('scripts')
 
         <!-- Select2 JS -->
-        <script src="assets/plugins/select2/js/select2.min.js"></script>    
+        <script src="{{ url('') }}/assets/plugins/select2/js/select2.min.js"></script>    
 
         <!-- Datetimepicker JS -->
-        <script src="assets/js/moment.min.js"></script>
-        <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+        <script src="{{ url('') }}/assets/js/moment.min.js"></script>
+        <script src="{{ url('') }}/assets/js/bootstrap-datetimepicker.min.js"></script>
 
         <!-- Sweetalert 2 -->
-	<script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-	<script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+	<script src="{{ url('') }}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
+	<script src="{{ url('') }}/assets/plugins/sweetalert/sweetalerts.min.js"></script>
     
 @endpush
 
@@ -32,7 +32,7 @@
                         <h6>Manage your Returns</h6>
                 </div>
                 <div class="page-btn">
-                        <a href="newsalesreturn" class="btn btn-added"><img src="assets/img/icons/plus.svg" alt="img" class="me-2">Add New Sales Return</a>
+                        <a href="newsalesreturn" class="btn btn-added"><img src="{{ url('') }}/assets/img/icons/plus.svg" alt="img" class="me-2">Add New Sales Return</a>
                 </div>
         </div>
 
@@ -44,24 +44,24 @@
                                 <div class="search-set">
                                         <div class="search-path">
                                                 <a class="btn btn-filter" id="filter_search">
-                                                        <img src="assets/img/icons/filter.svg" alt="img">
-                                                        <span><img src="assets/img/icons/closes.svg" alt="img"></span>
+                                                        <img src="{{ url('') }}/assets/img/icons/filter.svg" alt="img">
+                                                        <span><img src="{{ url('') }}/assets/img/icons/closes.svg" alt="img"></span>
                                                 </a>
                                         </div>
                                         <div class="search-input">
-                                                <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
+                                                <a class="btn btn-searchset"><img src="{{ url('') }}/assets/img/icons/search-white.svg" alt="img"></a>
                                         </div>
                                 </div>
                                 <div class="wordset">
                                         <ul>
                                                 <li>
-                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="assets/img/icons/pdf.svg" alt="img"></a>
+                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="pdf"><img src="{{ url('') }}/assets/img/icons/pdf.svg" alt="img"></a>
                                                 </li>
                                                 <li>
-                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="assets/img/icons/excel.svg" alt="img"></a>
+                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="excel"><img src="{{ url('') }}/assets/img/icons/excel.svg" alt="img"></a>
                                                 </li>
                                                 <li>
-                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="assets/img/icons/printer.svg" alt="img"></a>
+                                                        <a data-bs-toggle="tooltip" data-bs-placement="top" title="print"><img src="{{ url('') }}/assets/img/icons/printer.svg" alt="img"></a>
                                                 </li>
                                         </ul>
                                 </div>
@@ -106,7 +106,7 @@
                                                 </div>
                                                 <div class="col-lg-2 col-sm-6 col-12">
                                                         <div class="form-group">
-                                                                <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
+                                                                <a class="btn btn-filters ms-auto"><img src="{{ url('') }}/assets/img/icons/search-whites.svg" alt="img"></a>
                                                         </div>
                                                 </div>
                                         </div>
@@ -144,7 +144,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product1.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product1.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Palkova</a>
                                                         </td>
@@ -158,10 +158,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -174,7 +174,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product2.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product2.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Mysorepak</a>
                                                         </td>
@@ -188,10 +188,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -204,7 +204,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product3.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product3.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Murukku</a>
                                                         </td>
@@ -218,10 +218,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -234,7 +234,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product4.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product4.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Boondhi</a>
                                                         </td>
@@ -248,10 +248,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -264,7 +264,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product5.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product5.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Masala Kadalai</a>
                                                         </td>
@@ -278,10 +278,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -294,7 +294,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product6.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product6.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Palkova</a>
                                                         </td>
@@ -308,10 +308,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -324,7 +324,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product7.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product7.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Salt Biscuit</a>
                                                         </td>
@@ -338,10 +338,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -354,7 +354,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product1.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product1.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Palkova</a>
                                                         </td>
@@ -368,10 +368,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -384,7 +384,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product2.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product2.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Mysorepak</a>
                                                         </td>
@@ -398,10 +398,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -414,7 +414,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product3.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product3.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Murukku</a>
                                                         </td>
@@ -428,10 +428,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -444,7 +444,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product4.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product4.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Laddu</a>
                                                         </td>
@@ -458,10 +458,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -474,7 +474,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product5.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product5.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Avocat</a>
                                                         </td>
@@ -488,10 +488,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -504,7 +504,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product6.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product6.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Palkova</a>
                                                         </td>
@@ -518,10 +518,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>
@@ -534,7 +534,7 @@
                                                         </td>
                                                         <td class="productimgname">
                                                                 <a href="javascript:void(0);" class="product-img">
-                                                                        <img src="assets/img/product/product7.jpg" alt="product">
+                                                                        <img src="{{ url('') }}/assets/img/product/product7.jpg" alt="product">
                                                                 </a>
                                                                 <a href="javascript:void(0);">Apple Earpods</a>
                                                         </td>
@@ -548,10 +548,10 @@
                                                         <td>
                                                                  
                                                                 <a class="me-3" href="editsalesreturn.html">
-                                                                        <img src="assets/img/icons/edit.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/edit.svg" alt="img">
                                                                 </a>
                                                                 <a class="me-3 confirm-text" href="javascript:void(0);">
-                                                                        <img src="assets/img/icons/delete.svg" alt="img">
+                                                                        <img src="{{ url('') }}/assets/img/icons/delete.svg" alt="img">
                                                                 </a>
                                                         </td>
                                                 </tr>

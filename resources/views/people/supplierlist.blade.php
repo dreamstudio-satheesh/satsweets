@@ -116,7 +116,7 @@
                                                         <th>code</th>
                                                         <th>Phone</th>
                                                         <th>email</th>
-                                                        <th>Country</th>
+                                                       
                                                         <th>Action</th>
                                                 </tr>
                                         </thead>
@@ -137,7 +137,7 @@
                                                         <td>201</td>
                                                         <td>+12163547758 </td>
                                                         <td>thomas@example.com</td>
-                                                        <td>China</td>
+                                                        
                                                         <td>
                                                                   
                                                                 <a class="me-3" href="editsupplier.html">
@@ -164,7 +164,7 @@
                                                         <td>202</td>
                                                         <td>123-456-888</td>
                                                         <td>customer@example.com</td>
-                                                        <td>USA</td>
+                                                        
                                                         <td>
                                                                   
                                                                 <a class="me-3" href="editsupplier.html">
@@ -191,7 +191,7 @@
                                                         <td>521</td>
                                                         <td>123-456-888</td>
                                                         <td>customer@example.com</td>
-                                                        <td>USA</td>
+                                                        
                                                         <td>
                                                                   
                                                                 <a class="me-3" href="editsupplier.html">
@@ -218,7 +218,7 @@
                                                         <td>555</td>
                                                         <td>123-456-888</td>
                                                         <td>bruklin@example.com</td>
-                                                        <td>Thailand</td>
+                                                        
                                                         <td>
                                                                   
                                                                 <a class="me-3" href="editsupplier.html">
@@ -353,7 +353,7 @@
                                                         <td>555</td>
                                                         <td>123-456-888</td>
                                                         <td>bruklin@example.com</td>
-                                                        <td>Thailand</td>
+                                                        
                                                         <td>
                                                                   
                                                                 <a class="me-3" href="editsupplier.html">
