@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function newsales()   {
+    public function newsales()
+    {
            
         $categories = Category::with('products')->orderBy('id')->get();
         return view('cart.shop', compact('categories'));
