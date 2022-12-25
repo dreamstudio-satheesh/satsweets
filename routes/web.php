@@ -27,6 +27,52 @@ Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logou
 
 
 
+//Sales
+Route::view('saleslist', 'sales.saleslist')->name('saleslist');
+Route::view('newsales', 'sales.newsales')->name('newsales');
+Route::view('salesreturnlist', 'sales.salesreturnlist')->name('salesreturnlist');
+Route::view('newsalesreturn', 'sales.newsalesreturn')->name('newsalesreturn');
+
+//Purchase
+Route::view('purchaselist', 'purchase.purchaselist')->name('purchaselist');
+Route::view('addpurchase', 'purchase.addpurchase')->name('addpurchase');
+Route::view('importpurchase', 'purchase.importpurchase')->name('importpurchase');
+
+//Expense
+Route::view('expenselist', 'expense.expenselist')->name('expenselist');
+Route::view('addexpense', 'expense.addexpense')->name('addexpense');
+Route::view('expensecategory', 'expense.expensecategory')->name('expensecategory');
+
+//Quotation
+Route::view('quotationlist', 'quotation.quotationlist')->name('quotationlist');
+Route::view('addquotation', 'quotation.addquotation')->name('addquotation');
+
+//Return
+Route::view('salesreturnlist', 'return.salesreturnlist')->name('salesreturnlist');
+Route::view('addsalesreturn', 'return.addsalesreturn')->name('addsalesreturn');
+Route::view('purchasereturnlist', 'return.purchasereturnlist')->name('purchasereturnlist');
+Route::view('addpurchasereturn', 'return.addpurchasereturn')->name('addpurchasereturn');
+
+//People
+Route::view('supplierlist', 'people.supplierlist')->name('supplierlist');
+Route::view('addsupplier', 'people.addquotation')->name('addquotation');
+
+//Report
+Route::view('purchaseorderreport', 'report.purchaseorderreport')->name('purchaseorderreport');
+Route::view('inventoryreport', 'report.inventoryreport')->name('inventoryreport');
+Route::view('salesreport', 'report.salesreport')->name('salesreport');
+Route::view('invoicereport', 'report.invoicereport')->name('invoicereport');
+Route::view('purchasereport', 'report.purchasereport')->name('purchasereport');
+Route::view('supplierreport', 'report.supplierreport')->name('supplierreport');
+Route::view('customerreport', 'report.customerreport')->name('customerreport');
+
+//Settings
+Route::view('generalsettings', 'settings.generalsettings')->name('generalsettings');
+Route::view('grouppermissions', 'settings.grouppermissions')->name('grouppermissions');
+Route::view('taxrates', 'settings.taxrates')->name('taxrates');
+
+
+
 Auth::routes([
 
     'register' => false, // Register Routes...

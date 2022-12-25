@@ -19,42 +19,42 @@
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/sales1.svg') }}" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="">Sales List</a></li>
-                                    <li><a href="">New Sales</a></li>
-                                    <li><a href="">Sales Return List</a></li>
-                                    <li><a href="">New Sales Return</a></li>
+                                    <li><a href="{{ url('saleslist') }}">Sales List</a></li>
+                                    <li><a href="{{ url('newsales') }}">New Sales</a></li>
+                                    <li><a href="{{ url('salesreturnlist') }}">Sales Return List</a></li>
+                                    <li><a href="{{ url('newsalesreturn') }}">New Sales Return</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/purchase1.svg') }}" alt="img"><span> Purchase</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="purchaselist.html">Purchase List</a></li>
-                                    <li><a href="addpurchase.html">Add Purchase</a></li>
-                                    <li><a href="importpurchase.html">Import Purchase</a></li>
+                                    <li><a href="{{ url('purchaselist') }}">Purchase List</a></li>
+                                    <li><a href="{{ url('addpurchase') }}">Add Purchase</a></li>
+                                    <li><a href="{{ url('importpurchase') }}">Import Purchase</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/expense1.svg') }}" alt="img"><span> Expense</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="">Expense List</a></li>
-                                    <li><a href="">Add Expense</a></li>
-                                    <li><a href="">Expense Category</a></li>
+                                    <li><a href="{{ url('expenselist') }}">Expense List</a></li>
+                                    <li><a href="{{ url('addexpense') }}">Add Expense</a></li>
+                                    <li><a href="{{ url('expensecategory') }}">Expense Category</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/quotation1.svg') }}" alt="img"><span> Quotation</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="">Quotation List</a></li>
-                                    <li><a href="">Add Quotation</a></li>
+                                    <li><a href="{{ url('quotationlist') }}">Quotation List</a></li>
+                                    <li><a href="{{ url('addquotation') }}">Add Quotation</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="">Sales Return List</a></li>
-                                    <li><a href="">Add Sales Return </a></li>
-                                    <li><a href="">Purchase Return List</a></li>
-                                    <li><a href="">Add Purchase Return </a></li>
+                                    <li><a href="{{ url('salesreturnlist') }}">Sales Return List</a></li>
+                                    <li><a href="{{ url('addsalesreturn') }}">Add Sales Return </a></li>
+                                    <li><a href="{{ url('purchasereturnlist') }}">Purchase Return List</a></li>
+                                    <li><a href="{{ url('addpurchasereturn') }}">Add Purchase Return </a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
@@ -79,22 +79,22 @@
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg') }}" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="">Purchase order report</a></li>
-                                    <li><a href="">Inventory Report</a></li>
-                                    <li><a href="">Sales Report</a></li>
-                                    <li><a href="">Invoice Report</a></li>
-                                    <li><a href="">Purchase Report</a></li>
-                                    <li><a href="">Supplier Report</a></li>
-                                    <li><a href="">Customer Report</a></li>
+                                    <li><a href="{{ url('purchaseorderreport') }}">Purchase order report</a></li>
+                                    <li><a href="{{ url('inventoryreport') }}">Inventory Report</a></li>
+                                    <li><a href="{{ url('salesreport') }}">Sales Report</a></li>
+                                    <li><a href="{{ url('invoicereport') }}">Invoice Report</a></li>
+                                    <li><a href="{{ url('purchasereport') }}">Purchase Report</a></li>
+                                    <li><a href="{{ url('supplierreport') }}">Supplier Report</a></li>
+                                    <li><a href="{{ url('customerreport') }}">Customer Report</a></li>
                                 </ul>
                             </li>
                           
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="">General Settings</a></li>
-                                    <li><a href="">Group Permissions</a></li>
-                                    <li><a href="">Tax Rates</a></li>
+                                    <li><a href="{{ url('generalsettings') }}">General Settings</a></li>
+                                    <li><a href="{{ url('grouppermissions') }}">Group Permissions</a></li>
+                                    <li><a href="{{ url('taxrates') }}">Tax Rates</a></li>
                                 </ul>
                             </li>
                         </ul>
