@@ -62,8 +62,8 @@
                                 <ul>
                                     <li><a class="{{ (request()->is('customers')) ? 'active' : '' }}" href="{{ url('customers') }}">Store List</a></li>
                                     <li><a class="{{ (request()->is('customers/create')) ? 'active' : '' }}" href="{{ url('customers/create') }}">Add Store</a></li>
-                                    <li><a class="{{ (request()->is('suppliers')) ? 'active' : '' }}" href="{{ url('suppliers') }}">Supplier List</a></li>
-                                    <li><a class="{{ (request()->is('suppliers/create')) ? 'active' : '' }}" href="{{ url('suppliers/create') }}">Add Supplier </a></li>
+                                    <li><a class="{{ (request()->is('supplierlist')) ? 'active' : '' }}" href="{{ url('supplierlist') }}">Supplier List</a></li>
+                                    <li><a class="{{ (request()->is('addsupplier')) ? 'active' : '' }}" href="{{ url('addsupplier') }}">Add Supplier </a></li>
                                     <li><a class="{{ (request()->is('admin/users')) ? 'active' : '' }}" href="{{ url('admin/users') }}">User List</a></li>
                                     <li><a class="{{ (request()->is('admin/users/create')) ? 'active' : '' }}" href="{{ url('admin/users/create') }}">Add User</a></li>
                                    

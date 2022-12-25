@@ -46,6 +46,8 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'price' => 'required',
+            'stocks' => 'required',
             'category_id' => 'required',
         ]);
         
@@ -101,8 +103,16 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'price' => 'required',
+            'stocks' => 'required',
+            'category_id' => 'required',
         ]);
-        $product->update(['name'=>$request->name]);
+        $product->update([
+            'name'=>$request->name,
+            'price'=>$request->price,
+            'stocks'=>$request->stocks,
+            'category_id'=>$request->category_id,
+        ]);
         
         return redirect('products')->withSuccess('Updated');
     }

@@ -177,9 +177,9 @@
                                                     <a href="productlist.html" class="product-img">
                                                         <img src="{{ asset('assets/img/product/product22.jpg') }}" alt="product">
                                                     </a>
-                                                    <a href="productlist.html">Apple Earpods</a>
+                                                    <a href="productlist.html">Palkova</a>
                                                 </td>
-                                                <td>₹891.2</td>
+                                                <td>₹891</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
@@ -187,9 +187,9 @@
                                                     <a href="productlist.html" class="product-img">
                                                         <img src="{{ asset('assets/img/product/product23.jpg') }}" alt="product">
                                                     </a>
-                                                    <a href="productlist.html">iPhone 11</a>
+                                                    <a href="productlist.html">Laddu</a>
                                                 </td>
-                                                <td>₹668.51</td>
+                                                <td>₹668</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
@@ -197,9 +197,9 @@
                                                     <a href="productlist.html" class="product-img">
                                                         <img src="{{ asset('assets/img/product/product24.jpg') }}" alt="product">
                                                     </a>
-                                                    <a href="productlist.html">samsung</a>
+                                                    <a href="productlist.html">Mixture</a>
                                                 </td>
-                                                <td>₹522.29</td>
+                                                <td>₹522</td>
                                             </tr>
                                             <tr>
                                                 <td>4</td>
@@ -207,9 +207,9 @@
                                                     <a href="productlist.html" class="product-img">
                                                         <img src="{{ asset('assets/img/product/product6.jpg') }}" alt="product">
                                                     </a>
-                                                    <a href="productlist.html">Macbook Pro</a>
+                                                    <a href="productlist.html">Heart Biscuit</a>
                                                 </td>
-                                                <td>₹291.01</td>
+                                                <td>₹291</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -241,10 +241,10 @@
                                             <a class="product-img" href="productlist.html">
                                                 <img src="{{ asset('assets/img/product/product2.jpg') }}" alt="product">
                                             </a>
-                                            <a href="productlist.html">Orange</a>
+                                            <a href="productlist.html">Laddu</a>
                                         </td>
                                         <td>N/D</td>
-                                        <td>Fruits</td>
+                                        <td>Sweets</td>
                                         <td>12-12-2022</td>
                                     </tr>
                                     <tr>
@@ -254,10 +254,10 @@
                                             <a class="product-img" href="productlist.html">
                                                 <img src="{{ asset('assets/img/product/product3.jpg') }}" alt="product">
                                             </a>
-                                            <a href="productlist.html">Pineapple</a>
+                                            <a href="productlist.html">Murukku</a>
                                         </td>
                                         <td>N/D</td>
-                                        <td>Fruits</td>
+                                        <td>Snacks</td>
                                         <td>25-11-2022</td>
                                     </tr>
                                     <tr>
@@ -267,10 +267,10 @@
                                             <a class="product-img" href="productlist.html">
                                                 <img src="{{ asset('assets/img/product/product4.jpg') }}" alt="product">
                                             </a>
-                                            <a href="productlist.html">Stawberry</a>
+                                            <a href="productlist.html">Salt Biscuit</a>
                                         </td>
                                         <td>N/D</td>
-                                        <td>Fruits</td>
+                                        <td>Biscuits</td>
                                         <td>19-11-2022</td>
                                     </tr>
                                     <tr>
@@ -280,10 +280,10 @@
                                             <a class="product-img" href="productlist.html">
                                                 <img src="{{ asset('assets/img/product/product5.jpg') }}" alt="product">
                                             </a>
-                                            <a href="productlist.html">Avocat</a>
+                                            <a href="productlist.html">Badhusa</a>
                                         </td>
                                         <td>N/D</td>
-                                        <td>Fruits</td>
+                                        <td>Sweets</td>
                                         <td>20-11-2022</td>
                                     </tr>
                                 </tbody>

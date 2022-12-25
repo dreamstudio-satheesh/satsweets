@@ -31,8 +31,8 @@
 <div class="content">
         <div class="page-header">
                 <div class="page-title">
-                        <h4>Create Sales Return</h4>
-                        <h6>Add/Update Sales Return</h6>
+                        <h4>Purchase Add</h4>
+                        <h6>Add/Update Purchase</h6>
                 </div>
         </div>
         <div class="card">
@@ -40,12 +40,12 @@
                         <div class="row">
                                 <div class="col-lg-3 col-sm-6 col-12">
                                         <div class="form-group">
-                                                <label>Customer Name</label>
+                                                <label>Supplier Name</label>
                                                 <div class="row">
                                                         <div class="col-lg-10 col-sm-10 col-10">
-                                                                <select class="select ">
-                                                                        <option>Select Customer</option>
-                                                                        <option>Customer</option>
+                                                                <select class="select">
+                                                                        <option>Select</option>
+                                                                        <option>Supplier</option>
                                                                 </select>
                                                         </div>
                                                         <div class="col-lg-2 col-sm-2 col-2 ps-0">
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                         <div class="form-group">
-                                                <label>Quotation Date</label>
+                                                <label>Purchase Date </label>
                                                 <div class="input-groupicon">
                                                         <input type="text" placeholder="DD-MM-YYYY" class="datetimepicker">
                                                         <div class="addonset">
@@ -67,19 +67,27 @@
                                                 </div>
                                         </div>
                                 </div>
-                                
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                        <div class="form-group">
+                                                <label>Product Name</label>
+                                                <select class="select">
+                                                        <option>Choose</option>
+                                                        <option>Product Name</option>
+                                                </select>
+                                        </div>
+                                </div>
                                 <div class="col-lg-3 col-sm-6 col-12">
                                         <div class="form-group">
                                                 <label>Reference No.</label>
-                                                <input type="text">
+                                                <input type="text" >
                                         </div>
                                 </div>
                                 <div class="col-lg-12 col-sm-6 col-12">
                                         <div class="form-group">
-                                                <label>Product</label>
+                                                <label>Product Name</label>
                                                 <div class="input-groupicon">
                                                         <input type="text" placeholder="Scan/Search Product by code and select...">
-                                                        <div  class="addonset ">
+                                                        <div class="addonset">
                                                                 <img src="assets/img/icons/scanners.svg" alt="img">
                                                         </div>
                                                 </div>
@@ -92,12 +100,13 @@
                                                 <thead>
                                                         <tr>
                                                                 <th>Product Name</th>
-                                                                <th>Net Unit Price($)	</th>
-                                                                <th>Stock</th>
-                                                                <th>QTY	</th>
+                                                                <th>QTY</th>
+                                                                <th>Purchase Price($)	</th>
                                                                 <th>Discount($)	</th>
-                                                                <th>Tax %	 </th>
-                                                                <th>Subtotal ($)	</th>
+                                                                <th>Tax %</th>
+                                                                <th>Tax Amount($)</th>
+                                                                <th class="text-end">Unit Cost($)</th>
+                                                                <th class="text-end">Total Cost ($)	</th>
                                                                 <th></th>
                                                         </tr>
                                                 </thead>
@@ -107,31 +116,33 @@
                                                                         <a class="product-img">
                                                                                 <img src="assets/img/product/product7.jpg" alt="product">
                                                                         </a>
-                                                                        <a href="javascript:void(0);">Apple Earpods</a>
+                                                                        <a href="javascript:void(0);">White Sugar</a>
                                                                 </td>
-                                                                <td>150</td>
-                                                                <td>500</td>
-                                                                <td>500</td>
-                                                                <td>100</td>
-                                                                <td>50</td>
-                                                                <td>250</td>
+                                                                <td>10.00</td>
+                                                                <td>2000.00</td>
+                                                                <td>500.00</td>
+                                                                <td>0.00</td>
+                                                                <td>0.00</td>
+                                                                <td class="text-end">2000.00</td>
+                                                                <td class="text-end">2000.00</td>
                                                                 <td>
                                                                         <a class="delete-set"><img src="assets/img/icons/delete.svg" alt="svg"></a>
                                                                 </td>
                                                         </tr>
-                                                        <tr >
+                                                        <tr>
                                                                 <td class="productimgname">
                                                                         <a class="product-img">
                                                                                 <img src="assets/img/product/product6.jpg" alt="product">
                                                                         </a>
-                                                                        <a href="javascript:void(0);">Macbook Pro</a>
+                                                                        <a href="javascript:void(0);">Sunflower Oil</a>
                                                                 </td>
-                                                                <td>150</td>
-                                                                <td>500</td>
-                                                                <td>500</td>
-                                                                <td>100</td>
-                                                                <td>50</td>
-                                                                <td>250</td>
+                                                                <td>15.00</td>
+                                                                <td>6000.00</td>
+                                                                <td>100.00</td>
+                                                                <td>0.00</td>
+                                                                <td>0.00</td>
+                                                                <td class="text-end">1000.00</td>
+                                                                <td class="text-end">1000.00</td>
                                                                 <td>
                                                                         <a class="delete-set"><img src="assets/img/icons/delete.svg" alt="svg"></a>
                                                                 </td>
@@ -201,7 +212,7 @@
                                 </div>
                                 <div class="col-lg-12">
                                         <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                                        <a href="salesreturnlist.html"  class="btn btn-cancel">Cancel</a>
+                                        <a href="purchaselist.html" class="btn btn-cancel">Cancel</a>
                                 </div>
                         </div>
                 </div>

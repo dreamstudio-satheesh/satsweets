@@ -48,14 +48,14 @@ Route::view('quotationlist', 'quotation.quotationlist')->name('quotationlist');
 Route::view('addquotation', 'quotation.addquotation')->name('addquotation');
 
 //Return
-Route::view('salesreturnlist', 'return.salesreturnlist')->name('salesreturnlist');
+Route::view('salesreturnlists', 'return.salesreturnlists')->name('salesreturnlists');
 Route::view('addsalesreturn', 'return.addsalesreturn')->name('addsalesreturn');
 Route::view('purchasereturnlist', 'return.purchasereturnlist')->name('purchasereturnlist');
 Route::view('addpurchasereturn', 'return.addpurchasereturn')->name('addpurchasereturn');
 
 //People
 Route::view('supplierlist', 'people.supplierlist')->name('supplierlist');
-Route::view('addsupplier', 'people.addquotation')->name('addquotation');
+Route::view('addsupplier', 'people.addsupplier')->name('addsuppliers');
 
 //Report
 Route::view('purchaseorderreport', 'report.purchaseorderreport')->name('purchaseorderreport');
