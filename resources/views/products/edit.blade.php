@@ -41,13 +41,13 @@
                                 @csrf
 								@method('PUT')
 							<div class="row">                                
-								<div class="col-lg-3 col-sm-6 col-12">
+								<div class="col-lg-4 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Name</label>
 										<input name="name" type="text" value="{{ old('', $product->name) }}">
 									</div>
 								</div>
-                                <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="col-lg-4 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Category</label>
 										<select class="select" name="category_id">
@@ -57,19 +57,38 @@
 										</select>
 									</div>
 								</div>
-                                <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="col-lg-4 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Price</label>
 										<input name="price" type="text" value="{{ old('', $product->price) }}">
 									</div>
 								</div>
-                                <div class="col-lg-3 col-sm-6 col-12">
+                                <div class="col-lg-4 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Stocks</label>
 										<input name="stocks" type="text" value="{{ old('', $product->stocks) }}">
 									</div>
 								</div>
-                            </div>
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="form-group">
+									<label>HSN Code</label>
+									<input name="hsncode" type="text" value="{{ old('', $product->hsncode) }}" required>
+								</div>
+							</div>
+							<div class="col-lg-4 col-sm-6 col-12">
+								<div class="form-group">
+									<label>GST</label>
+									<select class="select" name="gst">
+										<option >{{ old('', $product->gst) }}</option>
+										<option value="0">0%</option>
+										<option value="5">5%</option>
+										<option value="12">12%</option>
+										<option value="18">18%</option>
+									</select>
+								</div>
+							</div>
+							
+						</div>
                             <div class="row">
 								<div class="col-lg-12">
 									<div class="form-group">

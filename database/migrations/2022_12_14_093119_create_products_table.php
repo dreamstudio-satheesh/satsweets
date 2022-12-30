@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name', 128)->unique();   
             $table->smallInteger('stocks')->default(1);
             $table->float('price', 8, 2);
+            $table->char('gst', 4)->default(0);
+            $table->char('hsncode', 4)->default(0000);
             $table->timestamps();
 
 
