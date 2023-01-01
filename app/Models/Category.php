@@ -13,6 +13,7 @@ class Category extends Model implements HasMedia
     use HasFactory, InteractsWithMedia;
     protected $guarded = ['id'];
     
+    
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')

@@ -29,6 +29,8 @@
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+		@livewireStyles
 		
 	</head>
 	<body>
@@ -51,6 +53,8 @@
 			</div>
 		</div>
 		<!-- /Main Wrapper -->
+
+		@livewireScripts
 		
 		<!-- jQuery -->
 		<script src="{{ asset('assets/js/jquery-3.6.0.min.js') }}"></script>
@@ -72,6 +76,8 @@
 		
 		<!-- Custom JS -->
 		<script src="{{ asset('assets/js/script.js') }}"></script>
+
+		
 		
 	</body>
 </html>

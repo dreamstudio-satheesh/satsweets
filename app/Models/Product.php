@@ -12,12 +12,13 @@ class Product extends Model implements HasMedia
 {
     use HasFactory, InteractsWithMedia;
     protected $guarded = ['id'];
+    //public $timestamps = false;
 
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
-              ->width(250)
-              ->height(250)
+              ->width(400)
+              ->height(300)
               ->sharpen(10);
     }
 

@@ -11,6 +11,9 @@
 
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+        <!-- Toatr CSS -->		
+        <link rel="stylesheet" href="assets/plugins/toastr/toatr.css">
     
 @endpush
 
@@ -22,10 +25,18 @@
         <!-- Owl JS -->
 		<script src="assets/plugins/owlcarousel/owl.carousel.min.js"></script>
 
+		<!-- Mask JS -->
+		<script src="assets/plugins/toastr/toastr.min.js"></script>
 
-        <!-- Sweetalert 2 -->
-        <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
+        <script type="text/javascript">
+			window.addEventListener('alert', event => {
+			toastr[event.detail.type](event.detail.message,
+			event.detail.title ?? ''), toastr.options = {
+			"closeButton": true,
+			"progressBar": true,
+			}
+			});
+		</script>
     
 @endpush
 
@@ -40,53 +51,16 @@
                                 <h6>Manage your purchases</h6>
                             </div>
                         </div>
-                        <ul class=" tabs owl-carousel owl-theme owl-product  border-0 " >
-                            @foreach ($categories as $category)
-                            <li class="{{($category->id == 1) ? 'active':''}}" id="{{ $category->name }}">
-                                <div class="product-details " >
-                                    <img src="assets/img/product/product62.png" alt="img">
-                                    <h6>{{ $category->name }}</h6>
-                                </div>
-                            </li>
-                            @endforeach	                           
-                        </ul>
-                        <div class="tabs_container" >
-
-                            @foreach ($categories as $category)
-                            <div  class="tab_content {{($category->id == 1) ? 'active':''}}" data-tab="{{ $category->name }}">
-                                <div class="row ">
-
-                                    @foreach ( $category->products as $product)
-                                    <div class="col-lg-3 col-sm-6 d-flex ">
-                                        <div class="productset flex-fill">
-                                            <div class="productsetimg">
-                                                @if ( !empty( $product->getFirstMediaUrl('products') ) )                                          
-                                                <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">                                        
-                                                @else
-                                                <img src="assets/img/product/product29.jpg" alt="img">
-                                                @endif 													
-                                                <h6>Qty: {{$product->stocks }}</h6>
-                                                <div class="check-product">
-                                                    <i class="fa fa-check"></i>
-                                                </div>
-                                            </div>
-                                            <div class="productsetcontent">
-                                                <h5>{{$product->name }}</h5>
-                                                <h4>{{$product->price }}</h4>
-                                                <h6>{{$product->stocks }}</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach	
-                                    
-                                
-                                </div>
-                            </div>
-                            @endforeach	
-                        
-                          
-                           
-                        </div>
+						
+						<div class="card">
+							<div class="card-header">
+								
+							</div>
+							<div class="card-body">
+								@livewire('shop', ['products' => $products])
+							</div>
+						</div>
+                       
                     </div>
                     
                 </div>

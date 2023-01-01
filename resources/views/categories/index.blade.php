@@ -7,6 +7,9 @@
 
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="{{ url('') }}/assets/css/bootstrap-datetimepicker.min.css">
+
+        <!-- Toatr CSS -->		
+        <link rel="stylesheet" href="assets/plugins/toastr/toatr.css">
     
 @endpush
 
@@ -19,9 +22,20 @@
         <script src="{{ url('') }}/assets/js/moment.min.js"></script>
         <script src="{{ url('') }}/assets/js/bootstrap-datetimepicker.min.js"></script>
 
-        <!-- Sweetalert 2 -->
-        <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
-        <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+        <!-- Mask JS -->
+		<script src="assets/plugins/toastr/toastr.min.js"></script>
+
+     
+
+        @if(Session::has('success'))
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                toastr.success(' {{ Session::get('success')}} ');                
+            });
+
+        </script>
+        @endif
     
 @endpush
 

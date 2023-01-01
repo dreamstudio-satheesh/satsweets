@@ -31,64 +31,67 @@
 
 @section('content')
 
-				<div class="content">
-					<div class="row">
-						<div class="col-lg-12 col-sm-12 tabs_wrapper" >
-							<div class="page-header ">
-								<div class="page-title">
-									<h4>Categories</h4>
-									<h6>Manage your purchases</h6>
-								</div>
-							</div>
-							<ul class=" tabs owl-carousel owl-theme owl-product  border-0 " >
-                                @foreach ($categories as $category)
-								<li class="active" id="{{ $category->name }}">
-									<div class="product-details " >
-										<img src="assets/img/product/product62.png" alt="img">
-										<h6>{{ $category->name }}</h6>
-									</div>
-								</li>
-                                @endforeach						
-							</ul>
-							<div class="tabs_container" >
-                                @foreach ($categories as $category) 
-                                    <div  class="tab_content" data-tab="{{ $category->name }}">
-                                        <div class="row ">
-                                            @foreach ( $category->products as $product)
-                                            <div class="col-lg-3 col-sm-6 d-flex ">
-                                                <div class="productset flex-fill">
-                                                    <div class="productsetimg">
-                                                        @if ( !empty( $product->getFirstMediaUrl('products') ) )                                          
-                                                        <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">                                        
-                                                        @else
-                                                        <img src="assets/img/product/product29.jpg" alt="img">
-                                                        @endif 													
-                                                        <h6>Qty: {{$product->stocks }}</h6>
-                                                        <div class="check-product">
-                                                            <i class="fa fa-check"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="productsetcontent">
-                                                        <h5>{{$product->name }}</h5>
-                                                        <h4>{{$product->price }}</h4>
-                                                        <h6>{{$product->stocks }}</h6>
-                                                    </div>
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-12 tabs_wrapper" >
+                        <div class="page-header ">
+                            <div class="page-title">
+                                <h4>Categories</h4>
+                                <h6>Manage your purchases</h6>
+                            </div>
+                        </div>
+                        <ul class=" tabs owl-carousel owl-theme owl-product  border-0 " >
+                            @foreach ($categories as $category)
+                            <li class="{{($category->id == 1) ? 'active':''}}" id="{{ $category->name }}">
+                                <div class="product-details " >
+                                    <img src="assets/img/product/product62.png" alt="img">
+                                    <h6>{{ $category->name }}</h6>
+                                </div>
+                            </li>
+                            @endforeach	                           
+                        </ul>
+                        <div class="tabs_container" >
+
+                            @foreach ($categories as $category)
+                            <div  class="tab_content {{($category->id == 1) ? 'active':''}}" data-tab="{{ $category->name }}">
+                                <div class="row ">
+
+                                    @foreach ( $category->products as $product)
+                                    <div class="col-lg-3 col-sm-6 d-flex ">
+                                        <div class="productset flex-fill">
+                                            <div class="productsetimg">
+                                                @if ( !empty( $product->getFirstMediaUrl('products') ) )                                          
+                                                <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">                                        
+                                                @else
+                                                <img src="assets/img/product/product29.jpg" alt="img">
+                                                @endif 													
+                                                <h6>Qty: {{$product->stocks }}</h6>
+                                                <div class="check-product">
+                                                    <i class="fa fa-check"></i>
                                                 </div>
                                             </div>
-                                                
-                                            @endforeach									
-                                            
+                                            <div class="productsetcontent">
+                                                <h5>{{$product->name }}</h5>
+                                                <h4>{{$product->price }}</h4>
+                                                <h6>{{$product->stocks }}</h6>
+                                            </div>
                                         </div>
                                     </div>
-                                @endforeach
-								
-							
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</div>
+                                    @endforeach	
+                                    
+                                
+                                </div>
+                            </div>
+                            @endforeach	
+                        
+                          
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+			
 		</div>
 		<div class="modal fade" id="calculator" tabindex="-1"   aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered" role="document">

@@ -88,7 +88,7 @@ class CategoryController extends Controller
         ]);
         $category->update(['name'=>$request->name]);
         
-        return redirect('categories')->withSuccess('Updated');
+        return redirect('categories')->withSuccess('Category Updated');
     }
 
     /**
