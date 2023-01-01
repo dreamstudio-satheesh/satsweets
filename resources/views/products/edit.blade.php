@@ -44,7 +44,7 @@
 								<div class="col-lg-4 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Name</label>
-										<input name="name" type="text" value="{{ old('', $product->name) }}">
+										<input name="name" type="text" value="{{ old('', $product->name) }}" required>
 									</div>
 								</div>
                                 <div class="col-lg-4 col-sm-6 col-12">
@@ -60,22 +60,28 @@
                                 <div class="col-lg-4 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Price</label>
-										<input name="price" type="text" value="{{ old('', $product->price) }}">
+										<input name="price" type="text" value="{{ old('', $product->price) }}" required>
 									</div>
 								</div>
-                                <div class="col-lg-4 col-sm-6 col-12">
+								<div class="col-lg-3 col-sm-6 col-12">
+									<div class="form-group">
+										<label>Barcode</label>
+										<input name="code" type="text" value="{{ old('', $product->code) }}" required>
+									</div>
+								</div>
+                                <div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Stocks</label>
-										<input name="stocks" type="text" value="{{ old('', $product->stocks) }}">
+										<input name="stocks" type="text" value="{{ old('', $product->stocks) }}" required>
 									</div>
 								</div>
-							<div class="col-lg-4 col-sm-6 col-12">
+							<div class="col-lg-3 col-sm-6 col-12">
 								<div class="form-group">
 									<label>HSN Code</label>
 									<input name="hsncode" type="text" value="{{ old('', $product->hsncode) }}" required>
 								</div>
 							</div>
-							<div class="col-lg-4 col-sm-6 col-12">
+							<div class="col-lg-3 col-sm-6 col-12">
 								<div class="form-group">
 									<label>GST</label>
 									<select class="select" name="gst">

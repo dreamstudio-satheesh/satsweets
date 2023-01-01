@@ -62,19 +62,25 @@
 										<input name="price" type="text" required>
 									</div>
 								</div>
-                                <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="col-lg-3 col-sm-6 col-12">
+									<div class="form-group">
+										<label>Barcode</label>
+										<input name="code" type="text"   maxlength="12"  required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Stocks</label>
 										<input name="stocks" type="text" required>
 									</div>
 								</div>
-								<div class="col-lg-4 col-sm-6 col-12">
+								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>HSN Code</label>
 										<input name="hsncode" type="text" required>
 									</div>
 								</div>
-								<div class="col-lg-4 col-sm-6 col-12">
+								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>GST</label>
 										<select class="select" name="gst">

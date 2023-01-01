@@ -102,6 +102,7 @@
                                         </label>
                                     </th>
                                     <th>Product name</th>
+                                    <th>Barcode</th>
                                     <th>Price</th>
                                     <th>Stock</th>
                                     <th>Action</th>
@@ -127,6 +128,7 @@
                                         </a>
                                         <a href="javascript:void(0);">{{ $product->name }}</a>
                                     </td>
+                                    <td>{{ $product->code }}</td>
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->stocks }}</td>
                                     <td>

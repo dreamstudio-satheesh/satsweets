@@ -23,8 +23,8 @@ class CartController extends Controller
 
     public function show()
     {
-        return view('cart.show');
-      // return  Cart::getContent();
+        
+       return view('cart.show');
        
     }
 

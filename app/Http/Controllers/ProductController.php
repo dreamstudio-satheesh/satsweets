@@ -45,16 +45,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+       //return $request->all();
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'code' => 'required|min:4|max:12',
             'price' => 'required',
+            'hsncode' => 'required',
+            'gst' => 'required',
             'stocks' => 'required',
             'category_id' => 'required',
         ]);
         
-        $product = Product::create([
+         $product = Product::create([
             'name'=>$request->name,
+            'code'=>$request->code,
             'price'=>$request->price,
+            'hsncode'=>$request->hsncode,
+            'gst'=>$request->gst,
             'stocks'=>$request->stocks,
             'category_id'=>$request->category_id,
             'guard_name'=>'web'
@@ -104,17 +111,28 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'code' => 'required|min:4|max:12',
             'price' => 'required',
+            'hsncode' => 'required',
+            'gst' => 'required',
             'stocks' => 'required',
             'category_id' => 'required',
         ]);
         $product->update([
             'name'=>$request->name,
+            'code'=>$request->code,
             'price'=>$request->price,
+            'hsncode'=>$request->hsncode,
+            'gst'=>$request->gst,
             'stocks'=>$request->stocks,
             'category_id'=>$request->category_id,
+            'guard_name'=>'web'
         ]);
         
+        if ($request->has('photo') && $request->file('photo')->isValid()) {
+
+            $product->addMediaFromRequest('photo')->toMediaCollection('products');               
+        }     
         return redirect('products')->withSuccess('Updated');
     }
 
