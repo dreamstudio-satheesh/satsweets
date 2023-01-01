@@ -18,19 +18,14 @@ class CartController extends Controller
 
     public function cart()
     {
-        return view('cart.show');
+       
     }
 
     public function show()
     {
-       return  Cart::getContent();
+        return view('cart.show');
+      // return  Cart::getContent();
        
     }
 
-    public function cartshow(Category $category)
-    {
-        $products = Product::latest()->get();   
-        $categories = Category::all();
-        return view('cart', compact('categories','products'));
-    }
 }

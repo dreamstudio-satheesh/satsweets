@@ -24,7 +24,6 @@
 
         <!-- Mask JS -->
 		<script src="assets/plugins/toastr/toastr.min.js"></script>
-
      
 
         @if(Session::has('success'))

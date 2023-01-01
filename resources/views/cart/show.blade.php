@@ -29,13 +29,7 @@
 		<script src="assets/plugins/toastr/toastr.min.js"></script>
 
         <script type="text/javascript">
-			window.addEventListener('alert', event => {
-			toastr[event.detail.type](event.detail.message,
-			event.detail.title ?? ''), toastr.options = {
-			"closeButton": true,
-			"progressBar": true,
-			}
-			});
+			
 		</script>
     
 @endpush
@@ -47,8 +41,8 @@
                     <div class="col-lg-12 col-sm-12 tabs_wrapper" >
                         <div class="page-header ">
                             <div class="page-title">
-                                <h4>Categories</h4>
-                                <h6>Manage your purchases</h6>
+                                <h4>Shopping Cart</h4>
+                                <h6>Manage your cart</h6>
                             </div>
                         </div>
 						
@@ -57,7 +51,7 @@
 								
 							</div>
 							<div class="card-body">
-								@livewire('shop', ['products' => $products])
+								
 							</div>
 						</div>
                        

@@ -113,7 +113,6 @@ Route::group([
     
      Route::get('newsales', [App\Http\Controllers\CartController::class, 'newsales'])->name('newsales');
      Route::get('cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart');
-     Route::get('/cart/{category}', [App\Http\Controllers\CartController::class, 'cartshow'])->name('cart.view');
 
     //lines
     Route::resource('vendors', App\Http\Controllers\vendorController::class);
