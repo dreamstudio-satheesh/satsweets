@@ -35,7 +35,7 @@
                     <div class="col-lg-12 col-sm-12 tabs_wrapper" >
                         
 
-                        @livewire('show-cart', ['cartlist' => $cartlist])
+                        @livewire('show-cart')
                        
                     </div>
                     

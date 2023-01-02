@@ -82,23 +82,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($cartlist as $cartitem)                              
-                            <tr>
-                                <td class="productimgname">                                    
-                                    <img src="assets/img/product/product7.jpg" alt="product">
-                                    {{ $cartitem['name'] }}
-                                </td>
-                                <td>150</td>
-                                <td>500</td>
-                                <td>500</td>
-                                <td>100</td>
-                                <td>250</td>
-                                <td class="text-end">500</td>
-                                <td>
-                                    <a href="javascript:void(0);" class="delete-set"><img src="assets/img/icons/delete.svg" alt="svg"></a>
-                                </td>
-                            </tr>
-                            @empty
+                            @if($cartlist)
+                                @foreach ($cartlist as $cartitem)                              
+                                <tr>
+                                    <td class="productimgname">                                    
+                                        <img src="assets/img/product/product7.jpg" alt="product">
+                                        {{ $cartitem[2344]->name }}
+                                    </td>
+                                    <td>150</td>
+                                    <td>500</td>
+                                    <td>500</td>
+                                    <td>100</td>
+                                    <td>250</td>
+                                    <td class="text-end">500</td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="delete-set"><img src="assets/img/icons/delete.svg" alt="svg"></a>
+                                    </td>
+                                </tr>                                     
+                                @endforeach                           
+                            @else
                             <tr>
                                 <td colspan="7" style="text-align: center;">
 
@@ -107,7 +109,10 @@
                                     <br /><br />
                                  </td>                            
                             </tr>
-                            @endforelse
+                                
+                            @endif
+                            
+                            
                             
                         </tbody>
                     </table>
