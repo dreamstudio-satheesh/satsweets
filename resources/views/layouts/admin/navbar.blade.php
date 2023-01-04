@@ -72,7 +72,7 @@
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                     <div class="dropdown-menu dropdown-menu-right">
 
-                        <a href="javascript:void(0);" class="dropdown-item"> <img src="http://localhost:8000/assets/img/icons/sales1.svg" alt=""> View Cart </a>
+                        <a href="{{ url('/cart') }}" class="dropdown-item"> <img src="http://localhost:8000/assets/img/icons/sales1.svg" alt=""> View Cart </a>
                         <a class="dropdown-item" href="">My Profile</a>
                         <a class="dropdown-item" href="">Settings</a>
                         <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>
