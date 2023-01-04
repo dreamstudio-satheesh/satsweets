@@ -32,7 +32,7 @@
                 
                     <!-- Shopping Cart -->
                     <li class="nav-item dropdown">
-                        <a href="javascript:void(0);" class="av-link">
+                        <a href="{{ url('/cart') }}" class="av-link">
                             <i class="fa fa-shopping-cart" data-bs-toggle="tooltip" title="" data-bs-original-title="fa fa-shopping-cart" aria-label="fa fa-shopping-cart" aria-describedby="tooltip883272"></i>
                              <span class="badge rounded-pill">4</span>
                         </a>
