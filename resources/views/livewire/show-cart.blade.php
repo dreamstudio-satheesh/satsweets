@@ -9,7 +9,7 @@
                 <div class="form-group">
                     <div class="input-groupicon">
                         
-                        <input type="text" wire:model="barcode"  autofocus >
+                        <input type="text" wire:model.defer="barcode"  autofocus >
                         <div class="addonset">
                             <img src="assets/img/icons/scanners.svg" alt="img">
                         </div>
@@ -71,34 +71,39 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Product</th>
-                                <th>Net Unit Price($)	</th>
-                                <th>Stock</th>
+                                <th>Product Name</th>
                                 <th>Qty</th>
-                                <th>Discount($)	</th>
-                                <th>Tax %	</th>
-                                <th class="text-end">Subtotal ($)</th>
+                                <th>Net Unit Price(₹)</th>                                
+                                <th>Tax Rate	</th>
+                                <th>Tax Amount</th>
+                                <th class="text-end">Subtotal (₹)</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if($cartlist)
-                                @foreach ($cartlist as $cartitem)                              
+                         @if($cartlist)
+                             @foreach ($cartlist as $item) 
+                                                             
                                 <tr>
                                     <td class="productimgname">                                    
                                         <img src="assets/img/product/product7.jpg" alt="product">
-                                        {{ $cartitem[2344]->name }}
+                                        {{ $item['name'] }}
                                     </td>
-                                    <td>150</td>
-                                    <td>500</td>
-                                    <td>500</td>
-                                    <td>100</td>
-                                    <td>250</td>
-                                    <td class="text-end">500</td>
+                                    <form method="post"></form>
+                                    <td><input class="sminput" wire:model="cartlist.{{ $item['code'] }}.quantity" type="text" ></td>
+                                    <td><input name="price" wire:model="cartlist.{{ $item['code'] }}.price" class="sminput" type="text" ></td>                                    
+                                    <td> {{ $item['gst'] }} %</td>
+                                    <td>  {{ $item['gstamount'] }} </td>
+                                    <td class="text-end"> 
+                                        {{ $item['total'] }}
+                                     </td>
                                     <td>
+                                        <a href="javascript:void(0);" class="edit-set"><img src="assets/img/icons/edit.svg" alt="svg"></a>
                                         <a href="javascript:void(0);" class="delete-set"><img src="assets/img/icons/delete.svg" alt="svg"></a>
                                     </td>
-                                </tr>                                     
+                                </form>
+                                </tr>  
+                                                                   
                                 @endforeach                           
                             @else
                             <tr>

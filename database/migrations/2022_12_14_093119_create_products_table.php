@@ -20,7 +20,7 @@ return new class extends Migration
             $table->smallInteger('stocks')->default(1);
             $table->float('price', 8, 2);
             $table->char('gst', 4)->default(0);
-            $table->char('hsncode', 4)->default(0000);
+            $table->string('hsncode', 12)->default(0000);
             $table->timestamps();
 
 
