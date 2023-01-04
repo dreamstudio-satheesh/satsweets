@@ -97,8 +97,7 @@
                                     <td class="text-end"> 
                                         {{ $item['total'] }}
                                      </td>
-                                    <td>
-                                        <a href="javascript:void(0);" class="edit-set"><img src="assets/img/icons/edit.svg" alt="svg"></a>
+                                    <td>                                        
                                         <a href="javascript:void(0);" class="delete-set"><img src="assets/img/icons/delete.svg" alt="svg"></a>
                                     </td>
                                 </form>
