@@ -15,8 +15,9 @@ class CartController extends Controller
         return view('cart.shop', compact('categories','products'));
     }
 
-    public function cart()
+    public function pos()
     {
+        return view('cart.pos');
        
     }
 

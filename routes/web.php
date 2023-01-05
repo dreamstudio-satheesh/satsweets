@@ -112,6 +112,7 @@ Route::group([
     // User routes
     
      Route::get('newsales', [App\Http\Controllers\CartController::class, 'newsales'])->name('newsales');
+     Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');
      Route::get('cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart');
 
     //lines
