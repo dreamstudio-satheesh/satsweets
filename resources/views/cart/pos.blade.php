@@ -18,7 +18,7 @@
                     border-width: none; 
                     box-shadow: none;
                     background: transparent;
-                    width: 44px; /*new width*/
+                    width: 84px; /*new width*/
                     height: 24px; /*new width*/
                 }         
                 .sminput.focus {
