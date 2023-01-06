@@ -9,6 +9,22 @@
 
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+        <style>
+           
+                .sminput {
+                    border: none;
+                    border-bottom:0.5px solid rgb(195, 199, 244);
+                    border-width: none; 
+                    box-shadow: none;
+                    background: transparent;
+                    width: 44px; /*new width*/
+                    height: 24px; /*new width*/
+                }         
+                .sminput.focus {
+                  outline: none;!important;
+                }
+              </style>
     
 @endpush
 
