@@ -20,8 +20,8 @@
         </div>
         <div class="card-body pt-0">
             <div class="totalitem">
-                <h4>Total items : 4</h4>
-                <a href="javascript:void(0);">Clear all</a>
+                <h4>Total items : {{ $total_count }}</h4>
+                <a href="javascript: void(0)" wire:click="clear_cart()">Clear all</a>
             </div>
             <div class="product-table">
                 @foreach ($cartlist as $cart)
@@ -53,8 +53,8 @@
                             </div>
                         </div>
                     </li>
-                    <li><input class="sminput"  type="text" value="{{ $cart['price']}}"></li>
-                    <li><a class="confirm-text" href="javascript:void(0);"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
+                    <li><input class="sminput"  type="text" wire:model.debounce="cartlist.{{ $cart['code'] }}.price" value=""></li>
+                    <li><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['code']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
                 </ul>
                 @endforeach
                 
@@ -67,22 +67,21 @@
                 <ul>
                     <li>
                         <h5>Subtotal </h5>
-                        <h6>55.00$</h6>
+                        <h6>₹{{ $sub_total }}</h6>
                     </li>
                     <li>
                         <h5>Tax </h5>
-                        <h6>5.00$</h6>
+                        <h6>₹{{ $taxamount }}</h6>
                     </li>
                     <li class="total-value">
                         <h5>Total  </h5>
-                        <h6>60.00$</h6>
+                        <h6>₹{{ $total }}</h6>
                     </li>
                 </ul>
             </div>
                 
             <div class="btn-totallabel">
                 <h5>Checkout</h5>
-                <h6>60.00$</h6>
             </div>							
             <div class="btn-pos">
                 <ul>
