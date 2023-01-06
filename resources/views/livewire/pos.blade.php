@@ -114,7 +114,7 @@
 									</div>
 								</div>
 							</li>
-							<li>₹.<input class="sminput"  type="text" value="{{ $cart['price']}}"></li>
+							<li><input class="sminput"  type="text" value="{{ $cart['price']}}"></li>
 							<li><a class="confirm-text" href="javascript:void(0);"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
 						</ul>
 						@endforeach
