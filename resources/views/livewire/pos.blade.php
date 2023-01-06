@@ -88,8 +88,8 @@
 						@foreach ($cartlist as $cart)
 						<ul class="product-lists">
 							<li>
-								<div class="">
-									<div class="">
+								<div class="productimg">
+									<div class="productimgs">
 										
 									@if ( !empty( $cart['url']))                                          
 									<img src="{{ $cart['url'] }}" >                                        
