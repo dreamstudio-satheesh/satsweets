@@ -1,7 +1,7 @@
             <div class="header">
                         
                 <!-- Logo -->
-                <div class="header-left active">
+                <div class="header-left">
                     <a href="{{ url('home') }}" class="logo">
                         <img src="{{ asset('assets/img/logo.png') }}"  alt="">
                     </a>
@@ -33,8 +33,8 @@
                     <!-- Shopping Cart -->
                     <li class="nav-item dropdown">
                         <a href="{{ url('/pos') }}" class="av-link">
-                            <i class="fa fa-shopping-cart" data-bs-toggle="tooltip" title="" data-bs-original-title="fa fa-shopping-cart" aria-label="fa fa-shopping-cart" aria-describedby="tooltip883272"></i>
-                             <span class="badge rounded-pill">4</span>
+                            <i class="fa fa-shopping-cart" title=""></i>
+                             
                         </a>
                         
                     </li>

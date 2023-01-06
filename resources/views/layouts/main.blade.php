@@ -33,7 +33,7 @@
 		@livewireStyles
 		
 	</head>
-	<body>
+	<body class="expand-menu mini-sidebar">
 		<div id="global-loader" >
 			<div class="whirly-loader"> </div>
 		</div>
@@ -44,9 +44,11 @@
 			@include('layouts.admin.mainnavbar')
 			<!-- Header -->
 			
-			
+			<!-- Sidebar -->
+			@include('layouts.admin.sidebar')
+			<!-- /Sidebar -->
 
-			<div class="page-wrapper ms-0">
+			<div class="page-wrapper">
 				@yield('content')
 			</div>
 		</div>
