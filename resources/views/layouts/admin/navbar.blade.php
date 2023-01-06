@@ -32,7 +32,7 @@
                 
                     <!-- Shopping Cart -->
                     <li class="nav-item dropdown">
-                        <a href="{{ url('/cart') }}" class="av-link">
+                        <a href="{{ url('/pos') }}" class="av-link">
                             <i class="fa fa-shopping-cart" data-bs-toggle="tooltip" title="" data-bs-original-title="fa fa-shopping-cart" aria-label="fa fa-shopping-cart" aria-describedby="tooltip883272"></i>
                              <span class="badge rounded-pill">4</span>
                         </a>
@@ -72,7 +72,7 @@
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                     <div class="dropdown-menu dropdown-menu-right">
 
-                        <a href="{{ url('/cart') }}" class="dropdown-item"> <img src="http://localhost:8000/assets/img/icons/sales1.svg" alt=""> View Cart </a>
+                        <a href="{{ url('/pos') }}" class="dropdown-item"> <img src="http://localhost:8000/assets/img/icons/sales1.svg" alt=""> View Cart </a>
                         <a class="dropdown-item" href="">My Profile</a>
                         <a class="dropdown-item" href="">Settings</a>
                         <a class="dropdown-item" href="{{ url('/logout') }}">Logout</a>

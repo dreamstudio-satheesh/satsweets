@@ -20,7 +20,7 @@
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/sales1.svg') }}" alt="img"><span> Sales</span> <span class="menu-arrow"></span></a>
                                 <ul>
                                     <li><a href="{{ url('saleslist') }}">Sales List</a></li>
-                                    <li><a href="{{ url('newsales') }}">New Sales</a></li>
+                                    <li><a href="{{ url('pos') }}">New Sales</a></li>
                                     <li><a href="{{ url('salesreturnlist') }}">Sales Return List</a></li>
                                     <li><a href="{{ url('newsalesreturn') }}">New Sales Return</a></li>
                                 </ul>
