@@ -36,7 +36,7 @@ class CartList extends Component
                             'code' => $product->code, // inique row ID
                             'name' => $product->name,
                             'price' => $product->price,
-                            'url' => $product->getFirstMediaUrl('products'),
+                            'url' => $product->getMedia('products')->first()->getUrl('thumb'),
                             'gstamount' =>round($product->price-($product->price *100/(100+$product->gst))),
                             'gst' => $product->gst,
                             'quantity' => 1,                      
