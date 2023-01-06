@@ -59,6 +59,7 @@ class CartList extends Component
 
         $this->total= $totalnum;
         $this->taxamount= $taxamount;
+        $this->sub_total= $totalnum-$taxamount;
     }
 
     public function removecart($code)
