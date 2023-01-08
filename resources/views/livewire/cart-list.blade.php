@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </li>
-                    <li><input class="sminput"  type="text" wire:model.debounce="cartlist.{{ $cart['code'] }}.price" value=""></li>
+                    <li><input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['code'] }}.price" value=""></li>
                     <li><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['code']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
                 </ul>
                 @endforeach
@@ -96,25 +96,7 @@
             <div class="btn-totallabel">
                 <h5>Checkout</h5>
             </div>							
-            <div class="btn-pos">
-                <ul>
-                    <li>
-                        <a class="btn"><img src="assets/img/icons/pause1.svg" alt="img" class="me-1">Hold</a>
-                    </li>
-                    <li>
-                        <a class="btn"><img src="assets/img/icons/edit-6.svg" alt="img" class="me-1">Quotation</a>
-                    </li>
-                    <li>
-                        <a class="btn"><img src="assets/img/icons/trash12.svg" alt="img" class="me-1">Void</a>
-                    </li>
-                    <li>
-                        <a class="btn"><img src="assets/img/icons/wallet1.svg" alt="img" class="me-1">Payment</a>
-                    </li>
-                    <li>
-                        <a class="btn"  data-bs-toggle="modal" data-bs-target="#recents"><img src="assets/img/icons/transcation.svg" alt="img" class="me-1"> Transaction</a>
-                    </li>
-                </ul>
-            </div>
+            
         </div>
     </div>
 </div>
