@@ -8,9 +8,11 @@ trait Invoices {
 
 
 
-    public function create()
+    public function create_invoice($data)
     {
-       Invoice::create();
+       
+       dd($data);
+        //Invoice::create();
     }
 
 

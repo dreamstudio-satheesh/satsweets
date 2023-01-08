@@ -5,10 +5,11 @@ namespace App\Http\Livewire;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Customer;
+use App\Traits\Invoices;
 
 class CartList extends Component
 {
-    
+    use Invoices; 
     public $checkout = false;
     public $total_count= 0;
 
@@ -105,7 +106,14 @@ class CartList extends Component
     {
         if (!empty($this->cartlist) && !empty($this->customer_id) && !empty($this->invoice_date)) {
           
-         dd($this->cartlist);
+         $this->create_invoice([
+                'cartlist' =>  $this->cartlist,
+                'customer_id' => $this->customer_id,
+                'invoice_date' => $this->invoice_date,
+                'total' => $this->total,
+                'sub_total' => $this->sub_total,
+                'taxamount' => $this->taxamount,
+            ]);
         }
     }
 
