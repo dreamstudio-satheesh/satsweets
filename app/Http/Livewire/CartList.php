@@ -56,7 +56,7 @@ class CartList extends Component
     public function updatecart($code=null)
     {       
         if ($code) {
-            $this->cartlist[$code]['total']=$this->cartlist[$code]['price']*$this->cartlist[$code]['quantity'];
+            $this->cartlist[$code]['total']=((int)$this->cartlist[$code]['price'])*((int)$this->cartlist[$code]['quantity']);
         }
         $this->total_count= count($this->cartlist);
 
@@ -65,7 +65,7 @@ class CartList extends Component
 
         foreach ($this->cartlist  as $item) {
             $totalnum += $item['total'];
-            $taxamount= $taxamount+$item['gstamount']*$item['quantity'];
+            $taxamount=((int)$taxamount+$item['gstamount']) *((int)$item['quantity']);
         }
 
         $this->total= $totalnum;
