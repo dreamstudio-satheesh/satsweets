@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use Livewire\Component;
+use App\Models\Customer;
 
 class CartList extends Component
 {
@@ -18,7 +19,15 @@ class CartList extends Component
 
     public $total= 0;
 
+    public $customers;
+
     protected $listeners = ['cartAdded' => 'cart'];
+
+
+    public function mount()
+    {
+        $this->customers = Customer::select('id','name')->get();
+    }
 
     public function addcart($code)
     {

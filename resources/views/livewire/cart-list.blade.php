@@ -6,9 +6,12 @@
                 <div class="col-lg-12">
                     <div class="select-split ">
                         <div class="select-group w-100">
-                            <select class="form-select">
-                                <option>Walk-in Customer</option>
-                                <option>Chris Moris</option>
+                            <select class="form-select form-select-sm" required>
+                                <option value="" selected disabled>Walk-in Customer</option>
+                                @foreach ($customers as $customer)
+                                <option value="{{ $customer->id }}">{{ $customer->name }}</option>                                    
+                                @endforeach
+                                
                             </select>
                         </div>
                     </div>

@@ -114,6 +114,8 @@ Route::group([
      Route::get('newsales', [App\Http\Controllers\CartController::class, 'newsales'])->name('newsales');
      Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');
      Route::get('cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart');
+     Route::get('invoice', [App\Http\Controllers\CartController::class, 'invoice'])->name('invoice');     
+     Route::get('invoicetwo', [App\Http\Controllers\CartController::class, 'invoicetwo'])->name('invoicetwo');
 
     //lines
     Route::resource('vendors', App\Http\Controllers\vendorController::class);
