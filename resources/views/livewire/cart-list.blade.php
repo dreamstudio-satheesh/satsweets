@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </li>
-                    <li>Price ₹<input class="sminput"  type="text" wire:model.debounce="cartlist.{{ $cart['code'] }}.price" value=""></li>
+                    <li>Price ₹<input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['code'] }}.price" ></li>
                     <li><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['code']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
                 </ul>
                 @endforeach

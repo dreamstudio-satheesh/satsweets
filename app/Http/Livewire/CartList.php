@@ -43,22 +43,18 @@ class CartList extends Component
 
 
     public function updated($name, $value)
-    {
-        
-      if (strpos($value, '.')) {
+    {      
+        if (strpos($name, '.')) {
         $code= explode('.',$name)[1];  
         if ($name && is_numeric($code)) {            
             $this->updatecart($code);
         }
-      }
-      
-    
-     
+      }   
 
     }
 
     public function updatecart($code=null)
-    {
+    {       
         if ($code) {
             $this->cartlist[$code]['total']=$this->cartlist[$code]['price']*$this->cartlist[$code]['quantity'];
         }
