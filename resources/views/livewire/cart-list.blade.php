@@ -92,10 +92,11 @@
                     </li>
                 </ul>
             </div>
-                
-            <div class="btn-totallabel">
+            @if ($checkout)
+            <div class="btn-totallabel" wire:click="checkout()">
                 <h5>Checkout</h5>
-            </div>							
+            </div>	
+            @endif             						
             
         </div>
     </div>

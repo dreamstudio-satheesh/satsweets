@@ -9,9 +9,13 @@ use App\Models\Customer;
 class CartList extends Component
 {
     
-    public $cartlist= array( );
-    
+    public $checkout = false;
     public $total_count= 0;
+
+    public $customers;
+
+
+    public $cartlist= array();
 
     public $sub_total= 0;
 
@@ -19,11 +23,10 @@ class CartList extends Component
 
     public $total= 0;
 
-    public $customers;
-
     public $customer_id='';
 
     public $invoice_date = '';
+
 
     protected $listeners = ['cartAdded' => 'cart'];
 
@@ -35,23 +38,26 @@ class CartList extends Component
         
     }
 
+    public function updated($name, $value)
+    {      
+        if (strpos($name, '.')) {
+            $code= explode('.',$name)[1];  
+            if ($name && is_numeric($code)) { $this->updatecart($code); }
+        }
+
+        if (!empty($this->cartlist) && !empty($this->customer_id) && !empty($this->invoice_date)) {          
+            $this->checkout = true;
+        }
+        else{  $this->checkout = false;}
+
+    }
+
     public function addcart($code)
     {
         $this->cartlist[$code]['quantity']++;
         $this->updatecart($code); 
     }
 
-
-    public function updated($name, $value)
-    {      
-        if (strpos($name, '.')) {
-        $code= explode('.',$name)[1];  
-        if ($name && is_numeric($code)) {            
-            $this->updatecart($code);
-        }
-      }   
-
-    }
 
     public function updatecart($code=null)
     {       
@@ -93,6 +99,14 @@ class CartList extends Component
     {
        unset($this->cartlist[$code]);
        $this->updatecart();
+    }
+
+    public function checkout()
+    {
+        if (!empty($this->cartlist) && !empty($this->customer_id) && !empty($this->invoice_date)) {
+          
+         dd($this->cartlist);
+        }
     }
 
     public function cart($code)
