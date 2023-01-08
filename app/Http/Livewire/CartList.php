@@ -21,12 +21,18 @@ class CartList extends Component
 
     public $customers;
 
+    public $customer_id='';
+
+    public $invoice_date = '';
+
     protected $listeners = ['cartAdded' => 'cart'];
 
 
     public function mount()
     {
         $this->customers = Customer::select('id','name')->get();
+
+        
     }
 
     public function addcart($code)
@@ -39,7 +45,7 @@ class CartList extends Component
     public function updated($name, $value)
     {
         
-      if ($value) {
+      if (strpos($value, '.')) {
         $code= explode('.',$name)[1];  
         if ($name && is_numeric($code)) {            
             $this->updatecart($code);

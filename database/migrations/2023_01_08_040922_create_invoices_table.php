@@ -17,13 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('invoiceid');
             $table->dateTime('date');
-            $table->integer('netdays');
             $table->dateTime('duedate');
-            $table->integer('client_id')->unsigned();
+            $table->string('taxamount');
+            $table->string('subtotal');
+            $table->string('total');
+            $table->integer('customer_id')->unsigned();
             $table
-                ->foreign('client_id')
+                ->foreign('customer_id')
                 ->references('id')
-                ->on('clients')
+                ->on('customers')
                 ->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

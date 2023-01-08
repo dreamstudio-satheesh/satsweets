@@ -6,7 +6,7 @@
                 <div class="col-lg-12">
                     <div class="select-split ">
                         <div class="select-group w-100">
-                            <select class="form-select form-select-sm" required>
+                            <select wire:model="customer_id" class="form-select form-select-sm" required>
                                 <option value="" selected disabled>Walk-in Customer</option>
                                 @foreach ($customers as $customer)
                                 <option value="{{ $customer->id }}">{{ $customer->name }}</option>                                    
@@ -14,6 +14,16 @@
                                 
                             </select>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label for="colFormLabelSm" class="col-form-label col-form-label-sm">Invoice Date</label>                       
+                            <input wire:model="invoice_date" type="date"  placeholder="dd-mm-yyyy" class="form-control form-control-sm" required>                            
+                        </div>
+
+                       
                     </div>
                 </div>
                 
