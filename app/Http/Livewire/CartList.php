@@ -64,7 +64,7 @@ class CartList extends Component
         $taxamount=0;
 
         foreach ($this->cartlist  as $item) {
-            $totalnum += $item['total'];
+            $totalnum +=(int) $item['total'];
             $taxamount=((int)$taxamount+$item['gstamount']) *((int)$item['quantity']);
         }
 
