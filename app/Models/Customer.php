@@ -9,4 +9,10 @@ class Customer extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+
+    public function Invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
 }

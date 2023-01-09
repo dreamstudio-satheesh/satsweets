@@ -28,7 +28,7 @@ Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logou
 
 
 //Sales
-Route::view('saleslist', 'sales.saleslist')->name('saleslist');
+Route::get('saleslist', [App\Http\Controllers\CartController::class, 'saleslist'])->name('saleslist');
 Route::view('salesreturnlist', 'sales.salesreturnlist')->name('salesreturnlist');
 Route::view('newsalesreturn', 'sales.newsalesreturn')->name('newsalesreturn');
 
@@ -111,7 +111,7 @@ Route::group([
     });
     // User routes
     
-     Route::get('newsales', [App\Http\Controllers\CartController::class, 'newsales'])->name('newsales');
+     
      Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');
      Route::get('cart', [App\Http\Controllers\CartController::class, 'show'])->name('cart');
      Route::get('invoice', [App\Http\Controllers\CartController::class, 'invoice'])->name('invoice');     

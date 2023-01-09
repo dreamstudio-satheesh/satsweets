@@ -41,10 +41,9 @@
                 <ul class="product-lists">
                     <li>
                         <div class="productimg">
-                            <div class="productimgs">
-                                
-                            @if ( !empty( $cart['url']))                                          
-                            <img src="{{ $cart['url'] }}" >                                        
+                            <div class="productimgs">                                
+                            @if ($cart['url'])  
+                            <img src="{{ $cart['url'] }}" >                                 
                             @else
                             <img src="assets/img/product/product29.jpg"  alt="img">
                             @endif

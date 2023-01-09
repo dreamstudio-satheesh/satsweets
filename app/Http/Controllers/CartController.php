@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Invoice;
 use App\Models\Category;
-use Illuminate\Http\Request;
-use LaravelDaily\Invoices\Invoice;
+//use Illuminate\Http\Request;
 use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\Party;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
+use LaravelDaily\Invoices\Invoice as PDFinvoice;
 
 class CartController extends Controller
 {
-    public function newsales($categoryId='1')
+    public function saleslist()
     {
-        $products = Product::where('category_id', $categoryId)->get();
-        $categories = Category::with('products')->orderBy('id')->get();
-        return view('cart.shop', compact('categories','products'));
+       
+        $invoices = Invoice::orderBy('id')->get();
+        return view('sales.saleslist',compact('invoices'));
+        
     }
 
     public function pos()
@@ -45,7 +46,7 @@ class CartController extends Controller
 
         $item = (new InvoiceItem())->title('Service 1')->pricePerUnit(2);
 
-        $invoice = Invoice::make()
+        $invoice = PDFinvoice::make()
             ->buyer($customer)
             ->discountByPercent(10)
             ->taxRate(15)
@@ -110,7 +111,7 @@ class CartController extends Controller
         ];
         $notes = implode("<br>", $notes);
 
-        $invoice = Invoice::make('receipt')
+        $invoice = PDFinvoice::make('receipt')
             // ability to include translated invoice status
             // in case it was paid
             ->status(__('invoices::invoice.paid'))

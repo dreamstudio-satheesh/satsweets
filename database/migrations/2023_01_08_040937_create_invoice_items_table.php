@@ -15,12 +15,16 @@ return new class extends Migration
     {
         Schema::create('invoice_items', function (Blueprint $table) {
             $table->id();
-            $table->increments('id');
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->integer('quantity');
-            $table->double('price', 15, 3);
-            $table->integer('invoice_id')->unsigned();
+            $table->string('name');            
+            $table->double('price', 8, 2);      
+            $table->mediumInteger('total')->unsigned();            
+            $table->smallInteger('gst')->unsigned();          
+            $table->smallInteger('quantity')->unsigned();
+            $table->smallInteger('gstamount')->unsigned();            
+            $table->text('description')->nullable();      
+            $table->foreignId('product_id')->unsigned();
+            $table->foreignId('invoice_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');            
             $table
                 ->foreign('invoice_id')
                 ->references('id')

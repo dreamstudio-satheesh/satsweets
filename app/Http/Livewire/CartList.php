@@ -107,7 +107,7 @@ class CartList extends Component
         if (!empty($this->cartlist) && !empty($this->customer_id) && !empty($this->invoice_date)) {
           
          $this->create_invoice([
-                'cartlist' =>  $this->cartlist,
+                'items' =>  $this->cartlist,
                 'customer_id' => $this->customer_id,
                 'invoice_date' => $this->invoice_date,
                 'total' => $this->total,
@@ -127,11 +127,17 @@ class CartList extends Component
             
             $product = Product::where('code',$code)->first();        
             if ($product) {
+                $media='';
+                if (!empty($product->getMedia('products')->first())) {
+                    $media=$product->getMedia('products')->first()->getUrl('thumb');
+                }
+               
                 $this->cartlist[$product->code]= array(
+                            'id' => $product->id,
                             'code' => $product->code, // inique row ID
                             'name' => $product->name,
                             'price' => (int)$product->price,
-                            'url' => $product->getMedia('products')->first()->getUrl('thumb'),
+                            'url' => '',
                             'gstamount' =>round($product->price-($product->price *100/(100+$product->gst))),
                             'gst' => $product->gst,
                             'quantity' => 1, 

@@ -33,7 +33,7 @@
 							<div class="productset flex-fill">
 								<div class="productsetimg" >
 									
-									@if ( !empty( $item->getMedia('products')->first()->getUrl('thumb') ) )                                          
+									@if ( !empty( $item->getMedia('products')->first() ) )                                          
 									<img src="{{ $item->getMedia('products')->first()->getUrl('thumb') }}" class="img-thumbnail">                                        
 									@else
 									<img src="assets/img/product/product29.jpg" class="img-fluid img-thumbnail" alt="img">
