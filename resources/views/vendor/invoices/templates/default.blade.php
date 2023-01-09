@@ -149,7 +149,7 @@
                             </h4>
                         @endif
                         <p>{{ __('invoices::invoice.serial') }} <strong>{{ $invoice->getSerialNumber() }}</strong></p>
-                        <p>{{ __('invoices::invoice.date') }}: <strong>{{ $invoice->getDate() }}</strong></p>
+                        <p>{{ __('invoices::invoice.date') }}: <strong>{{ date('d-m-Y', strtotime($invoice->getDate())) }}</strong></p>
                     </td>
                 </tr>
             </tbody>

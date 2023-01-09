@@ -8,8 +8,8 @@ return [
     */
 
     'invoice'                => 'Invoice',
-    'serial'                 => 'Serial No.',
-    'date'                   => 'Invoice date',
+    'serial'                 => 'Bill No.',
+    'date'                   => 'Bill date',
     'seller'                 => 'Seller',
     'buyer'                  => 'Buyer',
     'address'                => 'Address',
@@ -22,7 +22,7 @@ return [
     'price'                  => 'Price',
     'discount'               => 'Discount',
     'tax'                    => 'Tax',
-    'sub_total'              => 'Sub total',
+    'sub_total'              => 'Total Price',
     'total_discount'         => 'Total discount',
     'taxable_amount'         => 'Taxable amount',
     'total_taxes'            => 'Total taxes',
