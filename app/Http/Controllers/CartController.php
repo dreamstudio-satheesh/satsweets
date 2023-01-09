@@ -27,33 +27,30 @@ class CartController extends Controller
        
     }
 
-    public function show()
-    {
-       
-       return view('cart.show');
-       
-    }
 
-    public function invoice()
+    public function showinvoice($id)
     {
-        
+       $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
         $customer = new Buyer([
-            'name'          => 'John Doe',
+            'name'          =>  $invoice->customer->name,
             'custom_fields' => [
-                'email' => 'test@example.com',
+                'address' => $invoice->customer->address,
             ],
         ]);
 
-        $item = (new InvoiceItem())->title('Service 1')->pricePerUnit(2);
+        $items=[];
 
-        $invoice = PDFinvoice::make()
+        foreach ($invoice->invoice_items as  $item) {
+
+            $items[]= (new InvoiceItem())->title($item->name)->pricePerUnit($item->price);
+        }
+
+        $invoicepage = PDFinvoice::make()
             ->buyer($customer)
-            ->discountByPercent(10)
             ->taxRate(15)
-            ->shipping(1.99)
-            ->addItem($item);
+            ->addItems($items);
 
-        return $invoice->stream();
+        return $invoicepage->stream();
     }
 
 

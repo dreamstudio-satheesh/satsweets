@@ -143,7 +143,7 @@
                                                                 </a>
                                                                 <ul class="dropdown-menu"  >
                                                                         <li>
-                                                                                <a href="sales-details.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Sale Detail</a>
+                                                                                <a href="{{url('invoice/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">View Invoice</a>
                                                                         </li>
                                                                         <li>
                                                                                 <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
