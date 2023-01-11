@@ -79,10 +79,10 @@ return [
          */
         'attributes' => [
             'name'          => 'Sat Sweets',
-            'address'       => 'kakeyam road, Tirupur',
+            'address'       => '3/147 Karunaipalayam Pirivu, <br> Covai-Tiruchy Main Road, <br> Kangeyam -638701',
             'code'          => '',
-            'vat'           => '',
-            'phone'         => '9012345678',
+            'vat'           => '33ATOPR7702H1ZF',
+            'phone'         => '',
             'custom_fields' => [
                 /*
                  * Custom attributes for Seller::class

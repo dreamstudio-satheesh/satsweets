@@ -42,12 +42,12 @@ class CartController extends Controller
 
         foreach ($invoice->invoice_items as  $item) {
 
-            $items[]= (new InvoiceItem())->title($item->name)->pricePerUnit($item->price);
+            $items[]= (new InvoiceItem())->title($item->name)->pricePerUnit($item->price - $item->gstamount)->quantity($item->quantity);
         }
 
         $invoicepage = PDFinvoice::make()
             ->buyer($customer)
-            ->taxRate(15)
+            ->taxRate(5)
             ->addItems($items);
 
         return $invoicepage->stream();

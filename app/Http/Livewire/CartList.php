@@ -138,7 +138,7 @@ class CartList extends Component
                             'name' => $product->name,
                             'price' => (int)$product->price,
                             'url' => '',
-                            'gstamount' =>round($product->price-($product->price *100/(100+$product->gst))),
+                            'gstamount' =>round($product->price-($product->price *100/(100+$product->gst)), 2),
                             'gst' => $product->gst,
                             'quantity' => 1, 
                             'total' => $product->price,                     
