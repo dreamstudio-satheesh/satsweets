@@ -19,7 +19,7 @@
                 text-align: left;
                 background-color: #fff;
                 font-size: 10px;
-                margin: 36pt;
+                margin: 16pt;
             }
 
             h4 {
@@ -112,8 +112,8 @@
                 line-height: 1.1;
             }
             .party-header {
-                font-size: 1.5rem;
-                font-weight: 400;
+                font-size: 1rem;
+                font-weight: 300;
             }
             .total-amount {
                 font-size: 12px;
@@ -125,23 +125,35 @@
             .cool-gray {
                 color: #6B7280;
             }
+            .center {
+                text-align: center;
+            }
+            .center img {
+                display: block;
+            }
         </style>
     </head>
 
     <body>
         {{-- Header --}}
         @if($invoice->logo)
-            <img src="{{ $invoice->getLogo() }}" alt="logo" height="100">
+            <div class="center">
+                <img src="{{ $invoice->getLogo() }}" alt="logo" height="60">
+            </div>
         @endif
 
         <table class="table mt-5">
             <tbody>
                 <tr>
-                    <td class="border-0 pl-0" width="70%">
+                    <td class="border-0 pl-0" width="40%">
                         <h4 class="text-uppercase">
                             <strong>{{ $invoice->name }}</strong>
                         </h4>
                     </td>
+                    <td class="border-0 pl-0" width="40%">
+                    
+                     </td>
+
                     <td class="border-0 pl-0">
                         @if($invoice->status)
                             <h4 class="text-uppercase cool-gray">
@@ -149,7 +161,7 @@
                             </h4>
                         @endif
                         <p>{{ __('invoices::invoice.serial') }} <strong>{{ $invoice->getSerialNumber() }}</strong></p>
-                        <p>{{ __('invoices::invoice.date') }}: <strong>{{ date('d-m-Y', strtotime($invoice->getDate())) }}</strong></p>
+                        <p>{{ __('invoices::invoice.date') }}: <strong>{{ $invoice->getDate() }}</strong></p>
                     </td>
                 </tr>
             </tbody>

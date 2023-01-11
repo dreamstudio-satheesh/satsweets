@@ -46,8 +46,11 @@ class CartController extends Controller
         }
 
         $invoicepage = PDFinvoice::make()
+            //->status(__('invoices::invoice.paid'))
+            ->sequence($invoice->invoice_number)
             ->buyer($customer)
             ->taxRate(5)
+            ->logo(public_path('assets/img/logo.png'))
             ->addItems($items);
 
         return $invoicepage->stream();

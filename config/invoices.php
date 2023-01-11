@@ -5,7 +5,7 @@ return [
         /*
          * Carbon date format
          */
-        'format' => 'Y-m-d',
+        'format' => 'd-m-Y',
         /*
          * Due date for payment since invoice's date.
          */
@@ -28,7 +28,7 @@ return [
     ],
 
     'currency' => [
-        'code' => 'Rupees',
+        'code' => 'INR',
         /*
          * Usually cents
          * Used when spelling out the amount and if your currency has decimals.
@@ -54,7 +54,7 @@ return [
          * Supported tags {VALUE}, {SYMBOL}, {CODE}
          * Example: 1.99 €
          */
-        'format' => '{VALUE} {SYMBOL}',
+        'format' => '{SYMBOL} {VALUE}',
     ],
 
     'paper' => [
