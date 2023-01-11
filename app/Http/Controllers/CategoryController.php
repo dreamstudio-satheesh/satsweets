@@ -86,9 +86,8 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
         ]);
-        $category->update(['name'=>$request->name]);
-        
-        return redirect('categories')->withSuccess('Category Updated');
+        $category->update(['name'=>$request->name]);        
+       
 
         if ($request->has('photo') && $request->file('photo')->isValid()) {
 
@@ -99,6 +98,8 @@ class CategoryController extends Controller
 
             $category->addMediaFromRequest('photo')->toMediaCollection('categories');               
         } 
+
+        return redirect('categories')->withSuccess('Category Updated');
     }
 
     /**
