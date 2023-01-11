@@ -23,7 +23,7 @@
 					<div class="card">
 						<div class="card-body">
 							<div class="row">
-                                <form action="{{ route('categories.update', $category->id) }}" method="post">
+                                <form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
 								<div class="col-lg-6 col-sm-6 col-12">
@@ -34,7 +34,7 @@
 								</div>
 								<div class="col-lg-12">
 									<div class="form-group">
-										<label>	Product Image</label>
+										<label>	Category Image</label>
 										<div class="image-upload">
 											<input type="file" name="photo">
 											<div class="image-uploads">

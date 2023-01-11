@@ -44,7 +44,8 @@ class CategoryController extends Controller
             'name'=>$request->name, 'guard_name'=>'web'
         ]);
 
-        if ($request->has('photo') && $request->file('photo')->isValid()) {
+
+        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
 
             $category->addMediaFromRequest('photo')->toMediaCollection('categories');               
         }     
@@ -86,10 +87,10 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
         ]);
-        $category->update(['name'=>$request->name]);        
-       
-
-        if ($request->has('photo') && $request->file('photo')->isValid()) {
+        $category->update(['name'=>$request->name]);  
+        
+        
+        if($request->hasFile('photo') && $request->file('photo')->isValid()){
 
             $mediaItems = $category->getMedia();
             if (isset($mediaItems[0])) {

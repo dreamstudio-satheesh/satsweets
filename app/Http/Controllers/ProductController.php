@@ -67,7 +67,7 @@ class ProductController extends Controller
             'guard_name'=>'web'
         ]);    
 
-        if ($request->has('photo') && $request->file('photo')->isValid()) {
+        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
 
             $product->addMediaFromRequest('photo')->toMediaCollection('products');               
         }     
@@ -131,7 +131,7 @@ class ProductController extends Controller
 
        
 
-        if ($request->has('photo') && $request->file('photo')->isValid()) {
+        if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
 
             $mediaItems = $product->getMedia();
             if (isset($mediaItems[0])) {
