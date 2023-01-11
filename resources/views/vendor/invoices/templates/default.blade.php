@@ -88,7 +88,11 @@
             }
 
             .mt-5 {
-                margin-top: 3rem !important;
+                margin-top: 1.5rem !important;
+            }
+
+            .l-bottom {
+                margin-bottom: 1.5rem !important;
             }
 
             .pr-0,
@@ -145,7 +149,7 @@
         {{-- Header --}}
         @if($invoice->logo)
             <div class="center">
-                <img src="{{ $invoice->getLogo() }}" alt="logo" height="80">
+                <img class="l-bottom" src="{{ $invoice->getLogo() }}" alt="logo" height="80">
                 
                 <h4 class="text-uppercase">
                     <strong>{{ $invoice->name }}</strong>
