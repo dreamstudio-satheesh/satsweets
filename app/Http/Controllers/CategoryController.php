@@ -89,6 +89,16 @@ class CategoryController extends Controller
         $category->update(['name'=>$request->name]);
         
         return redirect('categories')->withSuccess('Category Updated');
+
+        if ($request->has('photo') && $request->file('photo')->isValid()) {
+
+            $mediaItems = $category->getMedia();
+            if (isset($mediaItems[0])) {
+                $mediaItems[0]->delete();
+            }          
+
+            $category->addMediaFromRequest('photo')->toMediaCollection('categories');               
+        } 
     }
 
     /**

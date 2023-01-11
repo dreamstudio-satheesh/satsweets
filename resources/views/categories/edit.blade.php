@@ -36,7 +36,7 @@
 									<div class="form-group">
 										<label>	Product Image</label>
 										<div class="image-upload">
-											<input type="file">
+											<input type="file" name="photo">
 											<div class="image-uploads">
 												<img src="{{ asset('assets/img/icons/upload.svg') }}" alt="img">
 												<h4>Drag and drop a file to upload</h4>

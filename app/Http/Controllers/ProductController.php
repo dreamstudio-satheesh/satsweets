@@ -128,8 +128,15 @@ class ProductController extends Controller
             'category_id'=>$request->category_id,
             'guard_name'=>'web'
         ]);
-        
+
+       
+
         if ($request->has('photo') && $request->file('photo')->isValid()) {
+
+            $mediaItems = $product->getMedia();
+            if (isset($mediaItems[0])) {
+                $mediaItems[0]->delete();
+            }          
 
             $product->addMediaFromRequest('photo')->toMediaCollection('products');               
         }     
