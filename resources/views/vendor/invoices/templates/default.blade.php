@@ -48,7 +48,7 @@
             }
 
             table {
-                margin-top: 0.5rem;
+                
                 border-collapse: collapse;
             }
 
