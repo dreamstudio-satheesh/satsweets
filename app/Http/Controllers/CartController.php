@@ -45,7 +45,7 @@ class CartController extends Controller
             $items[]= (new InvoiceItem())->title($item->name)->pricePerUnit($item->price - $item->gstamount)->quantity($item->quantity);
         }
 
-        $invoicepage = PDFinvoice::make()
+        $invoicepage = PDFinvoice::make('TAX INVOICE')
             //->status(__('invoices::invoice.paid'))
             ->sequence($invoice->invoice_number)
             ->buyer($customer)

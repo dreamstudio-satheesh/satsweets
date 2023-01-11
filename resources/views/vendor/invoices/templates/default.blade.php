@@ -203,7 +203,7 @@
 
                         @if($invoice->seller->vat)
                             <p class="seller-vat">
-                                {{ __('invoices::invoice.vat') }}: {{ $invoice->seller->vat }}
+                                GST No: {{ $invoice->seller->vat }}
                             </p>
                         @endif
 
@@ -241,7 +241,7 @@
 
                         @if($invoice->buyer->vat)
                             <p class="buyer-vat">
-                                {{ __('invoices::invoice.vat') }}: {{ $invoice->buyer->vat }}
+                                GST No: {{ $invoice->buyer->vat }}
                             </p>
                         @endif
 
@@ -336,18 +336,18 @@
                 @if($invoice->tax_rate)
                     <tr>
                         <td colspan="{{ $invoice->table_columns - 2 }}" class="border-0"></td>
-                        <td class="text-right pl-0">{{ __('invoices::invoice.tax_rate') }}</td>
+                        <td class="text-right pl-0">2.5% CGST</td>
                         <td class="text-right pr-0">
-                            {{ $invoice->tax_rate }}%
+                            ₹ {{ $invoice->total_taxes/2 }}                           
                         </td>
                     </tr>
                 @endif
                 @if($invoice->hasItemOrInvoiceTax())
                     <tr>
                         <td colspan="{{ $invoice->table_columns - 2 }}" class="border-0"></td>
-                        <td class="text-right pl-0">{{ __('invoices::invoice.total_taxes') }}</td>
+                        <td class="text-right pl-0">2.5% SGST</td>
                         <td class="text-right pr-0">
-                            {{ $invoice->formatCurrency($invoice->total_taxes) }}
+                            ₹ {{ $invoice->total_taxes/2 }}
                         </td>
                     </tr>
                 @endif
