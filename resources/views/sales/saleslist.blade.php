@@ -146,7 +146,10 @@
                                                                                 <a href="{{url('invoice/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">View Invoice</a>
                                                                         </li>
                                                                         <li>
-                                                                                <a href="edit-sales.html" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
+                                                                                <a href="{{url('thermal/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/eye1.svg" class="me-2" alt="img">Thermal Print</a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="#" class="dropdown-item"><img src="{{ url('') }}/assets/img/icons/edit.svg" class="me-2" alt="img">Edit Sale</a>
                                                                         </li>
                                                                         <li>
                                                                                 <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('') }}/assets/img/icons/dollar-square.svg" class="me-2" alt="img">Show Payments</a>

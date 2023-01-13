@@ -29,6 +29,7 @@ Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logou
 
 //Sales
 Route::get('saleslist', [App\Http\Controllers\CartController::class, 'saleslist'])->name('saleslist');
+Route::get('/thermal/{id}', [App\Http\Controllers\PrintController::class, 'thermal'])->name('thermal.show');
 Route::get('/invoice/{id}', [App\Http\Controllers\CartController::class, 'showinvoice'])->name('invoice.show');
 Route::view('salesreturnlist', 'sales.salesreturnlist')->name('salesreturnlist');
 Route::view('newsalesreturn', 'sales.newsalesreturn')->name('newsalesreturn');

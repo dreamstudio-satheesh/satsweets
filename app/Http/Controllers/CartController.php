@@ -28,6 +28,34 @@ class CartController extends Controller
     }
 
 
+    public function thermal($id)
+    {
+       $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
+        $customer = new Buyer([
+            'name'          =>  $invoice->customer->name,
+            'custom_fields' => [
+                'address' => $invoice->customer->address,
+            ],
+        ]);
+
+        $items=[];
+
+        foreach ($invoice->invoice_items as  $item) {
+
+            $items[]= (new InvoiceItem())->title($item->name)->pricePerUnit($item->price - $item->gstamount)->quantity($item->quantity);
+        }
+
+        $invoicepage = PDFinvoice::make('TAX INVOICE')
+            //->status(__('invoices::invoice.paid'))
+            ->sequence($invoice->invoice_number)
+            ->buyer($customer)
+            ->taxRate(5)
+            ->logo(public_path('assets/img/logo.png'))
+            ->addItems($items);
+
+        return $invoicepage->stream();
+    }
+
     public function showinvoice($id)
     {
        $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();

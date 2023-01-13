@@ -83,11 +83,11 @@
 								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>GST</label>
-										<select class="select" name="gst">
-											<option value="0">0%</option>
+										<select class="select" name="gst">											
 											<option value="5">5%</option>
 											<option value="12">12%</option>
 											<option value="18">18%</option>
+											<option value="0">0%</option>
 										</select>
 									</div>
 								</div>
