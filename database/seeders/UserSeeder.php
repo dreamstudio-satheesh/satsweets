@@ -25,6 +25,7 @@ class UserSeeder extends Seeder
             'name' => 'user',
             'email' => 'user@satsweets.com',
             'password' => 'password',
+            'line_id' => '1',
         ]);
         $user->assignRole('USER');
     }

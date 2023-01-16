@@ -44,6 +44,17 @@
                 </div>
 
                 <div class="mb-3 col-12">
+                    <label id="password_label" for="">Line</label>
+                    <select class="form-control" name="line_id" >
+                        <option value="">Nill</option>
+                        @foreach ($lines as $line)
+                        <option value="{{ $line->id }}">{{ $line->name }}</option>
+                        @endforeach
+                       
+                      </select>
+                </div>
+
+                <div class="mb-3 col-12">
                     <label id="password_label" for="password">Password</label>
                     <input id="password" name="password" type="password" class="form-control" />
                     @error('password')
