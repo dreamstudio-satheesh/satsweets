@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('name');            
             $table->double('price', 8, 2);      
-            $table->mediumInteger('total')->unsigned();            
+            $table->double('total', 8, 2);            
             $table->smallInteger('gst')->unsigned();          
             $table->smallInteger('quantity')->unsigned();
-            $table->smallInteger('gstamount')->unsigned();            
+            $table->double('gstamount', 8, 2);            
             $table->text('description')->nullable();      
-            $table->foreignId('product_id')->unsigned();
+            $table->string('product_code');
             $table->foreignId('invoice_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');            
+            $table->foreign('product_code')->references('code')->on('products');            
             $table
                 ->foreign('invoice_id')
                 ->references('id')

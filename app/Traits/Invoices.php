@@ -24,7 +24,7 @@ trait Invoices {
         foreach ($data['items'] as $key => $item) {
            Invoice_item::create([
             'invoice_id' => $invoice->invoice_number,
-            'product_id' => $item['id'],
+            'product_code' => $item['code'],
             'name' => $item['name'],
             'price' => $item['price'],
             'gst' => $item['gst'],
