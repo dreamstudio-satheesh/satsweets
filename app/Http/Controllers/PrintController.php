@@ -13,9 +13,8 @@ class PrintController extends Controller
     public function thermal($id)
     {
        $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
-       $data=array();
        $customPaper = array(0,0,280,650);
-       $pdf = Pdf::loadView('invoices.thermal', $data)->setPaper($customPaper);
+       $pdf = Pdf::loadView('invoices.thermal', compact('invoice'))->setPaper($customPaper);
        return $pdf->stream();
 
     }

@@ -79,7 +79,7 @@ return [
          */
         'attributes' => [
             'name'          => 'Sat Sweets',
-            'address'       => '3/147 Karunaipalayam Pirivu, <br> Covai-Tiruchy Main Road, <br> Kangeyam -638701',
+            'address'       => '3/147 Karunaipalayam Pirivu, </br> Covai-Tiruchy Main Road, </br> Kangeyam -638701',
             'code'          => '',
             'vat'           => '33ATOPR7702H1ZF',
             'phone'         => '',
