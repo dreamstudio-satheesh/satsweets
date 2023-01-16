@@ -25,6 +25,7 @@
                                     <li><a href="{{ url('newsalesreturn') }}">New Sales Return</a></li>
                                 </ul>
                             </li>
+                            @role('admin')
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/purchase1.svg') }}" alt="img"><span> Purchase</span> <span class="menu-arrow"></span></a>
                                 <ul>
@@ -48,6 +49,7 @@
                                     <li><a href="{{ url('addquotation') }}">Add Quotation</a></li>
                                 </ul>
                             </li>
+                           
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
                                 <ul>
@@ -57,6 +59,7 @@
                                     <li><a href="{{ url('addpurchasereturn') }}">Add Purchase Return </a></li>
                                 </ul>
                             </li>
+                            @endrole
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/users1.svg') }}" alt="img"><span> People</span> <span class="menu-arrow"></span></a>
                                 <ul>
@@ -64,11 +67,13 @@
                                     <li><a class="{{ (request()->is('customers/create')) ? 'active' : '' }}" href="{{ url('customers/create') }}">Add Store</a></li>
                                     <li><a class="{{ (request()->is('supplierlist')) ? 'active' : '' }}" href="{{ url('supplierlist') }}">Supplier List</a></li>
                                     <li><a class="{{ (request()->is('addsupplier')) ? 'active' : '' }}" href="{{ url('addsupplier') }}">Add Supplier </a></li>
+                                    @role('admin')
                                     <li><a class="{{ (request()->is('admin/users')) ? 'active' : '' }}" href="{{ url('admin/users') }}">User List</a></li>
                                     <li><a class="{{ (request()->is('admin/users/create')) ? 'active' : '' }}" href="{{ url('admin/users/create') }}">Add User</a></li>
-                                   
+                                    @endrole
                                 </ul>
-                            </li>														
+                            </li>
+                            @role('admin')													
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/places.svg') }}" alt="img"><span> Places</span> <span class="menu-arrow"></span></a>
                                 <ul>
@@ -76,6 +81,7 @@
                                     <li><a class="{{ (request()->is('lines/create')) ? 'active' : '' }}"" href="{{ url('lines/create') }}">New Line</a></li>
                                 </ul>
                             </li>
+                            
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg') }}" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
                                 <ul>
@@ -97,6 +103,8 @@
                                     <li><a href="{{ url('taxrates') }}">Tax Rates</a></li>
                                 </ul>
                             </li>
+
+                            @endrole
                         </ul>
                     </div>
                 </div>
