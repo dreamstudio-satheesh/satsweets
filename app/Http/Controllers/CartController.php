@@ -14,9 +14,8 @@ class CartController extends Controller
 {
     public function saleslist()
     {
-       
-        $invoices = Invoice::orderBy('id')->get();
-        return view('sales.saleslist',compact('invoices'));
+        
+        return view('sales.saleslist');
         
     }
 

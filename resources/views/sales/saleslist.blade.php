@@ -100,7 +100,7 @@
                                 </div>
                         </div>
                         <!-- /Filter -->
-                        @livewire('invoice-list', ['invoices' => $invoices])
+                        @livewire('invoice-list')
                 </div>
         </div>
         <!-- /product list -->

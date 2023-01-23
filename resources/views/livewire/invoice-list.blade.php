@@ -34,9 +34,9 @@
                                 <td>{{ \Carbon\Carbon::parse($invoice->date)->format('d/m/Y')}} </td>
                                 <td>{{ $invoice->customer->name}}</td>
                                 <td>{{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }}</td>
-                                <td><span class="badges bg-lightgreen">Paid</span></td>
+                                <td><span class="badges {{ ($invoice->status == "Unpaid" )?'bg-lightred': 'bg-lightgreen' }}">{{ $invoice->status }}</span></td>
                                 <td>{{ $invoice->total }}</td>
-                                <td>0.00</td>
+                                <td>{{ $invoice->paid_amount }}</td>
                                 <td>Admin</td>
                                 <td class="text-center">
                                         <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">

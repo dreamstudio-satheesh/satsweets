@@ -22,13 +22,13 @@
 							<div class="col-lg-6 col-sm-12 col-12">
 								<div class="form-group">
 									<label>Reference</label>									
-									<input type="text" value="INV/SL0101">
+									<input type="text" >
 								</div>
 							</div>
 							<div class="col-lg-6 col-sm-12 col-12">
 								<div class="form-group">
 									<label>Amount To Pay:</label>
-									<input type="text" value="0.00"  disabled>
+									<input type="text" wire:model="amount_to_pay"  disabled>
 								</div>
 							</div>
 							<div class="col-lg-6 col-sm-12 col-12">

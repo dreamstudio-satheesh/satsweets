@@ -23,6 +23,7 @@ return new class extends Migration
             $table->double('taxamount')->nullable();
             $table->double('discount')->nullable();
             $table->double('paid_amount')->nullable();
+            $table->string('status')->default('Unpaid');
             $table->integer('payment_type')->nullable();
             $table->text('note')->nullable();
             $table->foreignId('customer_id')->unsigned();
