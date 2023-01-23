@@ -28,7 +28,7 @@ class CartController extends Controller
 
     public function pos()
     {
-        $categories = Category::with('products')->orderBy('id')->get();
+        $categories = Category::orderBy('id')->get();
         return view('cart.pos', compact('categories'));
        
     }
