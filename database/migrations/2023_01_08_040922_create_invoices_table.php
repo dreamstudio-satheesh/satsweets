@@ -18,9 +18,13 @@ return new class extends Migration
             $table->unsignedInteger('invoice_number')->unique();
             $table->dateTime('date');
             $table->dateTime('duedate')->nullable();
-            $table->smallInteger('taxamount')->unsigned();
-            $table->mediumInteger('sub_total')->unsigned();
-            $table->mediumInteger('total')->unsigned();
+            $table->double('sub_total')->nullable();
+            $table->double('total')->nullable();
+            $table->double('taxamount')->nullable();
+            $table->double('discount')->nullable();
+            $table->double('paid_amount')->nullable();
+            $table->integer('payment_type')->nullable();
+            $table->text('note')->nullable();
             $table->foreignId('customer_id')->unsigned();
             $table
             ->foreign('customer_id')

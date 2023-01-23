@@ -21,16 +21,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',  [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm']);
-
-
 Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logout']);
-
 
 
 //Sales
 Route::get('saleslist', [App\Http\Controllers\CartController::class, 'saleslist'])->name('saleslist');
 Route::get('/thermal/{id}', [App\Http\Controllers\PrintController::class, 'thermal'])->name('thermal.show');
 Route::get('/invoice/{id}', [App\Http\Controllers\CartController::class, 'showinvoice'])->name('invoice.show');
+
+   
+
+Route::get('/addpayment/{id}', [App\Http\Controllers\PaymentController::class, 'create'])->name('payment.create');
+
+
+
+
 Route::view('salesreturnlist', 'sales.salesreturnlist')->name('salesreturnlist');
 Route::view('newsalesreturn', 'sales.newsalesreturn')->name('newsalesreturn');
 
@@ -116,8 +121,6 @@ Route::group([
      
      Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');
      Route::get('editcart/{id}', [App\Http\Controllers\CartController::class, 'editcart'])->name('editcart');
-     Route::get('invoice', [App\Http\Controllers\CartController::class, 'invoice'])->name('invoice');     
-     Route::get('invoicetwo', [App\Http\Controllers\CartController::class, 'invoicetwo'])->name('invoicetwo');
 
     //lines
     Route::resource('vendors', App\Http\Controllers\vendorController::class);

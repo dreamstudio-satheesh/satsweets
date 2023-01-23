@@ -18,11 +18,10 @@ return new class extends Migration
             $table->string('name', 128)->unique();
             $table->string('code', 50)->unique();    
             $table->smallInteger('stocks')->default(1);
-            $table->float('price', 8, 2)->unsigned();
+            $table->double('price')->nullable();
             $table->char('gst', 4)->default(0);
             $table->string('hsncode', 12)->default(0000);
             $table->timestamps();
-
 
             $table->foreignId('category_id')->constrained();
         });

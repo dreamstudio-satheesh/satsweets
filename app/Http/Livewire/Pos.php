@@ -12,11 +12,6 @@ class Pos extends Component
    public $products;
    
  
-    public function mount($id='1')
-    {
-        $this->products = Product::where('category_id', $id)->get();
-    }
-
     public function category($id)
     {
         $this->products = Product::where('category_id', $id)->get();
@@ -25,6 +20,7 @@ class Pos extends Component
    
     public function render()
     {
+        $this->products = Product::where('category_id', '1')->get();
         return view('livewire.pos');
     }
 }

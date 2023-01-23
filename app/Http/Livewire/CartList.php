@@ -41,10 +41,6 @@ class CartList extends Component
         }else{
             $this->customers = Customer::select('id','name')->get();
         }
-            
-
-        
-        
 
         
     }
@@ -129,6 +125,10 @@ class CartList extends Component
 
     public function cart($code)
     {
+       
+       
+        $this->emit('playAudio');
+
         if (array_key_exists("$code",$this->cartlist)) 
         { 
             $this->addcart($code);                   
