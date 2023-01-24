@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = array(
+       /*  $categories = array(
             array('id' => '1','name' => 'Rs.20 pkt','created_at' => '2023-01-23 04:57:48','updated_at' => '2023-01-23 05:56:25'),
             array('id' => '2','name' => '1/4 kg pkt','created_at' => '2023-01-23 05:56:37','updated_at' => '2023-01-23 05:56:37'),
             array('id' => '3','name' => '1/2 kg pkt','created_at' => '2023-01-23 05:56:46','updated_at' => '2023-01-23 05:56:46'),
@@ -24,5 +24,5 @@ class CategorySeeder extends Seeder
           );
         
         Category::insert($categories);
-    }
+    } */
 }

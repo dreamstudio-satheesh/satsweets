@@ -15,12 +15,12 @@ class LineSeeder extends Seeder
      */
     public function run()
     {
-        $lines = array(
+       /*  $lines = array(
             array('id' => '1','name' => 'Koduvai Line','created_at' => '2023-01-23 04:58:58','updated_at' => '2023-01-23 04:58:58'),
             array('id' => '2','name' => 'kodumudi','created_at' => '2023-01-23 08:19:03','updated_at' => '2023-01-23 08:19:03')
           );
 
-        Line::insert($lines);
+        Line::insert($lines); */
           
     }
 }
