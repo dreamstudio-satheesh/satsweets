@@ -61,7 +61,7 @@ class CartList extends Component
 
     public function addcart($id)
     {
-
+        $this->emit('playAudio');
         $this->cartlist[$id]['quantity']++;
         $this->updatecart($id); 
     }
@@ -90,6 +90,7 @@ class CartList extends Component
 
     public function removecart($id)
     {
+        $this->emit('playAudio');
         if ($this->cartlist[$id]['quantity'] > 1) {
 
             $this->cartlist[$id]['quantity']--;           
