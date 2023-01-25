@@ -24,16 +24,10 @@
   <!-- Header -->
   <header>
   <div class="row align-items-center">
-    <div class="col-sm-12 text-center">
-      <img id="logo" src="{{ asset('logo.png') }}" width="160px" height="107px" title="satsweets" alt="sat logo" />
-      <address>
-        SAT Sweets<br />
-        3/147 Karunaipalayam Pirivu,  Covai-Tiruchy Main Road, <br />
-        Kangeyam -638701  <Span class="text-0 fw-400"> GST NO :33ATOPR7702H1ZF</Span>
-       
-        </address>
+    <div class="col-sm-7 text-center text-sm-start mb-3 mb-sm-0">
+      <img id="logo" src="{{ asset('logo.png') }}" width="120px" height="81px" title="satsweets" alt="sat logo" />
     </div>
-    <div class="col-sm-12 text-center">
+    <div class="col-sm-5 text-center text-sm-end">
       <h4 class="text-8 mb-0">Invoice</h4>
     </div>
   </div>
@@ -43,14 +37,14 @@
   <!-- Main Content -->
   <main>
   <div class="row">
-    <div class="col-sm-8"><strong>Invoiced To:</strong></div>
+    <div class="col-sm-8"><strong>Date:</strong> {{ \Carbon\Carbon::parse($invoice->date)->format('d/m/Y')}} </div>
     <div class="col-sm-4 text-sm-end"> <strong>Invoice No:</strong> {{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} </div>	  
   </div>
  
   <div class="row">
 
     
-    <div class="col-sm-8  order-sm-0"> 
+    <div class="col-sm-8  order-sm-0"> <strong>Invoiced To:</strong>
         <address>
          {{ $invoice->customer->name}}<br />
          {{ $invoice->customer->address}}<br />
@@ -58,8 +52,14 @@
         </address>
       </div>
 
-    <div class="col-sm-4 text-sm-end order-sm-1"> <strong>Date:</strong>
-        {{ \Carbon\Carbon::parse($invoice->date)->format('d/m/Y')}}
+    <div class="col-sm-4 text-sm-end order-sm-1"> <strong>Pay To:</strong>
+        <address>
+        SAT Sweets<br />
+        3/147 Karunaipalayam Pirivu, <br />
+        Covai-Tiruchy Main Road, <br />
+        Kangeyam -638701 <br /> <Span class="text-0 fw-400"> GST NO :33ATOPR7702H1ZF</Span>
+       
+        </address>
       </div>
   
   </div>
@@ -73,7 +73,10 @@
             <td class="col-3"><strong>HSN Code</strong></td>
 			<td class="col-6"><strong>Products</strong></td>
             <td class="col-1 text-center"><strong>QTY</strong></td>
-            <td class="col-1 text-center text-0"><strong>Tax%</strong></td>
+            <td class="col-1 text-center text-0"><strong>CGST</strong></td>
+            <td class="col-1 text-center"><strong>%</strong></td>
+            <td class="col-1 text-center text-0"><strong>SGST</strong></td>
+            <td class="col-1 text-center"><strong>%</strong></td>
 			<td class="col-1 text-center"><strong>Rate</strong></td>
             <td class="col-2 text-end"><strong>Amount</strong></td>
           </tr>
@@ -84,37 +87,40 @@
                 <td class="col-3">{{ $item->hsncode }}</td>
                 <td class="col-6 text-1">{{ $item->name }}</td>
                 <td class="col-1 text-center">{{ $item->quantity }}</td>
-                <td class="col-1 text-center">{{ $item->gst }}%</td>
-                <td class="col-1 text-end">₹{{ $item->total - ($item->quantity * $item->gstamount) }}</td>
-                <td class="col-2 text-center">₹{{ $item->price }}</td>
+                <td class="col-1 text-center">{{ round($item->gstamount/2,2) }}</td>
+                <td class="col-1 text-center">{{ $item->gst/2 }}%</td>
+                <td class="col-1 text-center">{{ round($item->gstamount/2,2) }}</td>
+                <td class="col-1 text-center">{{ $item->gst/2 }}%</td>
+                <td class="col-2 text-end">₹{{ $item->total - ($item->quantity * $item->gstamount) }}</td>
+                <td class="col-1 text-center">₹{{ $item->price }}</td>
               </tr>
             @endforeach
            </tbody>
 
            <tfoot class="card-footer line-height-1">
 			<tr>
-              <td colspan="5" class="text-end"><strong>Sub Total:</strong></td>
+              <td colspan="8" class="text-end"><strong>Sub Total:</strong></td>
               <td class="text-end">₹{{ $invoice->sub_total }}</td>
             </tr>
             <tr>
-              <td colspan="5" class="text-end"><strong>2.5% CGST:</strong></td>
+              <td colspan="8" class="text-end"><strong>2.5% CGST:</strong></td>
               <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
             </tr>
             <tr>
-                <td colspan="5" class="text-end"><strong>2.5% SGST:</strong></td>
+                <td colspan="8" class="text-end"><strong>2.5% SGST:</strong></td>
                 <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
               </tr>
 			<tr>
                 <tr>
-                    <td colspan="5" class="text-end"><strong>6% CGST:</strong></td>
-                    <td class="text-end">₹ 0.00 </td>
+                    <td colspan="8" class="text-end"><strong>6% CGST:</strong></td>
+                    <td class="text-end">₹{{ 0 }}</td>
                   </tr>
                   <tr>
-                      <td colspan="5" class="text-end"><strong>6% SGST:</strong></td>
-                      <td class="text-end">₹ 0.00</td>
+                      <td colspan="8" class="text-end"><strong>6% SGST:</strong></td>
+                      <td class="text-end">₹{{ 0 }}</td>
                     </tr>
                   <tr>
-              <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
+              <td colspan="8" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ $invoice->total }}</td>
             </tr>
 		  </tfoot>
