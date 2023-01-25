@@ -67,7 +67,7 @@
   <div class="card">
     <div class="card-body p-0">
       <div class="table-responsive">
-        <table id="items" class="table mb-0">
+        <table id="items" class="table table-bordered mb-0">
 		<thead class="card-header">
           <tr>
             <td class="col-3"><strong>HSN Code</strong></td>

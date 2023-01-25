@@ -58,11 +58,7 @@ button:active {
   outline: none;
 }
 
-/* #items tr,td {
-  border-bottom: none;
-  border-top: none;
 
-} */
 
 p {
   line-height: 1.5;
@@ -79,6 +75,12 @@ iframe {
 
 h1, h2, h3, h4, h5, h6 {
   color: #0c2f54;
+}
+
+#items tr,td {
+  border-bottom: none;
+  border-top: none;
+
 }
 
 .table {
