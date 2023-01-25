@@ -77,7 +77,7 @@
             <td class="col-1 text-center"><strong>%</strong></td>
             <td class="col-1 text-center text-0"><strong>SGST</strong></td>
             <td class="col-1 text-center"><strong>%</strong></td>
-			<td class="col-1 text-center"><strong>Price</strong></td>
+			<td class="col-1 text-center"><strong>Rate</strong></td>
             <td class="col-2 text-end"><strong>Amount</strong></td>
           </tr>
         </thead>
