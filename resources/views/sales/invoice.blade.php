@@ -38,10 +38,9 @@
   <main>
   <div class="row">
     <div class="col-sm-8"><strong>Date:</strong> {{ \Carbon\Carbon::parse($invoice->date)->format('d/m/Y')}} </div>
-    <div class="col-sm-4 text-sm-end"> <strong>Invoice No:</strong> {{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} </div>
-	  
+    <div class="col-sm-4 text-sm-end"> <strong>Invoice No:</strong> {{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} </div>	  
   </div>
-  <hr>
+ 
   <div class="row">
 
     
