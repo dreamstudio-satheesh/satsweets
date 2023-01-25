@@ -57,16 +57,16 @@
                                 </div>
                                 <div class="increment-decrement">
                                     <div class="input-groups">
-                                        <input type="button" value="-" wire:click="removecart({{ $cart['code']}})   class="button-minus dec button">
+                                        <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button">
                                         <input type="text" name="child"  value="{{ $cart['quantity']}}" class="quantity-field">
-                                        <input type="button" value="+" wire:click="addcart({{ $cart['code']}})  class="button-plus inc button ">
+                                        <input type="button" value="+" wire:click="addcart({{ $cart['id']}})  class="button-plus inc button ">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
-                    <li> ₹ <input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['code'] }}.price" ></li>
-                    <li><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['code']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
+                    <li> ₹ <input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['id'] }}.price" ></li>
+                    <li><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['id']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
                 </ul>
                 @endforeach
                 

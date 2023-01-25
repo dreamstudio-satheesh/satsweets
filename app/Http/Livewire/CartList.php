@@ -48,8 +48,8 @@ class CartList extends Component
     public function updated($name, $value)
     {      
         if (strpos($name, '.')) {
-            $code= explode('.',$name)[1];  
-            if ($name && is_numeric($code)) { $this->updatecart($code); }
+            $id= explode('.',$name)[1];  
+            if ($name && is_numeric($id)) { $this->updatecart($id); }
         }
 
         if (!empty($this->cartlist) && !empty($this->customer_id) && !empty($this->invoice_date)) {          
@@ -59,17 +59,18 @@ class CartList extends Component
 
     }
 
-    public function addcart($code)
+    public function addcart($id)
     {
-        $this->cartlist[$code]['quantity']++;
-        $this->updatecart($code); 
+
+        $this->cartlist[$id]['quantity']++;
+        $this->updatecart($id); 
     }
 
 
-    public function updatecart($code=null)
+    public function updatecart($id=null)
     {       
-        if ($code) {
-            $this->cartlist[$code]['total']=((int)$this->cartlist[$code]['price'])*((int)$this->cartlist[$code]['quantity']);
+        if ($id) {
+            $this->cartlist[$id]['total']=((int)$this->cartlist[$id]['price'])*((int)$this->cartlist[$id]['quantity']);
         }
         $this->total_count= count($this->cartlist);
 
@@ -78,22 +79,23 @@ class CartList extends Component
 
         foreach ($this->cartlist  as $item) {
             $totalnum +=(int) $item['total'];
-            $taxamount=((int)$taxamount+$item['gstamount']) *((int)$item['quantity']);
+            $taxamount+=$item['gstamount'] *$item['quantity'];
         }
+        
 
         $this->total= $totalnum;
         $this->taxamount= $taxamount;
         $this->sub_total= $totalnum-$taxamount;
     }
 
-    public function removecart($code)
+    public function removecart($id)
     {
-        if ($this->cartlist[$code]['quantity'] > 1) {
+        if ($this->cartlist[$id]['quantity'] > 1) {
 
-            $this->cartlist[$code]['quantity']--;           
+            $this->cartlist[$id]['quantity']--;           
         }
         
-        $this->updatecart($code);
+        $this->updatecart($id);
     }
 
     public function clear_cart()
@@ -102,9 +104,9 @@ class CartList extends Component
        $this->updatecart();
     }
 
-    public function delete_cart($code)
+    public function delete_cart($id)
     {
-       unset($this->cartlist[$code]);
+       unset($this->cartlist[$id]);
        $this->updatecart();
     }
 
@@ -123,36 +125,36 @@ class CartList extends Component
         }
     }
 
-    public function cart($code)
-    {
-       
+    public function cart($id)
+    { 
        
         $this->emit('playAudio');
 
-        if (array_key_exists("$code",$this->cartlist)) 
+        if (array_key_exists("$id",$this->cartlist)) 
         { 
-            $this->addcart($code);                   
+            $this->addcart($id);                   
            
         }else{               
             
-            $product = Product::where('code',$code)->first();        
+            $product = Product::where('id',$id)->first();        
             if ($product) {
                 $media='';
                 if (!empty($product->getMedia('products')->first())) {
                     $media=$product->getMedia('products')->first()->getUrl('thumb');
                 }
-               
-                $this->cartlist[$product->code]= array(
+                $this->cartlist[$product->id]= array(
                             'id' => $product->id,
                             'code' => $product->code, // inique row ID
                             'name' => $product->name,
                             'price' => (int)$product->price,
                             'url' => '',
-                            'gstamount' =>round($product->price-($product->price *100/(100+$product->gst)), 2),
+                            //$total  * ((100 + TAX PERCENT) / 100)
+                            'gstamount' =>round($product->price *((100+$product->gst)/100),2)-$product->price ,
                             'gst' => $product->gst,
                             'quantity' => 1, 
                             'total' => $product->price,                     
                         );
+
                 $this->updatecart();        
             }
 
