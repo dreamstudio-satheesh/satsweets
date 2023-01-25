@@ -23,6 +23,7 @@ return new class extends Migration
             $table->double('gstamount', 8, 2);            
             $table->text('description')->nullable();      
             $table->string('product_code');
+            $table->string('hsncode', 12)->default(0000);
             $table->foreignId('invoice_id')->unsigned();
             $table->foreign('product_code')->references('code')->on('products');            
             $table

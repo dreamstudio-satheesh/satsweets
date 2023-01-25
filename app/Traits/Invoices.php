@@ -28,6 +28,7 @@ trait Invoices {
             'name' => $item['name'],
             'price' => $item['price'],
             'gst' => $item['gst'],
+            'hsncode' => $item['hsncode'],
             'gstamount' => $item['gstamount'],
             'quantity' => $item['quantity'],
             'total' => $item['total'],

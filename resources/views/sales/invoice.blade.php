@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="images/favicon.png" rel="icon" />
-<title>General Invoice - Koice</title>
+<title>Invoice-{{ $invoice->invoice_number }}</title>
 
 <!-- Web Fonts
 ======================= -->
@@ -25,10 +25,10 @@
   <header>
   <div class="row align-items-center">
     <div class="col-sm-7 text-center text-sm-start mb-3 mb-sm-0">
-      <img id="logo" src="{{ asset('logo.png') }}" width="160px" height="107px" title="satsweets" alt="sat logo" />
+      <img id="logo" src="{{ asset('logo.png') }}" width="120px" height="81px" title="satsweets" alt="sat logo" />
     </div>
     <div class="col-sm-5 text-center text-sm-end">
-      <h4 class="text-7 mb-0">Invoice</h4>
+      <h4 class="text-8 mb-0">Invoice</h4>
     </div>
   </div>
   <hr>
@@ -37,8 +37,8 @@
   <!-- Main Content -->
   <main>
   <div class="row">
-    <div class="col-sm-8"><strong>Date:</strong> 05/12/2020</div>
-    <div class="col-sm-4 text-sm-end"> <strong>Invoice No:</strong> 16835</div>
+    <div class="col-sm-8"><strong>Date:</strong> {{ \Carbon\Carbon::parse($invoice->date)->format('d/m/Y')}} </div>
+    <div class="col-sm-4 text-sm-end"> <strong>Invoice No:</strong> {{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} </div>
 	  
   </div>
   <hr>
@@ -46,19 +46,19 @@
 
     <div class="col-sm-8 order-sm-0"> <strong>Pay To:</strong>
         <address>
-        Smith Rhodes<br />
-        15 Hodges Mews, High Wycombe<br />
-        HP12 3JL<br />
-        United Kingdom
+        SAT Sweets<br />
+        3/147 Karunaipalayam Pirivu, <br />
+        Covai-Tiruchy Main Road, <br />
+        Kangeyam -638701 <br /> <Span class="text-0 fw-400"> GST NO :33ATOPR7702H1ZF</Span>
+       
         </address>
       </div>
 
     <div class="col-sm-4 text-sm-end order-sm-1"> <strong>Invoiced To:</strong>
       <address>
-      Koice Inc<br />
-      2705 N. Enterprise St<br />
-      Orange, CA 92865<br />
-	  contact@koiceinc.com
+       {{ $invoice->customer->name}}<br />
+       {{ $invoice->customer->address}}<br />
+       {{ $invoice->customer->gstnumber}}
       </address>
     </div>
    
@@ -70,48 +70,37 @@
         <table class="table mb-0">
 		<thead class="card-header">
           <tr>
-            <td class="col-3"><strong>Service</strong></td>
-			<td class="col-4"><strong>Description</strong></td>
-            <td class="col-2 text-center"><strong>Rate</strong></td>
-			<td class="col-1 text-center"><strong>QTY</strong></td>
+            <td class="col-3"><strong>HSN Code</strong></td>
+			<td class="col-4"><strong>Products</strong></td>
+            <td class="col-2 text-center"><strong>QTY</strong></td>
+			<td class="col-1 text-center"><strong>Price</strong></td>
             <td class="col-2 text-end"><strong>Amount</strong></td>
           </tr>
         </thead>
           <tbody>
-            <tr>
-              <td class="col-3">Design</td>
-              <td class="col-4 text-1">Creating a website design</td>
-              <td class="col-2 text-center">$50.00</td>
-			  <td class="col-1 text-center">10</td>
-			  <td class="col-2 text-end">$500.00</td>
-            </tr>
-            <tr>
-              <td>Development</td>
-              <td class="text-1">Website Development</td>
-              <td class="text-center">$120.00</td>
-			  <td class="text-center">10</td>
-			  <td class="text-end">$1200.00</td>
-            </tr>
-			<tr>
-              <td>SEO</td>
-              <td class="text-1">Optimize the site for search engines (SEO)</td>
-              <td class="text-center">$450.00</td>
-			  <td class="text-center">1</td>
-			  <td class="text-end">$450.00</td>
-            </tr>
-          </tbody>
-		  <tfoot class="card-footer">
+            @foreach ($invoice->invoice_items as $item)
+                <tr>
+                <td class="col-3">{{ $item->hsncode }}</td>
+                <td class="col-4 text-1">{{ $item->name }}</td>
+                <td class="col-2 text-center">{{ $item->quantity }}</td>
+                <td class="col-1 text-center">₹{{ $item->price }}</td>
+                <td class="col-2 text-end">₹{{ $item->total - ($item->quantity * $item->gstamount) }}</td>
+              </tr>
+            @endforeach
+           </tbody>
+
+           <tfoot class="card-footer">
 			<tr>
               <td colspan="4" class="text-end"><strong>Sub Total:</strong></td>
-              <td class="text-end">$2150.00</td>
+              <td class="text-end">₹{{ $invoice->sub_total }}</td>
             </tr>
             <tr>
               <td colspan="4" class="text-end"><strong>Tax:</strong></td>
-              <td class="text-end">$215.00</td>
+              <td class="text-end">₹{{ $invoice->taxamount }}</td>
             </tr>
 			<tr>
               <td colspan="4" class="text-end border-bottom-0"><strong>Total:</strong></td>
-              <td class="text-end border-bottom-0">$2365.00</td>
+              <td class="text-end border-bottom-0">₹{{ $invoice->total }}</td>
             </tr>
 		  </tfoot>
         </table>

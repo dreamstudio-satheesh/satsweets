@@ -152,6 +152,7 @@ class CartList extends Component
                             //$total  * ((100 + TAX PERCENT) / 100)
                             'gstamount' =>round($product->price *((100+$product->gst)/100),2)-$product->price ,
                             'gst' => $product->gst,
+                            'hsncode' => $product->hsncode,
                             'quantity' => 1, 
                             'total' => $product->price,                     
                         );

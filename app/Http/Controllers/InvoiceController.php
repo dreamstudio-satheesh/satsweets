@@ -11,6 +11,7 @@ class InvoiceController extends Controller
 
     public function show($id)
     {
-        return view('sales.invoice');
+        $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
+        return view('sales.invoice',compact('invoice'));
     }
 }
