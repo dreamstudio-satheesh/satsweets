@@ -79,7 +79,7 @@
         </thead>
           <tbody>
             @foreach ($invoice->invoice_items as $item)
-                <tr>
+                <tr class="line-height-1">
                 <td class="col-3">{{ $item->hsncode }}</td>
                 <td class="col-4 text-1">{{ $item->name }}</td>
                 <td class="col-2 text-center">{{ $item->quantity }}</td>
