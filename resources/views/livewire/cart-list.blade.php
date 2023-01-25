@@ -58,7 +58,7 @@
                                 <div class="increment-decrement">
                                     <div class="input-groups">
                                         <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button">
-                                        <input type="text" name="child"  value="{{ $cart['quantity']}}" class="quantity-field">
+                                        <input type="text" name="child" disabled  value="{{ $cart['quantity']}}" class="quantity-field">
                                         <input type="button" value="+" wire:click="addcart({{ $cart['id']}})  class="button-plus inc button ">
                                     </div>
                                 </div>
