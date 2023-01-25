@@ -44,7 +44,16 @@
   <hr>
   <div class="row">
 
-    <div class="col-sm-8 order-sm-0"> <strong>Pay To:</strong>
+    
+    <div class="col-sm-8  order-sm-0"> <strong>Invoiced To:</strong>
+        <address>
+         {{ $invoice->customer->name}}<br />
+         {{ $invoice->customer->address}}<br />
+         {{ $invoice->customer->gstnumber}}
+        </address>
+      </div>
+
+    <div class="col-sm-4 text-sm-end order-sm-1"> <strong>Pay To:</strong>
         <address>
         SAT Sweets<br />
         3/147 Karunaipalayam Pirivu, <br />
@@ -53,21 +62,13 @@
        
         </address>
       </div>
-
-    <div class="col-sm-4 text-sm-end order-sm-1"> <strong>Invoiced To:</strong>
-      <address>
-       {{ $invoice->customer->name}}<br />
-       {{ $invoice->customer->address}}<br />
-       {{ $invoice->customer->gstnumber}}
-      </address>
-    </div>
-   
+  
   </div>
 	
   <div class="card">
     <div class="card-body p-0">
       <div class="table-responsive">
-        <table class="table mb-0">
+        <table id="items" class="table table-bordered mb-0">
 		<thead class="card-header">
           <tr>
             <td class="col-3"><strong>HSN Code</strong></td>
@@ -95,9 +96,13 @@
               <td class="text-end">₹{{ $invoice->sub_total }}</td>
             </tr>
             <tr>
-              <td colspan="4" class="text-end"><strong>Tax:</strong></td>
-              <td class="text-end">₹{{ $invoice->taxamount }}</td>
+              <td colspan="4" class="text-end"><strong>2.5% CGST:</strong></td>
+              <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
             </tr>
+            <tr>
+                <td colspan="4" class="text-end"><strong>2.5% SGST:</strong></td>
+                <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
+              </tr>
 			<tr>
               <td colspan="4" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ $invoice->total }}</td>
