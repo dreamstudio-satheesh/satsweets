@@ -54,7 +54,7 @@
          {{ $invoice->customer->name}}<br />
          {{ $invoice->customer->address}}<br />
          @if ($invoice->customer->gstnumber)
-        GST NO : {{ $invoice->customer->gstnumber}}
+         <Span class="text-0 fw-400">GST NO : {{ $invoice->customer->gstnumber}}</Span>
          @endif
          
         </address>
