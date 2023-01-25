@@ -89,7 +89,7 @@
             @endforeach
            </tbody>
 
-           <tfoot class="card-footer">
+           <tfoot class="card-footer line-height-1">
 			<tr>
               <td colspan="4" class="text-end"><strong>Sub Total:</strong></td>
               <td class="text-end">₹{{ $invoice->sub_total }}</td>
