@@ -58,11 +58,11 @@ button:active {
   outline: none;
 }
 
-#items tr,td {
+/* #items tr,td {
   border-bottom: none;
   border-top: none;
 
-}
+} */
 
 p {
   line-height: 1.5;
