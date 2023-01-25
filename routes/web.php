@@ -27,7 +27,7 @@ Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logou
 //Sales
 Route::get('saleslist', [App\Http\Controllers\CartController::class, 'saleslist'])->name('saleslist');
 Route::get('/thermal/{id}', [App\Http\Controllers\PrintController::class, 'thermal'])->name('thermal.show');
-Route::get('/invoice/{id}', [App\Http\Controllers\CartController::class, 'showinvoice'])->name('invoice.show');
+Route::get('/invoice/{id}', [App\Http\Controllers\InvoiceController::class, 'show'])->name('invoice.show');
 
    
 
@@ -90,13 +90,6 @@ Auth::routes([
   ]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/home/test', [App\Http\Controllers\HomeController::class, 'index'])->name('test');
-
-
-
-
-
-
 
 
 Route::group([
