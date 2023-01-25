@@ -27,7 +27,6 @@
     <div class="col-sm-12 text-center">
       <img id="logo" src="{{ asset('logo.png') }}" width="160px" height="107px" title="satsweets" alt="sat logo" />
       <address>
-        SAT Sweets<br />
         3/147 Karunaipalayam Pirivu,  Covai-Tiruchy Main Road, <br />
         Kangeyam -638701  <Span class="text-0 fw-400"> GST NO :33ATOPR7702H1ZF</Span>
        
