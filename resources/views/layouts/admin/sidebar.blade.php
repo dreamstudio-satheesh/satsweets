@@ -105,6 +105,15 @@
                             </li>
 
                             @endrole
+
+                            @role('user')
+                            <li class="submenu">
+                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/settings.svg') }}" alt="img"><span> Settings</span> <span class="menu-arrow"></span></a>
+                                <ul>
+                                    <li><a href="{{ url('user/line') }}">Line Settings</a></li>
+                                </ul>
+                            </li>
+                            @endrole
                         </ul>
                     </div>
                 </div>
