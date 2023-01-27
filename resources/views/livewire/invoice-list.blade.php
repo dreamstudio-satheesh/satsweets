@@ -50,7 +50,7 @@
                                                         <a href="{{url('thermal/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/eye1.svg') }}" class="me-2" alt="img">Thermal Print</a>
                                                 </li>
                                                 <li>
-                                                        <a href="{{url('editcart/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/edit.svg') }}" class="me-2" alt="img">Edit Sale</a>
+                                                        <a href="{{url('editinvoice/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/edit.svg') }}" class="me-2" alt="img">Edit Sale</a>
                                                 </li>
                                                 <li>
                                                         <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#showpayment"><img src="{{ url('/assets/img/icons/dollar-square.svg') }}" class="me-2" alt="img">Show Payments</a>
@@ -62,6 +62,7 @@
                                                         <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('/assets/img/icons/download.svg') }}" class="me-2" alt="img">Download pdf</a>
                                                 </li>	
                                                 <li>
+                                                        
                                                         <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('/assets/img/icons/delete1.svg') }}" class="me-2" alt="img">Delete Sale</a>
                                                 </li>								
                                         </ul>

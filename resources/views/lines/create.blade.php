@@ -25,8 +25,19 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 col-12">
                             <div class="form-group">
-                                <label>Region</label>
-                                <input type="text" >
+                                <label>Line</label>
+                                <select name="line" class="form-select">
+                                    <option>-- Select Line --</option>
+                                    <option value="1">A</option>
+                                    <option value="2" >B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                    <option value="5">E</option>
+                                    <option value="6 ">F</option>
+                                    <option value="7">G</option>
+                                    <option value="8">H</option>
+                                    <option value="9">I</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-lg-12">

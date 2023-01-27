@@ -113,7 +113,9 @@ Route::group([
     
      
      Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');
-     Route::get('editcart/{id}', [App\Http\Controllers\CartController::class, 'editcart'])->name('editcart');
+     Route::get('editinvoice/{id}', [App\Http\Controllers\InvoiceController::class, 'editinvoice'])->name('editinvoice');
+     Route::get('editcart/{id}', [App\Http\Controllers\InvoiceController::class, 'editcart'])->name('editcart');     
+     Route::delete('invoices/{id}', [App\Http\Controllers\InvoiceController::class, 'delete'])->name('invoices.delete');
 
     //lines
     Route::resource('vendors', App\Http\Controllers\vendorController::class);

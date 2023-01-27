@@ -14,4 +14,18 @@ class InvoiceController extends Controller
         $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
         return view('sales.invoice',compact('invoice'));
     }
+
+    public function editinvoice($id)
+    {
+        $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
+       return view('invoices.edit', compact('invoice'));
+       
+    }
+
+    public function delete($id)
+    {
+        Invoice::find($id)->delete();
+  
+        return back();
+    }
 }

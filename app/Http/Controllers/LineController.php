@@ -40,9 +40,12 @@ class LineController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'line' => 'required',
         ]);
          Line::create([
-            'name'=>$request->name, 'guard_name'=>'web'
+            'name'=>$request->name, 
+            'line'=>$request->line, 
+            'guard_name'=>'web'
         ]);
 
         return redirect()->route('lines.index')->withSuccess('Line added'); 
@@ -81,8 +84,12 @@ class LineController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:255',
+            'line' => 'required',
         ]);
-        $line->update(['name'=>$request->name]);
+        $line->update([
+        'name'=>$request->name,
+        'line'=>$request->line, 
+    ]);
         
         return redirect('lines')->withSuccess('Updated');
     }

@@ -20,10 +20,11 @@ trait Invoices {
             'sub_total' => $data['sub_total'],
             'total' => $data['total'],
         ]);
+        //dd($invoice);
 
         foreach ($data['items'] as $key => $item) {
-           Invoice_item::create([
-            'invoice_id' => $invoice->invoice_number,
+            Invoice_item::create([
+            'invoice_id' => $invoice->id,
             'product_code' => $item['code'],
             'name' => $item['name'],
             'price' => $item['price'],

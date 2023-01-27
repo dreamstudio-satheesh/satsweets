@@ -19,12 +19,7 @@ class CartController extends Controller
         
     }
 
-    public function editcart($id)
-    {
-        $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
-       return view('cart.edit', compact('invoice'));
-       
-    }
+   
 
     public function pos()
     {
