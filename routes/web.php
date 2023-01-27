@@ -28,6 +28,7 @@ Route::get('/logout',  [App\Http\Controllers\Auth\LoginController::class, 'logou
 Route::get('saleslist', [App\Http\Controllers\CartController::class, 'saleslist'])->name('saleslist');
 Route::get('/thermal/{id}', [App\Http\Controllers\PrintController::class, 'thermal'])->name('thermal.show');
 Route::get('/invoice/{id}', [App\Http\Controllers\InvoiceController::class, 'show'])->name('invoice.show');
+Route::delete('invoice/{id}', [App\Http\Controllers\InvoiceController::class, 'delete'])->name('invoice.delete');
 
    
 

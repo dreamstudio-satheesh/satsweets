@@ -62,7 +62,8 @@
 
 
 		<div class="col-lg-4 col-sm-12 ">
-			@livewire('cart-list')
+			<livewire:cart-list /> 
+			
 		</div>
 	</div>
 </div>

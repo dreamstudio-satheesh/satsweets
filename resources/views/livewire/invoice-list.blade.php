@@ -62,8 +62,12 @@
                                                         <a href="javascript:void(0);" class="dropdown-item"><img src="{{ url('/assets/img/icons/download.svg') }}" class="me-2" alt="img">Download pdf</a>
                                                 </li>	
                                                 <li>
-                                                        
-                                                        <a href="javascript:void(0);" class="dropdown-item confirm-text"><img src="{{ url('/assets/img/icons/delete1.svg') }}" class="me-2" alt="img">Delete Sale</a>
+                                                        <form method="POST" action="{{ route('invoice.delete', $invoice->id) }}">
+                                                        @csrf
+                                                        <input name="_method" type="hidden" value="DELETE">
+                                                        <button type="submit" class="dropdown-item btn-flat show_confirm"><img src="{{ url('/assets/img/icons/delete1.svg') }}" class="me-2" alt="img">Delete Sale</button>
+                                                        </form>
+                                                       
                                                 </li>								
                                         </ul>
                                 </td>

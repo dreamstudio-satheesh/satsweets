@@ -11,6 +11,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        
         $roles = Role::count();
         $users = User::count();
         return view('dashboard.index', compact('roles',  'users'));
