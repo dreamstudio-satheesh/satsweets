@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\User\StoreRequest;
 use App\Http\Requests\Admin\User\UpdateRequest;
-use App\Models\Line;
 use App\Models\Role;
 use App\Models\User;
 
@@ -30,8 +29,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        $lines = Line::all();
-        return view('admin.users.create', compact('roles','lines'));
+        return view('admin.users.create', compact('roles'));
     }
 
     /**

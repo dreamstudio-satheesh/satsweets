@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label>Line</label>
                                 <select name="line" class="form-select">
-                                    <option>-- Select Line --</option>
+                                    <option selected disabled>-- Select Line --</option>
                                     <option value="1">A</option>
                                     <option value="2" >B</option>
                                     <option value="3">C</option>

@@ -19,6 +19,7 @@
                     <label>Line - Delivery  Area</label>
 
                     <select name="line_id" id="line" " class="form-control" >
+                        <option selected disabled>-- Select Line --</option>
                         @foreach ($lines as $line)
                         <option value="{{ $line->id }}">{{ $line->name }}</option>
                         @endforeach

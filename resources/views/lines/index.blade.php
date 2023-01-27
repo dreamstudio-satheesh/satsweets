@@ -112,6 +112,7 @@
                                                 </label>
                                             </th>
                                             <th>Area Name</th>
+                                            <th>ID</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -126,6 +127,7 @@
                                                 </label>
                                             </td>
                                             <td>{{ $line->name }}</td>
+                                            <td>{{ $line->line }}</td>
                                             <td>
                                                 <div class="status-toggle d-flex justify-content-between align-items-center">
                                                     <input type="checkbox" id="user2" class="check" checked="">
