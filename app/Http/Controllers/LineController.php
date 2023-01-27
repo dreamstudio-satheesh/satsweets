@@ -57,9 +57,10 @@ class LineController extends Controller
      * @param  \App\Models\Line  $line
      * @return \Illuminate\Http\Response
      */
-    public function show(Line $line)
+    public function select()
     {
-        //
+        $lines = Line::all();
+        return view('settings.selectline', compact('lines'));
     }
 
     /**

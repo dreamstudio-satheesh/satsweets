@@ -109,7 +109,10 @@ Route::group([
 
         
     });
+
     // User routes
+    
+    Route::get('user/selectline', [App\Http\Controllers\LineController::class, 'select'])->name('selectline');
     
      
      Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');
