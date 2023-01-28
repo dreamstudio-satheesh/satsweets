@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return $user = Auth::user();
+         $user = Auth::user();
         if ($user->hasRole('user')) {
            return redirect('pos');
         }
