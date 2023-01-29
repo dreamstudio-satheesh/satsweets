@@ -45,7 +45,7 @@
 								</div>
 								<div class="productsetcontent">
 									<h5>{{$item->code}}</h5>
-									<h4>{{$item->name}}</h4>
+									<<p style="font-size: 12px;">>{{$item->name}}</p>
 									<h6>{{$item->price}}</h6>
 								</div>
 							</div>
