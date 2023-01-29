@@ -12,7 +12,7 @@
                                 @else
                                 <img  src="{{ url('') }}/assets/img/product/noimage.png" alt="product" >
                                 @endif 
-							<div> <p style="font-size: 9px;">{{$category->name}} </p> </div>
+							<div> <p style="font-size: 7px;">{{$category->name}} </p> </div>
 							
 						</div>
 						
