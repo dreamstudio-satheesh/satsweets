@@ -4680,6 +4680,7 @@ span.select2-container.select2-container--default.select2-container--open {
 }
 .page-header {
   margin-bottom: 25px;
+  background-color: #fff;
 }
 @media (max-width: 575px) {
   .page-header {
