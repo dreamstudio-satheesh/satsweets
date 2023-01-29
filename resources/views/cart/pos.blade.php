@@ -29,10 +29,10 @@
                         margin-top: 0;
                         z-index: 1501;                       
                         }
-                .page-header .row {
+               /*  .page-header .row {
                         flex-wrap: nowrap;
                 }
-
+ */
                     
                       
               </style>
