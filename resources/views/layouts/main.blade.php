@@ -18,7 +18,6 @@
 		<!-- animation CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}">
 
-        @stack('styles')
 
 		<!-- Datatable CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/dataTables.bootstrap4.min.css') }}">
@@ -29,6 +28,8 @@
 		
 		<!-- Main CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+		@stack('styles')
 
 		@livewireStyles
 		

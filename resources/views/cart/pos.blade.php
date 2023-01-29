@@ -24,6 +24,22 @@
                 .sminput.focus {
                   outline: none;!important;
                 }
+
+                .sidebar {
+                        background-color: transparent;
+                        border-right: 1px solid transparent;
+                        margin-top: 0;
+                        z-index: 1501;
+                        position: fixed;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        -webkit-transition: all 0.2s ease;
+                        -ms-transition: all 0.2s ease;
+                        transition: all 0.2s ease;
+                        border-right: 1px solid #E8EBED;
+                        width: 260px;
+                        }
               </style>
     
 @endpush
