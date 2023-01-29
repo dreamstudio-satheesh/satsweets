@@ -26,30 +26,15 @@
                 }
 
                 .sidebar {
-                        background-color: transparent;
-                        border-right: 1px solid transparent;
                         margin-top: 0;
-                        z-index: 1501;
-                        position: fixed;
-                        top: 0;
-                        bottom: 0;
-                        left: 0;
-                        -webkit-transition: all 0.2s ease;
-                        -ms-transition: all 0.2s ease;
-                        transition: all 0.2s ease;
-                        border-right: 1px solid #E8EBED;
-                        width: 260px;
+                        z-index: 1501;                       
                         }
+                . page-header .row {
+                        flex-wrap: nowrap;
+                }
 
-                        .product-details {
-                        background: #fff;
-                        border-radius: 5px;
-                        padding: 10px;
-                        box-shadow: 0px 4px 4px 0px #ededed40;
-                        border: 1px solid #F8F8F8 !important;
-                        height: 85px;
-                        flex-direction: column;
-                        }
+                    
+                      
               </style>
     
 @endpush
