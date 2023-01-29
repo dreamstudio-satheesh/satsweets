@@ -40,6 +40,16 @@
                         border-right: 1px solid #E8EBED;
                         width: 260px;
                         }
+
+                        .product-details {
+                        background: #fff;
+                        border-radius: 5px;
+                        padding: 10px;
+                        box-shadow: 0px 4px 4px 0px #ededed40;
+                        border: 1px solid #F8F8F8 !important;
+                        height: 85px;
+                        flex-direction: column;
+                        }
               </style>
     
 @endpush
