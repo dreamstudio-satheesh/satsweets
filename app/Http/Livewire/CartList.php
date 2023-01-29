@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Line;
 use App\Models\Product;
 use Livewire\Component;
 use App\Models\Customer;
@@ -33,11 +34,12 @@ class CartList extends Component
 
 
     public function mount()
-    {
-        
-        
+    {        
         if(auth()->user()->hasRole('user') && auth()->user()->line_id){
-            $this->customers = Customer::where('line_id',auth()->user()->line_id)->select('id','name')->get();
+
+            $lines=Line::where('line', auth()->user()->line_id )->select('id')->get()->toArray();            
+            $this->customers = Customer::whereIn('line_id',$lines)->select('id','name')->get();
+            
         }else{
             $this->customers = Customer::select('id','name')->get();
         }

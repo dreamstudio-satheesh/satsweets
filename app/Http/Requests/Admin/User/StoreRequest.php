@@ -26,9 +26,9 @@ class StoreRequest extends FormRequest
         return [
             'name'=>'required',
             'email'=>['email','required','unique:users,email'],
-            'password'=>['required','min:8','confirmed'],
-            'roles'=>'required',
+            'password'=>['required','min:8','confirmed'],            
             'line_id'=>'nullable',
+            'roles'=>'required',
         ];
     }
 }
