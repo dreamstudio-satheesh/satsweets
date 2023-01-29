@@ -4685,6 +4685,7 @@ span.select2-container.select2-container--default.select2-container--open {
 @media (max-width: 575px) {
   .page-header {
     margin-bottom: 20px;
+    background-color: #fff;
     flex-direction: column;
   }
   .page-header .page-title {
