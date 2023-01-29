@@ -5,7 +5,7 @@
 				<div class="row">
                     @foreach ($categories as $category)
 
-                    <div class="col-lg-12" style="width: 113.683px; margin-right: 10px;" wire:click="category({{ $category->id }})">						
+                    <div class="col-lg-10" style="width: 108px; margin-right: 5px;" wire:click="category({{ $category->id }})">						
 						<div class="product-details ">
                                 @if ( !empty( $category->getFirstMediaUrl('categories') ) )                                          
                                 <img src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
