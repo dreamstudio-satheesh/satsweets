@@ -59,7 +59,8 @@ class LineController extends Controller
      */
     public function select()
     {
-        $lines = Line::all();
+        $line=auth()->user()->line_id;
+        $lines = Line::where('line', $line)->get();
         return view('settings.selectline', compact('lines'));
     }
 
