@@ -5,15 +5,15 @@
 				<div class="row">
                     @foreach ($categories as $category)
 
-                    <div class="col-lg-12" style="width: 98px; margin-right: 4px;" wire:click="category({{ $category->id }})">						
+                    <div class="col-lg-1 col-md-2 col-sm-2" style="width:90px; margin-right: 4px;" wire:click="category({{ $category->id }})">						
 						<div class="product-details ">
                                 @if ( !empty( $category->getFirstMediaUrl('categories') ) )                                          
-                                <img src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
+                                <img  src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
                                 @else
-                                <img src="{{ url('') }}/assets/img/product/noimage.png" alt="product" >
+                                <img  src="{{ url('') }}/assets/img/product/noimage.png" alt="product" >
                                 @endif 
+							<div class="d-none d-sm-none d-md-block"> <p style="font-size: 10px;">{{$category->name}} </p> </div>
 							
-							<h6>{{$category->name}} </h6>
 						</div>
 						
 					</div>	                        
