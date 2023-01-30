@@ -52,7 +52,8 @@
 										<label>Category</label>
 										<select class="select" name="category_id">
                                             @foreach ($categories as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+
+                                            <option value="{{ $category->id }}" {{  ($category->id == $product->category_id) ? "selected":"" }}>{{ $category->name }}</option>
                                             @endforeach
 										</select>
 									</div>
