@@ -85,7 +85,7 @@
                 <td class="col-3">{{ $item->hsncode }}</td>
                 <td class="col-6 text-1">{{ $item->name }}</td>
                 <td class="col-1 text-center">{{ $item->quantity }}</td>
-                <td class="col-1 text-end">₹{{ $item->total - ( $item->gstamount) }}</td>
+                <td class="col-1 text-end">₹{{ $item->price - $item->gstamount }}</td>
                 <td class="col-2 text-center">₹{{ $item->quantity * $item->price }}</td>
               </tr>
             @endforeach
