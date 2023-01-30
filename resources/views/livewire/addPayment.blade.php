@@ -42,8 +42,8 @@
 									<label>Payment type</label>
 									<select class="form-control" >
 										<option>Cash</option>
-										<option>Online</option>
-										<option>Inprogress</option>
+										<option>Bank Transfer</option>
+										<option>Other</option>
 									</select>
 								</div>
 							</div>
