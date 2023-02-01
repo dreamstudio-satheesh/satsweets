@@ -29,10 +29,14 @@
                         margin-top: 0;
                         z-index: 1501;                       
                         }
-               /*  .page-header .row {
-                        flex-wrap: nowrap;
-                }
- */
+
+                        @media(min-width:576px){
+
+                                .page-header .row {
+                                        flex-wrap: inherit;
+                                        }
+                        }
+
                     
                       
               </style>
