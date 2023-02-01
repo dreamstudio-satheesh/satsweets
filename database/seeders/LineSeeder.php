@@ -15,6 +15,7 @@ class LineSeeder extends Seeder
      */
     public function run()
     {
+      
       $lines = array(
         array('id' => '1','name' => 'கொடுவாய்','line' => '1','created_at' => '2023-01-27 08:46:37','updated_at' => '2023-01-27 08:46:37'),
         array('id' => '2','name' => 'பூந்துறை','line' => '1','created_at' => '2023-01-27 08:47:09','updated_at' => '2023-01-27 08:47:09'),
