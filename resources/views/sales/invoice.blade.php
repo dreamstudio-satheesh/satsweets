@@ -97,11 +97,11 @@
               <td class="text-end">₹{{ $invoice->sub_total }}</td>
             </tr>
             <tr>
-              <td colspan="4" class="text-end"><strong>2.5% CGST:</strong></td>
+              <td colspan="4" class="text-end"><strong>6% CGST:</strong></td>
               <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
             </tr>
             <tr>
-                <td colspan="4" class="text-end"><strong>2.5% SGST:</strong></td>
+                <td colspan="4" class="text-end"><strong>6% SGST:</strong></td>
                 <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
               </tr>
 		

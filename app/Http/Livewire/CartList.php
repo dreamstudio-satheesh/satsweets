@@ -38,10 +38,10 @@ class CartList extends Component
         if(auth()->user()->hasRole('user') && auth()->user()->line_id){
 
             $lines=Line::where('line', auth()->user()->line_id )->select('id')->get()->toArray();            
-            $this->customers = Customer::whereIn('line_id',$lines)->select('id','name')->get();
+            $this->customers = Customer::whereIn('line_id',$lines)->get();
             
         }else{
-            $this->customers = Customer::select('id','name')->get();
+            $this->customers = Customer::all();
         }
 
         

@@ -24,6 +24,8 @@
 
         <!-- Mask JS -->
 		<script src="assets/plugins/toastr/toastr.min.js"></script>
+
+        
      
 
         @if(Session::has('success'))
@@ -91,7 +93,7 @@
                                     <div class="form-group">
                                         <select class="select">
                                             <option>Choose Category</option>
-                                            <option>Computers</option>
+                                            
                                         </select>
                                     </div>
                                 </div>

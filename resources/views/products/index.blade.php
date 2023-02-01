@@ -22,6 +22,15 @@
         <!-- Sweetalert 2 -->
         <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+             $("#selectbox").change(function () {
+                var productid=$(this).val();
+                location.href = "{{ url('products/')}}/"+$(this).val();
+             })
+         });
+         </script>
     
 @endpush
 
@@ -76,9 +85,12 @@
                             <div class="row">
                                 <div class="col-lg-2 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <select class="select">
+                                        <select class="select"  id="selectbox">
                                             <option>Choose Product</option>
-                                            <option>Computers</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category->id}}" selected>{{ $category->name}}</option>
+                                            @endforeach
+                                            
                                         </select>
                                     </div>
                                 </div>
@@ -121,7 +133,8 @@
                                         <a href="javascript:void(0);" class="product-img">
                                             
                                             @if ( !empty( $product->getFirstMediaUrl('products') ) )                                          
-                                            <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">                                        
+                                           {{--  <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">  --}}    
+                                           <img src="{{ url('') }}/assets/img/product/noimage.png">                                   
                                             @else
                                             <img src="{{ url('') }}/assets/img/product/noimage.png">
                                             @endif 

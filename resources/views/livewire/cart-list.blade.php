@@ -9,7 +9,7 @@
                                 <select wire:model="customer_id" class="form-select form-select-sm" required>
                                     <option value="" selected disabled>Walk-in Customer</option>
                                     @foreach ($customers as $customer)
-                                    <option value="{{ $customer->id }}">{{ $customer->name }}</option>                                    
+                                    <option value="{{ $customer->id }}">{{ $customer->name }} - {{ Str::limit( $customer->address, 10) }}</option>                                    
                                     @endforeach
                                     
                                 </select>

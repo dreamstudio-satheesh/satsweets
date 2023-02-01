@@ -17,8 +17,16 @@ class ProductController extends Controller
     {
         
         $products = Product::all();
+        $categories = Category::all();
+        return view('products.index', compact('products','categories'));
+    }
 
-        return view('products.index', compact('products'));
+
+    public function show($id)
+    {
+        $products = Product::where('category_id',$id)->get();
+        $categories = Category::all();
+        return view('products.index', compact('products','categories'));
     }
 
 
@@ -75,16 +83,7 @@ class ProductController extends Controller
         return redirect()->route('products.index')->withSuccess('product added');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
