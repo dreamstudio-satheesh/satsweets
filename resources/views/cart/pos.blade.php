@@ -36,6 +36,14 @@
                                 margin-bottom: 5px;
                         }
 
+                        .productimg .productcontet h4 {
+                                        font-size: 9px;
+                                        color: #000;
+                                        font-weight: 600;
+                                        margin-bottom: 5px;
+                                        width: 100px;
+                                        }
+
                         .row {                       
                                 font-size: 8px;
                         }
