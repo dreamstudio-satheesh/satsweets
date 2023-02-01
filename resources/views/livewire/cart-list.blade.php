@@ -37,13 +37,13 @@
                 <ul class="product-lists">
                     <li>
                         <div class="productimg">
-                            <div class="productimgs">                                
+                          {{--   <div class="productimgs">                                
                             @if ($cart['url'])  
                             <img src="{{ $cart['url'] }}" >                                 
                             @else
                             <img src="assets/img/product/product29.jpg"  alt="img">
                             @endif
-                            </div>
+                            </div> --}}
                             <div class="productcontet">
                                 <h4>{{ $cart['name']}}
                                 <a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
