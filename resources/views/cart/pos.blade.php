@@ -26,17 +26,43 @@
                 }
 
                 .sidebar {
-                        margin-top: 0;
-                        z-index: 1501;                       
+                margin-top: 0;
+                z-index: 1501;                       
+                }
+
+               @media (max-width:768px){
+
+                        .page-header {
+                                margin-bottom: 5px;
                         }
 
-                        @media(min-width:576px){
-
-                                .page-header .row {
-                                        flex-wrap: inherit;
-                                        }
+                        .row {                       
+                                font-size: 8px;
                         }
 
+                        .page-header .row {
+                                flex-wrap: inherit;
+                        }
+
+                        .page-header .row .col-md-2 {
+                                width:75px;
+                                margin-right:1px;
+                                 }
+                }
+
+               
+               
+                  
+                @media (min-width:992px) {
+                                .page-header .row .col-md-2 {
+                                width:105px;
+                                margin-right:2px;
+                                 }
+
+                                
+                         }
+
+                        
                     
                       
               </style>
