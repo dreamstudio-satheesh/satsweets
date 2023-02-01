@@ -1,7 +1,7 @@
 <div>
     <div class="row">
 		<div class="col-lg-8 col-sm-6 tabs_wrapper" >
-			<div class="page-header sticky-top">
+			<div class="page-header">
 				<div class="row">
                     @foreach ($categories as $category)
 
