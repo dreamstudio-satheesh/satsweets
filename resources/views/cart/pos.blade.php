@@ -40,12 +40,8 @@
                                 font-size: 8px;
                         }
 
-                        .page-header .row {
-                                flex-wrap: inherit;
-                        }
-
                         .page-header .row .col-md-2 {
-                                width:75px;
+                                width:85px;
                                 margin-right:1px;
                                  }
                 }
