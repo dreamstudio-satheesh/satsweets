@@ -41,7 +41,7 @@
                 }
 
                 .tabs_container {
-                        min-height: 1000px;
+                        min-height: 1500px;
                         
                         }
                 .header {
