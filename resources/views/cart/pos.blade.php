@@ -34,6 +34,9 @@
                         min-height: 1000px;
                         
                         }
+                .header {
+                        position: absolute;
+                }
 
                @media (max-width:768px){
 
