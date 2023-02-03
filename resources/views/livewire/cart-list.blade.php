@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="col"> ₹ <input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['id'] }}.price" ></div>
-                        <div class="col"><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['id']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></div>
+                        <div class="col"><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['id']}})"><img height="12px" src="assets/img/icons/delete-2.svg" alt="img"></a></div>
                       </div>
                 </div>
                 
