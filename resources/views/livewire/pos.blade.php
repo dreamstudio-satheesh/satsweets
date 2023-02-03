@@ -1,11 +1,11 @@
 <div>
     <div class="row">
-		<div class="col-lg-8 col-sm-7 tabs_wrapper " >
+		<div class="col-lg-8 col-sm-8 tabs_wrapper " >
 			<div class="page-header">
 				<div class="row">
                     @foreach ($categories as $category)
 
-                    <div class="col-lg-1 col-md-2 col-sm-2" wire:click="category({{ $category->id }})">						
+                    <div class="col-lg-1 col-md-2 col-sm-3" wire:click="category({{ $category->id }})">						
 						<div class="product-details">
                                 @if ( !empty( $category->getFirstMediaUrl('categories') ) )                                          
                                 <img  src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
