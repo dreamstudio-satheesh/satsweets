@@ -32,7 +32,7 @@
                 <h4>Total items : {{ $total_count }}</h4>
                 <a href="javascript: void(0)" wire:click="clear_cart()">Clear all</a>
             </div>
-            <div class="product-table">
+            <div class="vertical-scroll scroll-demo">
                 @foreach ($cartlist as $cart)
                 <div class="cart-list">
                     <div class="row productimg">
