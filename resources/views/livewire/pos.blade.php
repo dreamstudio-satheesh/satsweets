@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-		<div class="col-lg-8 col-sm-8 tabs_wrapper sticky-top" >
+		<div class="col-lg-8 col-sm-8 tabs_wrapper" >
 			<div class="page-header">
 				<div class="row">
                     @foreach ($categories as $category)
@@ -25,7 +25,7 @@
 			
 					
 
-			<div class="tabs_container vertical-scroll scroll-demo" >
+			<div class="tabs_container  sticky-top vertical-scroll scroll-demo" >
 					<div class="row ">
                         @foreach ($products as $item)
 
