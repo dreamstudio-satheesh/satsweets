@@ -30,6 +30,11 @@
                 z-index: 1501;                       
                 }
 
+                .tabs_container {
+                        min-height: 700px;
+                        
+                        }
+
                @media (max-width:768px){
 
                         .page-header {
