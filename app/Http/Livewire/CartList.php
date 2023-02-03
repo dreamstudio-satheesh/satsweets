@@ -145,7 +145,7 @@ class CartList extends Component
                 if (!empty($product->getMedia('products')->first())) {
                     $media=$product->getMedia('products')->first()->getUrl('thumb');
                 }
-                $this->cartlist[$product->id]=concat( array(
+                $this->cartlist[$product->id]= array(
                             'id' => $product->id,
                             'code' => $product->code, // inique row ID
                             'name' => $product->name,
@@ -157,7 +157,7 @@ class CartList extends Component
                             'hsncode' => $product->hsncode,
                             'quantity' => 1, 
                             'total' => $product->price,                     
-                        ));
+                        );
 
                 $this->updatecart();        
             }
