@@ -25,7 +25,8 @@
 			
 					
 
-			<div class="tabs_container   vertical-scroll scroll-demo" >
+			<div class="tabs_container visible-scroll scroll-demo" >
+				<div class="horz-scroll-content">
 					<div class="row ">
                         @foreach ($products as $item)
 
@@ -55,7 +56,7 @@
 						
 					
 				</div>
-				
+				</div>
 			</div>
 		</div>
 
