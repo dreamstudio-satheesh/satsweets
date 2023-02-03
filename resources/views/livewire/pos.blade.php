@@ -25,12 +25,11 @@
 			
 					
 
-			<div class="tabs_container visible-scroll scroll-demo" >
-				<div class="horz-scroll-content">
+			<div class="tabs_container   vertical-scroll scroll-demo" >
 					<div class="row ">
                         @foreach ($products as $item)
 
-                        <div class="col-lg-3 col-sm-3 col-xs-3 " wire:click="$emit('cartAdded',{{ $item->id }})">
+                        <div class="col-lg-2 col-sm-3 col-xs-4 d-flex " wire:click="$emit('cartAdded',{{ $item->id }})">
 							<div class="productset flex-fill">
 								<div class="productsetimg" >
 									
@@ -56,7 +55,7 @@
 						
 					
 				</div>
-				</div>
+				
 			</div>
 		</div>
 
