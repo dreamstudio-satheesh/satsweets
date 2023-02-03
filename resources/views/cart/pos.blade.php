@@ -54,10 +54,6 @@
                                 margin-bottom: 5px;
                         }
 
-                        .page-header .row {
-                                flex-wrap: inherit;
-                        }
-
                         .productimg .productcontet h4 {
                                         font-size: 9px;
                                         color: #000;
@@ -74,7 +70,7 @@
                                 width:65px;
                                 margin-right:2px;
                                
-                                 }
+                        }
                 }
 
                
@@ -85,8 +81,7 @@
                                 width:105px;
                                 margin-right:2px;
                                  }
-
-                                
+      
                          }
 
                         
