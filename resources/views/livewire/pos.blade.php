@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-		<div class="col-lg-4 col-sm-4  vertical-scroll scroll-demo">
+		<div class="col-lg-4 col-sm-4  ">
 			<livewire:cart-list /> 
 			
 		</div>
