@@ -63,7 +63,7 @@
                                         color: #000;
                                         font-weight: 600;
                                         margin-bottom: 5px;
-                                        width: 100px;
+                                        width: 90px;
                                         }
 
                         .row {                       
