@@ -71,8 +71,8 @@
                         }
 
                         .page-header .row .col-md-2 {
-                                width:95px;
-                                margin-right:1px;
+                                width:65px;
+                                margin-right:2px;
                                
                                  }
                 }
