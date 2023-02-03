@@ -8,9 +8,9 @@
                     <div class="col-lg-1 col-md-2 col-sm-1" wire:click="category({{ $category->id }})">						
 						<div class="product-details">
                                 @if ( !empty( $category->getFirstMediaUrl('categories') ) )                                          
-                                <img  width="50px" src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
+                                <img  width="30px" src="{{ $category->getFirstMediaUrl('categories', 'thumb') }}">                                        
                                 @else
-                                <img width="50px"  src="{{ url('') }}/assets/img/product/noimage.png" alt="product" >
+                                <img width="30px"  src="{{ url('') }}/assets/img/product/noimage.png" alt="product" >
                                 @endif 
 							<div>{{$category->name}}</div>
 							
