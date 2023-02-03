@@ -6411,10 +6411,9 @@ span.select2-container.select2-container--default.select2-container--open {
 .product-details {
   font-size: 8px;
   border-radius: 5px;
-  padding: 10px;
+  padding: 1px;
   box-shadow: 0px 4px 4px 0px #EDEDED40;
   border: 1px solid #F8F8F8 !important;
-  height: 105px;
   flex-direction: column;
 }
 .product-details:hover {

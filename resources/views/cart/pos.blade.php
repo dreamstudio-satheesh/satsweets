@@ -22,7 +22,7 @@
                     height: 24px; /*new width*/
                 }         
                 .sminput.focus {
-                  outline: none;!important;
+                  outline: none
                 }
 
                 .sidebar {
@@ -54,6 +54,10 @@
                                 margin-bottom: 5px;
                         }
 
+                        .page-header .row {
+                                flex-wrap: nowrap;
+                        }
+
                         .productimg .productcontet h4 {
                                         font-size: 9px;
                                         color: #000;
@@ -69,6 +73,7 @@
                         .page-header .row .col-md-2 {
                                 width:95px;
                                 margin-right:1px;
+                               
                                  }
                 }
 
