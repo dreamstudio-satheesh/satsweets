@@ -49,7 +49,7 @@
                         }
 
                         .page-header .row .col-md-2 {
-                                width:85px;
+                                width:95px;
                                 margin-right:1px;
                                  }
                 }
