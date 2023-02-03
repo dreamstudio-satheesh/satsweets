@@ -55,7 +55,7 @@
                         }
 
                         .page-header .row {
-                                flex-wrap: nowrap;
+                                flex-wrap: inherit;
                         }
 
                         .productimg .productcontet h4 {
