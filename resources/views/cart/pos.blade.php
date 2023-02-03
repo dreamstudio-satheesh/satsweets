@@ -29,6 +29,16 @@
                 margin-top: 0;
                 z-index: 1501;                       
                 }
+                .productimg{
+                        padding-bottom: 10px;
+                }
+
+                .cart-list {
+                border: 1px solid #FAFBFE;
+                 box-shadow: 0px 4px 4px 0px #e3dfdf40; 
+                margin: 0 0 5px;
+                padding: 5px;
+                }
 
                 .tabs_container {
                         min-height: 1000px;

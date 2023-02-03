@@ -34,36 +34,32 @@
             </div>
             <div class="product-table">
                 @foreach ($cartlist as $cart)
-                <ul class="product-lists">
-                    <li>
-                        <div class="productimg">
-                          {{--   <div class="productimgs">                                
-                            @if ($cart['url'])  
-                            <img src="{{ $cart['url'] }}" >                                 
-                            @else
-                            <img src="assets/img/product/product29.jpg"  alt="img">
-                            @endif
-                            </div> --}}
-                            <div class="productcontet">
-                                <h4>{{ $cart['name']}}
-                                <a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
-                                </h4>
-                                {{-- <div class="productlinkset">
-                                    <h5>{{ $cart['code']}}</h5>
-                                </div> --}}
-                                <div class="increment-decrement">
-                                    <div class="input-groups">
-                                        <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button">
-                                        <input type="text" name="child" disabled  value="{{ $cart['quantity']}}" class="quantity-field">
-                                        <input type="button" value="+" wire:click="addcart({{ $cart['id']}})  class="button-plus inc button ">
-                                    </div>
+                <div class="cart-list">
+                    <div class="row productimg">
+                        <div class="col-8">
+                            <strong><span style="font-size: 12px;">{{ $cart['name']}}</span></strong>
+                        </div>
+                        <div class="col-4 productlinkset"><h5></span>{{ $cart['code']}}</h5></div>                  
+                      </div>
+
+                      <div class="row">                    
+                        <div class="col">
+                            <div class="increment-decrement">
+                                <div class="input-groups">
+                                    <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button">
+                                    <input type="text" name="child" disabled  value="{{ $cart['quantity']}}" class="quantity-field">
+                                    <input type="button" value="+" wire:click="addcart({{ $cart['id']}})  class="button-plus inc button ">
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li> ₹ <input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['id'] }}.price" ></li>
-                    <li><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['id']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></li>
-                </ul>
+                        <div class="col"> ₹ <input class="sminput"  type="number" wire:model.debounce="cartlist.{{ $cart['id'] }}.price" ></div>
+                        <div class="col"><a class="confirm-text" href="javascript:void(0);" wire:click="delete_cart({{ $cart['id']}})"><img src="assets/img/icons/delete-2.svg" alt="img"></a></div>
+                      </div>
+                </div>
+                
+                  
+
+                
                 @endforeach
                 
             </div>
