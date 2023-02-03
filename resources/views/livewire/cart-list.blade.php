@@ -48,9 +48,9 @@
                                 <h4>{{ $cart['name']}}
                                 <a href="javascript:void(0);" class="ms-2" data-bs-toggle="modal" data-bs-target="#edit"><img src="assets/img/icons/edit-5.svg" alt="img"></a>
                                 </h4>
-                                <div class="productlinkset">
+                                {{-- <div class="productlinkset">
                                     <h5>{{ $cart['code']}}</h5>
-                                </div>
+                                </div> --}}
                                 <div class="increment-decrement">
                                     <div class="input-groups">
                                         <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button">
