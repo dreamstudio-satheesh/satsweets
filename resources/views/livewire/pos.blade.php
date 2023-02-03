@@ -61,7 +61,7 @@
 
 
 
-		<div class="col-lg-4 col-sm-4">
+		<div class="col-lg-4 col-sm-4 sticky-top">
 			<livewire:cart-list /> 
 			
 		</div>
