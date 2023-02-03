@@ -1,6 +1,6 @@
 <div>
     <div class="row">
-		<div class="col-lg-8 col-sm-8 tabs_wrapper" >
+		<div class="col-lg-8 col-sm-8 tabs_wrapper vertical-scroll scroll-demo" >
 			<div class="page-header">
 				<div class="row">
                     @foreach ($categories as $category)

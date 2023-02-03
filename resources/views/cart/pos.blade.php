@@ -2,7 +2,7 @@
 
 @push('styles')
 
-     
+        <link rel="stylesheet" href="assets/plugins/scrollbar/scroll.min.css">
 
         <!-- Select2 CSS -->
         <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
@@ -78,6 +78,11 @@
         <!-- Select2 JS -->
         <script src="assets/plugins/select2/js/select2.min.js"></script>
 
+
+        <!-- Plyr JS -->
+	<script src="assets/plugins/scrollbar/scrollbar.min.js"></script>
+	<script src="assets/plugins/scrollbar/custom-scroll.js"></script>
+        
       
         <!-- Datetimepicker JS -->
         <script src="assets/js/moment.min.js"></script>
