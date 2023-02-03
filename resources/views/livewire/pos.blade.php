@@ -25,7 +25,7 @@
 			
 					
 
-			<div class=" container vertical-scroll scroll-demo" >
+			<div class="tabs_container   vertical-scroll scroll-demo" >
 					<div class="row ">
                         @foreach ($products as $item)
 
