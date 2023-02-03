@@ -1,10 +1,6 @@
 <div>
     <div class="row">
-		<div class="col-lg-4 col-sm-4  ">
-			<livewire:cart-list /> 
-			
-		</div>
-		<div class="col-lg-8 col-sm-8 tabs_wrapper" >
+		<div class="col-lg-8 col-sm-8 tabs_wrapper vertical-scroll scroll-demo" >
 			<div class="page-header">
 				<div class="row">
                     @foreach ($categories as $category)
@@ -27,6 +23,8 @@
 				
 			</div>
 			
+					
+
 			<div class="tabs_container" >
 					<div class="row ">
                         @foreach ($products as $item)
@@ -62,5 +60,10 @@
 		</div>
 
 
+
+		<div class="col-lg-4 col-sm-4">
+			<livewire:cart-list /> 
+			
+		</div>
 	</div>
 </div>
