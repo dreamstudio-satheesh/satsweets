@@ -10,6 +10,8 @@
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
 
+        <link rel="stylesheet" href="assets/plugins/scrollbar/scroll.min.css">
+
         <style>
            
                 .sminput {
@@ -44,6 +46,9 @@
                         min-height: 1200px;
                         
                         }
+                       
+              
+                
                 .header {
                         position: absolute;
                 }
