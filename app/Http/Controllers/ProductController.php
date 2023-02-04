@@ -76,6 +76,10 @@ class ProductController extends Controller
 
         if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
 
+            if (isset($mediaItems[0])) {
+                $mediaItems[0]->delete();
+            }    
+
             $product->addMediaFromRequest('photo')->toMediaCollection('products');               
         }     
 
