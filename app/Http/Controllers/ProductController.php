@@ -117,7 +117,8 @@ class ProductController extends Controller
             'gst' => 'required',
             'stocks' => 'required',
             'category_id' => 'required',
-        ]);
+        ]);  
+
         $product->update([
             'name'=>$request->name,
             'code'=>$request->code,
@@ -127,19 +128,14 @@ class ProductController extends Controller
             'stocks'=>$request->stocks,
             'category_id'=>$request->category_id,
             'guard_name'=>'web'
-        ]);
-
-       
+        ]);            
 
         if ($request->hasFile('photo') && $request->file('photo')->isValid()) {
 
-            $mediaItems = $product->getMedia();
-            if (isset($mediaItems[0])) {
-                $mediaItems[0]->delete();
-            }          
-
-            $product->addMediaFromRequest('photo')->toMediaCollection('products');               
-        }     
+            $product->clearMediaCollection('products'); 
+            $product->addMediaFromRequest('photo')->toMediaCollection('products');                 
+        }               
+          
         return redirect('products')->withSuccess('Updated');
     }
 
