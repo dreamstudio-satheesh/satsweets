@@ -133,8 +133,8 @@
                                         <a href="javascript:void(0);" class="product-img">
                                             
                                             @if ( !empty( $product->getFirstMediaUrl('products') ) )                                          
-                                           {{--  <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}">  --}}    
-                                           <img src="{{ url('') }}/assets/img/product/noimage.png">                                   
+                                             <img src="{{ $product->getFirstMediaUrl('products', 'thumb') }}"> 
+                                                                             
                                             @else
                                             <img src="{{ url('') }}/assets/img/product/noimage.png">
                                             @endif 
