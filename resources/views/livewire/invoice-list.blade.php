@@ -37,7 +37,7 @@
                                 <td><span class="badges {{ ($invoice->status == "Unpaid" )?'bg-lightred': 'bg-lightgreen' }}">{{ $invoice->status }}</span></td>
                                 <td>{{ $invoice->total }}</td>
                                 <td>{{ $invoice->paid_amount }}</td>
-                                <td>Admin</td>
+                                <td>{{ $invoice->user->name}}</td>
                                 <td class="text-center">
                                         <a class="action-set" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="true">
                                                 <i class="fa fa-ellipsis-v" aria-hidden="true"></i>

@@ -4,6 +4,7 @@ namespace App\Traits;
 
 use App\Models\Invoice;
 use App\Models\Invoice_item;
+use Illuminate\Support\Facades\Auth;
 
 trait Invoices {
 
@@ -19,6 +20,7 @@ trait Invoices {
             'taxamount' => $data['taxamount'],
             'sub_total' => $data['sub_total'],
             'total' => $data['total'],
+            'created_by' => Auth::user()->id
         ]);
         //dd($invoice);
 

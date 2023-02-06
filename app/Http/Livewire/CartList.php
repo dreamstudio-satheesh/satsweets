@@ -124,6 +124,7 @@ class CartList extends Component
                 'total' => $this->total,
                 'sub_total' => $this->sub_total,
                 'taxamount' => $this->taxamount,
+                
             ]);
         }
     }

@@ -17,7 +17,7 @@ class InvoiceList extends Component
 
     public function mount()
     {
-        $this->invoices = Invoice::orderBy('id')->get();
+        $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
     }
     
     public function createpayment($id)
