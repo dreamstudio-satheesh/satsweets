@@ -14,7 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::table('invoices', function (Blueprint $table) {
-            $table->foreignId('created_by')->constrained();          
+            $table->unsignedBigInteger('created_by');
+ 
+            $table->foreign('created_by')->references('id')->on('users');  
         });
     }
 
