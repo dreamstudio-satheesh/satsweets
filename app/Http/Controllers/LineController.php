@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Line;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class LineController extends Controller
@@ -28,6 +29,17 @@ class LineController extends Controller
     public function create()
     {
         return view('lines.create');
+    }
+
+    public function submit(Request $request)
+    {
+        
+        $user =Auth::user();
+        $user->user_line_id = $request['line_id'];
+        $user->save();
+
+        return redirect('pos')->withSuccess('Updated');
+
     }
 
     /**

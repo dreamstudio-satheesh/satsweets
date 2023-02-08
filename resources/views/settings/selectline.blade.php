@@ -34,12 +34,13 @@
         <div class="card">
                 <div class="card-body">
                         <div class="row">
-                             
+                                <form action="{{ route('user.selectline') }}" method="post">
+                                        @csrf
                                 <div class="col-lg-4 col-sm-6 col-12">
                                         <div class="form-group">
                                                 <label>Select Line <span class="manitory">*</span></label>
                                                 <select name="line_id" id="line" " class="form-control" >
-                                                        <option selected disabled>-- Select Line --</option>
+                                                        <option selected value="">-- Select Line --</option>
                                                         @foreach ($lines as $line)
                                                         <option value="{{ $line->id }}">{{ $line->name }}</option>
                                                         @endforeach
@@ -55,10 +56,11 @@
                                 
                                 <div class="row">
                                         <div class="col-lg-12">
-                                                <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                                                <a href="javascript:void(0);" class="btn btn-cancel">Cancel</a>
+                                                <input type="submit" class="btn btn-submit me-2" value="Submit">
+                                                <a  onclick="history.back()" class="btn btn-cancel">Cancel</a>
                                         </div>
                                 </div>
+                                </form>
                         </div>
                 </div>
         </div>

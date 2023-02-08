@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 128)->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->smallInteger('line_id')->nullable();
+            $table->smallInteger('user_line_id')->nullable();
             $table->string('photo')->default('images/default.png');
             $table->string('password');
             $table->rememberToken();

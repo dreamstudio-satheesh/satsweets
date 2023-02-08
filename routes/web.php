@@ -114,6 +114,7 @@ Route::group([
     // User routes
     
     Route::get('user/selectline', [App\Http\Controllers\LineController::class, 'select'])->name('selectline');
+    Route::post('user/selectline', [App\Http\Controllers\LineController::class, 'submit'])->name('user.selectline');
     
      
      Route::get('pos', [App\Http\Controllers\CartController::class, 'pos'])->name('pos');

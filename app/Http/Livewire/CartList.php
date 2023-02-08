@@ -35,7 +35,11 @@ class CartList extends Component
 
     public function mount()
     {        
-        if(auth()->user()->hasRole('user') && auth()->user()->line_id){
+        if(auth()->user()->hasRole('user') && auth()->user()->user_line_id){
+                      
+            $this->customers = Customer::where('line_id', auth()->user()->user_line_id)->get();
+            
+        }elseif(auth()->user()->hasRole('user') && auth()->user()->line_id){
 
             $lines=Line::where('line', auth()->user()->line_id )->select('id')->get()->toArray();            
             $this->customers = Customer::whereIn('line_id',$lines)->get();
