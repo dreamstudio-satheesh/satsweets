@@ -24,7 +24,7 @@ class InvoiceList extends Component
     }
     
     protected $rules = [
-        'paying_amount' => 'required',
+        'payment_amount' => 'required',
         'payment_date' => 'required',
     ];
 
