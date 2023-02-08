@@ -51,7 +51,7 @@ class InvoiceList extends Component
 
     public function close()
     {
-        $this->reset(['amount_to_pay', 'paying_amount']);
+        $this->reset(['amount_to_pay', 'payment_amount']);
         $this->emit('close_payment_modal');
     }
     
