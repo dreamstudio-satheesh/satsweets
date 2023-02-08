@@ -23,6 +23,12 @@
         <!-- Sweetalert 2 -->
         <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalerts.min.js"></script>
+
+        <script type="text/javascript">
+                window.livewire.on('close_payment_modal', () => {
+                    $('#createpayment').modal('hide');
+                });
+            </script>
     
 @endpush
 

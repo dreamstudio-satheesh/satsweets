@@ -4,20 +4,55 @@ namespace App\Http\Livewire;
 
 use App\Models\Invoice;
 use Livewire\Component;
+use Carbon\Carbon;
+use App\Models\SalesPayment;
 
 class InvoiceList extends Component
 {
-    public $invoices;
+    public $invoices, $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes ;
 
-    public $invoice_number;
-
-    public $amount_to_pay;
+    public $payment_type='1';
 
     public $updateMode = false;
+
 
     public function mount()
     {
         $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
+
+        $this->payment_date=Carbon::now()->format('Y-m-d');
+    }
+    
+    protected $rules = [
+        'paying_amount' => 'required',
+        'payment_date' => 'required',
+    ];
+
+    public function submit()
+    {
+        $this->validate();
+      
+ 
+        // Execution doesn't reach here if validation fails.
+ 
+        SalesPayment::create([
+            'invoice_num' => $this->invoice_number,
+            'payment_date' => $this->payment_date,
+            'payment_type' => $this->payment_type,
+            'amount' => $this->payment_amount,
+            'reference' => $this->reference,
+            'notes' => $this->notes,
+        ]); 
+
+        
+
+        $this->close();
+    }
+
+    public function close()
+    {
+        $this->reset(['amount_to_pay', 'paying_amount']);
+        $this->emit('close_payment_modal');
     }
     
     public function createpayment($id)
