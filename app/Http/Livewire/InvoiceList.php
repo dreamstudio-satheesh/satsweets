@@ -44,7 +44,7 @@ class InvoiceList extends Component
             'notes' => $this->notes,
         ]); 
 
-       $invoice= Invoice::where('invoice_number',$this->invoice_number)->get();
+       $invoice= Invoice::where('invoice_number',$this->invoice_number)->first();
        $paid_amount=$this->payment_amount+ $invoice->paid_amount;
        if($paid_amount  >= $invoice->total )
             { $invoice_status="Paid"; }
