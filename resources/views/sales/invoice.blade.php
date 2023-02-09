@@ -33,7 +33,7 @@
         </address>
     </div>
     <div class="col-sm-12 text-center">
-      <h4 class="text-5 mb-0">TAX - INVOICE</h4>
+      <h4 class="text-5 mb-0">INVOICE</h4>
     </div>
   </div>
   <hr>
