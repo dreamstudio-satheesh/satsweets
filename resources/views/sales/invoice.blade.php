@@ -73,20 +73,20 @@
 		<thead class="card-header">
           <tr>
             <td class="col-3"><strong>HSN Code</strong></td>
-			<td class="col-6"><strong>Products</strong></td>
+			<td class="col-5"><strong>Products</strong></td>
             <td class="col-1 text-center"><strong>QTY</strong></td>
 			<td class="col-1 text-center"><strong>Rate</strong></td>
-            <td class="col-2 text-end"><strong>Amount</strong></td>
+            <td class="col-3 text-end"><strong>Amount</strong></td>
           </tr>
         </thead>
           <tbody>
             @foreach ($invoice->invoice_items as $item)
                 <tr class="line-height-1">
                 <td class="col-3">{{ $item->hsncode }}</td>
-                <td class="col-6 text-1">{{ $item->name }}</td>
+                <td class="col-5 text-1">{{ $item->name }}</td>
                 <td class="col-1 text-center">{{ $item->quantity }}</td>
                 <td class="col-1 text-end">₹{{ $item->price - $item->gstamount }}</td>
-                <td class="col-2 text-center">₹{{ $item->quantity * $item->price }} <strong><p class="text-0">(Incl GST)</p></strong></td>
+                <td class="col-3 text-center">₹{{ $item->quantity * $item->price }} <span class="text-0">(Incl GST)</span> </td>
               </tr>
             @endforeach
            </tbody>
@@ -107,7 +107,7 @@
 		
               <tr>
               <td colspan="4" class="text-end border-bottom-0"><strong>Total:</strong></td>
-              <td class="text-end border-bottom-0">₹{{ $invoice->total }}</td>
+              <td class="text-end border-bottom-0">₹{{ $invoice->total }} </td>
             </tr>
 		  </tfoot>
         </table>
