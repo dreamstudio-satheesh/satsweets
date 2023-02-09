@@ -16,8 +16,8 @@
 /*  Basic Style 
 /* =================================== */
 body {
-  background: #254076;
-  color: #2e495d;
+  background: #fffafa;
+  color: #535b61;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 22px;
@@ -544,7 +544,6 @@ hr {
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
-  min-height: 1052px;
 }
 
 @media (max-width: 767px) {
