@@ -76,7 +76,7 @@
 			<td class="col-5"><strong>Products</strong></td>
             <td class="col-1 text-center"><strong>QTY</strong></td>
 			<td class="col-1 text-center"><strong>Rate</strong></td>
-            <td class="col-3 text-end"><strong>Amount</strong></td>
+            <td class="col-3 text-center"><strong>Amount</strong></td>
           </tr>
         </thead>
           <tbody>
