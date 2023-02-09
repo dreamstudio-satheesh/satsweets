@@ -16,8 +16,8 @@
 /*  Basic Style 
 /* =================================== */
 body {
-  background: #e7e9ed;
-  color: #535b61;
+  background: #254076;
+  color: #2e495d;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 22px;
@@ -117,8 +117,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Text Size */
 .text-0 {
-  font-size: 11px !important;
-  font-size: 0.6875rem !important;
+  font-size: 8px !important;
+  font-size: 0.54rem !important;
 }
 
 .text-1 {
@@ -544,6 +544,7 @@ hr {
   -webkit-border-radius: 6px;
   -o-border-radius: 6px;
   border-radius: 6px;
+  min-height: 1052px;
 }
 
 @media (max-width: 767px) {

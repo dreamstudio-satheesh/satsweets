@@ -46,9 +46,7 @@
                         min-height: 1200px;
                         
                         }
-                       
               
-                
                 .header {
                         position: absolute;
                 }
@@ -76,11 +74,7 @@
                                 margin-right:2px;
                                
                         }
-                }
-
-               
-               
-                  
+                }                
                 @media (min-width:992px) {
                                 .page-header .row .col-md-2 {
                                 width:105px;
@@ -88,9 +82,6 @@
                                  }
       
                          }
-
-                        
-                    
                       
               </style>
     
@@ -111,11 +102,9 @@
         <script src="assets/js/moment.min.js"></script>
         <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
 
-
         <!-- Sweetalert 2 -->
         <script src="assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script src="assets/plugins/sweetalert/sweetalerts.min.js"></script>
-
     
 @endpush
 

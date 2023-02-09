@@ -13,23 +13,13 @@ class CartList extends Component
     use Invoices; 
     public $checkout = false;
     public $total_count= 0;
-
     public $customers;
-
-
     public $cartlist= array();
-
     public $sub_total= 0;
-
     public $taxamount= 0;
-
     public $total= 0;
-
     public $customer_id='';
-
     public $invoice_date = '';
-
-
     protected $listeners = ['cartAdded' => 'cart'];
 
 
@@ -46,9 +36,7 @@ class CartList extends Component
             
         }else{
             $this->customers = Customer::all();
-        }
-
-        
+        }    
     }
 
     public function updated($name, $value)
@@ -103,7 +91,6 @@ class CartList extends Component
 
             $this->cartlist[$id]['quantity']--;           
         }
-        
         $this->updatecart($id);
     } 
 
@@ -137,7 +124,6 @@ class CartList extends Component
 
     public function cart($id)
     { 
-       
         $this->emit('playAudio');
 
         if (array_key_exists("$id",$this->cartlist)) 
@@ -165,11 +151,8 @@ class CartList extends Component
                             'quantity' => 1, 
                             'total' => $product->price,                     
                         );
-
                 $this->updatecart();        
-            }
-
-           
+            }           
         }
         
     }

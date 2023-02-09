@@ -33,7 +33,7 @@
         </address>
     </div>
     <div class="col-sm-12 text-center">
-      <h4 class="text-6 mb-0">Invoice</h4>
+      <h4 class="text-5 mb-0">TAX - INVOICE</h4>
     </div>
   </div>
   <hr>
@@ -42,8 +42,8 @@
   <!-- Main Content -->
   <main>
   <div class="row">
-    <div class="col-sm-8"><strong>Invoiced To:</strong></div>
-    <div class="col-sm-4 text-sm-end"> <strong>Invoice No:</strong> {{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} </div>	  
+    <div class="col-sm-8"><strong>Invoiced To : </strong></div>
+    <div class="col-sm-4 text-sm-end"><strong>Invoice &nbsp; </strong> #{{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} &nbsp;&nbsp;&nbsp;</div>	  
   </div>
  
   <div class="row">
@@ -60,7 +60,7 @@
         </address>
       </div>
 
-    <div class="col-sm-4 text-sm-end order-sm-1"> <strong>Date:</strong>
+    <div class="col-sm-4 text-sm-end order-sm-1"> <strong> Date &nbsp;:&nbsp;&nbsp;</strong>
         {{ \Carbon\Carbon::parse($invoice->date)->format('d/m/Y')}}
       </div>
   
@@ -86,7 +86,7 @@
                 <td class="col-6 text-1">{{ $item->name }}</td>
                 <td class="col-1 text-center">{{ $item->quantity }}</td>
                 <td class="col-1 text-end">₹{{ $item->price - $item->gstamount }}</td>
-                <td class="col-2 text-center">₹{{ $item->quantity * $item->price }}</td>
+                <td class="col-2 text-center">₹{{ $item->quantity * $item->price }} <strong><p class="text-0">(Incl GST)</p></strong></td>
               </tr>
             @endforeach
            </tbody>
@@ -116,10 +116,16 @@
   </div>
   </main>
   <!-- Footer -->
+  <div class="row">
+   <hr>
+    <p align="right" class="text-2">For SATSWEETS</p>
+  </div>
   <footer class="text-center mt-4">
+    <br><br><br>
   <p class="text-1"><strong>NOTE :</strong> This is computer generated receipt and does not require physical signature.</p>
 
   <div class="btn-group btn-group-sm d-print-none"><button onclick="window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</button> <a href="" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> </div>
+  
   </footer>
 </div>
 </body>
