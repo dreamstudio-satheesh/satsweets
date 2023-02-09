@@ -93,20 +93,20 @@
 
            <tfoot class="card-footer line-height-1">
 			<tr>
-              <td colspan="3" class="text-end"><strong>Sub Total:</strong></td>
+              <td colspan="4" class="text-end"><strong>Sub Total:</strong></td>
               <td class="text-end">₹{{ $invoice->sub_total }}</td>
             </tr>
             <tr>
-              <td colspan="3" class="text-end"><strong>6% CGST:</strong></td>
+              <td colspan="4" class="text-end"><strong>6% CGST:</strong></td>
               <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
             </tr>
             <tr>
-                <td colspan="3" class="text-end"><strong>6% SGST:</strong></td>
+                <td colspan="4" class="text-end"><strong>6% SGST:</strong></td>
                 <td class="text-end">₹{{ $invoice->taxamount /2 }}</td>
               </tr>
 		
               <tr>
-              <td colspan="3" class="text-end border-bottom-0"><strong>Total:</strong></td>
+              <td colspan="4" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ $invoice->total }} </td>
             </tr>
 		  </tfoot>
