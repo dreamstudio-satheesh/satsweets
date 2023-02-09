@@ -42,13 +42,13 @@
                         <div class="col-4 productlinkset"><h5></span>{{ $cart['code']}}</h5></div>                  
                       </div>
 
-                      <div class="row">                    
+                      <div class="row">                   
                         <div class="col">
                             <div class="increment-decrement">
                                 <div class="input-groups">
-                                    <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button">
-                                    <input type="text" name="child" disabled  value="{{ $cart['quantity']}}" class="quantity-field">
-                                    <input type="button" value="+" wire:click="addcart({{ $cart['id']}})  class="button-plus inc button ">
+                                    {{-- <input type="button" value="-" wire:click="removecart({{ $cart['id']}})   class="button-minus dec button"> --}}
+                                    <input type="number"  min="1" max="999"  oninput="validateForm(this)"  wire:model="cartlist.{{ $cart['id']}}.quantity" class="quantity-field">
+                                    {{-- <input type="button" value="+" wire:click="addcart({{ $cart['id']}})  class="button-plus inc button "> --}}
                                 </div>
                             </div>
                         </div>

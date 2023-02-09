@@ -52,7 +52,9 @@ class CartList extends Component
     }
 
     public function updated($name, $value)
-    {      
+    {  
+        
+        
         if (strpos($name, '.')) {
             $id= explode('.',$name)[1];  
             if ($name && is_numeric($id)) { $this->updatecart($id); }
@@ -65,12 +67,12 @@ class CartList extends Component
 
     }
 
-    public function addcart($id)
+/*     public function addcart($id)
     {
         $this->emit('playAudio');
         $this->cartlist[$id]['quantity']++;
         $this->updatecart($id); 
-    }
+    } */
 
 
     public function updatecart($id=null)
@@ -85,7 +87,10 @@ class CartList extends Component
 
         foreach ($this->cartlist  as $item) {
             $totalnum +=(int) $item['total'];
-            $taxamount+=$item['gstamount'] *$item['quantity'];
+            if(is_numeric($item['quantity'])){
+
+                $taxamount+=$item['gstamount'] *$item['quantity'];
+            }
         }
         
 
@@ -94,7 +99,7 @@ class CartList extends Component
         $this->sub_total= $totalnum-$taxamount;
     }
 
-    public function removecart($id)
+ /*    public function removecart($id)
     {
         $this->emit('playAudio');
         if ($this->cartlist[$id]['quantity'] > 1) {
@@ -103,7 +108,7 @@ class CartList extends Component
         }
         
         $this->updatecart($id);
-    }
+    } */
 
     public function clear_cart()
     {
