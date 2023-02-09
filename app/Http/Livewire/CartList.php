@@ -87,12 +87,10 @@ class CartList extends Component
         foreach ($this->cartlist  as $item) {
             $totalnum +=(int) $item['total'];
             if(is_numeric($item['quantity'])){
-
                 $taxamount+=$item['gstamount'] *$item['quantity'];
             }
         }
         
-
         $this->total= $totalnum;
         $this->taxamount= $taxamount;
         $this->sub_total= $totalnum-$taxamount;
