@@ -504,17 +504,22 @@ hr {
 }
 
 @media print {
-  .table td, .table th {
-    background-color: transparent !important;
+
+  body {
+    background-color: white !important;
   }
-@media print
-{
+
   table { page-break-after:auto }
   tr    { page-break-inside:avoid; page-break-after:auto }
   td    { page-break-inside:avoid; page-break-after:auto }
   thead { display:table-header-group }
   tfoot { display:table-row-group }
-}
+
+
+  .table td, .table th {
+    background-color: transparent !important;
+  }
+  
 
   .table td.bg-light, .table th.bg-light {
     background-color: #FFF !important;
