@@ -15,11 +15,11 @@ class InvoiceController extends Controller
         $fivegst=0; $twelvegst=0;
         foreach ($invoice->invoice_items as $item) {
             if ($item->gst == 5) {
-                $fivegst +=$item->gstamount;
+                $fivegst =$fivegst+$item->gstamount;
             }
 
             if ($item->gst == 12) {
-                $twelvegst +=$item->gstamount;
+                $twelvegst =$twelvegst+$item->gstamount;
             }
         }
         return view('sales.invoice',compact('invoice','fivegst','twelvegst'));
