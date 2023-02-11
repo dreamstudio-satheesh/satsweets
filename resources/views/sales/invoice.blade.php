@@ -99,33 +99,33 @@
            <tfoot class="card-footer line-height-1">
 			<tr>
               <td colspan="4" class="text-end"><strong>Sub Total:</strong></td>
-              <td class="text-center">₹{{ number_format($invoice->sub_total,2) }}</td>
+              <td class="text-end">₹{{ number_format($invoice->sub_total,2) }}</td>
             </tr>
            @if ($fivegst)
             <tr>
               <td colspan="4" class="text-end"><strong>2.5% CGST:</strong></td>
-              <td class="text-center">₹{{ number_format($fivegst /2,2) }}</td>
+              <td class="text-end">₹{{ number_format($fivegst /2,2) }}</td>
             </tr>
             <tr>
                 <td colspan="4" class="text-end"><strong>2.5% SGST:</strong></td>
-                <td class="text-center">₹{{ number_format($fivegst /2,2) }}</td>
+                <td class="text-end">₹{{ number_format($fivegst /2,2) }}</td>
             </tr>               
            @endif
 
            @if ($twelvegst)
            <tr>
              <td colspan="4" class="text-end"><strong>6% CGST:</strong></td>
-             <td class="text-center">₹{{ number_format($twelvegst /2,2) }}</td>
+             <td class="text-end">₹{{ number_format($twelvegst /2,2) }}</td>
            </tr>
            <tr>
                <td colspan="4" class="text-end"><strong>6% SGST:</strong></td>
-               <td class="text-center">₹{{ number_format($twelvegst /2,2) }}</td>
+               <td class="text-end">₹{{ number_format($twelvegst /2,2) }}</td>
            </tr>               
           @endif
            
               <tr>
               <td colspan="4" class="text-end border-bottom-0"><strong>Total:</strong></td>
-              <td class="text-center border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
+              <td class="text-end border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
             </tr>
 		  </tfoot>
         </table>
