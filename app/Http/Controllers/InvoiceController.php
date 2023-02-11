@@ -12,7 +12,17 @@ class InvoiceController extends Controller
     public function show($id)
     {
         $invoice = Invoice::with(['invoice_items','customer'])->where('id',$id)->first();
-        return view('sales.invoice',compact('invoice'));
+        $fivegst=0; $twelvegst=0;
+        foreach ($invoice->invoice_items as $item) {
+            if ($item->gst == 5) {
+                $fivegst +=$item->gstamount;
+            }
+
+            if ($item->gst == 12) {
+                $twelvegst +=$item->gstamount;
+            }
+        }
+        return view('sales.invoice',compact('invoice','fivegst','twelvegst'));
     }
 
     public function editinvoice($id)

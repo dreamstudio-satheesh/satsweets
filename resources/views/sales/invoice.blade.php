@@ -90,8 +90,8 @@
                 <td class="col-3">{{ $item->hsncode }}</td>
                 <td class="col-5 text-1">{{ $item->name }}</td>
                 <td class="col-1 text-center">{{ $item->quantity }}</td>
-                <td class="col-1 text-end">₹{{ $item->price - $item->gstamount }}</td>
-                <td class="col-3 text-center">₹{{ $item->quantity * $item->price }} <span class="text-0">(Incl GST)</span> </td>
+                <td class="col-1 text-end">₹{{ number_format($item->price - $item->gstamount,2) }}</td>
+                <td class="col-3 text-center">₹{{ number_format($item->quantity * $item->price,2) }} <span class="text-0">(Incl GST)</span> </td>
               </tr>
             @endforeach
            </tbody>
@@ -99,20 +99,33 @@
            <tfoot class="card-footer line-height-1">
 			<tr>
               <td colspan="4" class="text-end"><strong>Sub Total:</strong></td>
-              <td class="text-center">₹{{ $invoice->sub_total }}</td>
+              <td class="text-center">₹{{ number_format($invoice->sub_total,2) }}</td>
+            </tr>
+           @if ($fivegst)
+            <tr>
+              <td colspan="4" class="text-end"><strong>2.5% CGST:</strong></td>
+              <td class="text-center">₹{{ number_format($fivegst /2,2) }}</td>
             </tr>
             <tr>
-              <td colspan="4" class="text-end"><strong>6% CGST:</strong></td>
-              <td class="text-center">₹{{ $invoice->taxamount /2 }}</td>
-            </tr>
-            <tr>
-                <td colspan="4" class="text-end"><strong>6% SGST:</strong></td>
-                <td class="text-center">₹{{ $invoice->taxamount /2 }}</td>
-              </tr>
-		
+                <td colspan="4" class="text-end"><strong>2.5% SGST:</strong></td>
+                <td class="text-center">₹{{ number_format($fivegst /2,2) }}</td>
+            </tr>               
+           @endif
+
+           @if ($twelvegst)
+           <tr>
+             <td colspan="4" class="text-end"><strong>6% CGST:</strong></td>
+             <td class="text-center">₹{{ number_format($twelvegst /2,2) }}</td>
+           </tr>
+           <tr>
+               <td colspan="4" class="text-end"><strong>6% SGST:</strong></td>
+               <td class="text-center">₹{{ number_format($twelvegst /2,2) }}</td>
+           </tr>               
+          @endif
+           
               <tr>
               <td colspan="4" class="text-end border-bottom-0"><strong>Total:</strong></td>
-              <td class="text-center border-bottom-0">₹{{ $invoice->total }} </td>
+              <td class="text-center border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
             </tr>
 		  </tfoot>
         </table>
