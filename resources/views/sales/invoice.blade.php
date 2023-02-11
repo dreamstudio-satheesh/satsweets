@@ -80,6 +80,7 @@
             <td class="col-3"><strong>HSN Code</strong></td>
 			<td class="col-5"><strong>Products</strong></td>
             <td class="col-1 text-center"><strong>QTY</strong></td>
+            <td class="col-1 text-center"><strong>GST</strong></td>
 			<td class="col-1 text-center"><strong>Rate</strong></td>
             <td class="col-3 text-center"><strong>Amount</strong></td>
           </tr>
@@ -90,6 +91,7 @@
                 <td class="col-3">{{ $item->hsncode }}</td>
                 <td class="col-5 text-1">{{ $item->name }}</td>
                 <td class="col-1 text-center">{{ $item->quantity }}</td>
+                <td class="col-1 text-end">{{ $item->gst}}%</td>
                 <td class="col-1 text-end">₹{{ number_format($item->price - $item->gstamount,2) }}</td>
                 <td class="col-3 text-center">₹{{ number_format($item->quantity * $item->price,2) }} <span class="text-0">(Incl GST)</span> </td>
               </tr>
