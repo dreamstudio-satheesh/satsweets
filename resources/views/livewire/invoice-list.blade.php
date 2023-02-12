@@ -83,7 +83,7 @@
             <div class="card-body"> 
                 {{ $invoices->links('pagination') }}  
             </div>
-            Total Records: {{ $invoices->total() }} From :{{ $invoices->current_page() }} 
+            Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
             </div>
     
     </div>
