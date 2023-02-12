@@ -1,15 +1,21 @@
 <div>
-
         @include('livewire.addPayment')
-    <div class="table-responsive">
-        <table class="table">
+    
+        <div class="card">
+            <div class="card-body">            
+                {{ $invoices->links('pagination') }}  
+            </div>
+        </div>
+    
+        <div class="table-responsive">
+            <table class="table">
                 <thead>
                         <tr>
                                 <th>
-                                <label class="checkboxs">
-                                <input type="checkbox" id="select-all">
-                                <span class="checkmarks"></span>
-                                </label>
+                                        <label class="checkboxs">
+                                                <input type="checkbox" id="select-all">
+                                                <span class="checkmarks"></span>
+                                        </label>
                                 </th>
                                 <th>Date</th>
                                 <th>Customer Name</th>
@@ -22,7 +28,7 @@
                         </tr>
                 </thead>
                 <tbody>
-
+    
                         @foreach ($invoices as $invoice)
                         <tr>
                                 <td>
@@ -67,23 +73,21 @@
                                                         <input name="_method" type="hidden" value="DELETE">
                                                         <button type="submit" class="dropdown-item btn-flat show_confirm"><img src="{{ url('/assets/img/icons/delete1.svg') }}" class="me-2" alt="img">Delete Sale</button>
                                                         </form>
-                                                       
+                                                        
                                                 </li>								
                                         </ul>
                                 </td>
                         </tr>  
                         @endforeach
                 </tbody>
-        </table>
-    </div>
-
-    <div class="card">
-        <div class="card-body">
-            
-            {{ $invoices->links('pagination') }}
-              
-
+            </table>        
         </div>
+        
+        <div class="card">
+            <div class="card-body"> 
+                {{ $invoices->links('pagination') }}
+            </div>
+            </div>
+    
     </div>
-
-</div>
+    
