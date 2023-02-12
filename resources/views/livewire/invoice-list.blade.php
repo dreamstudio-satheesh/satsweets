@@ -2,14 +2,14 @@
 
         @include('livewire.addPayment')
     <div class="table-responsive">
-        <table class="table  datanew">
+        <table class="table">
                 <thead>
                         <tr>
                                 <th>
-                                        <label class="checkboxs">
-                                                <input type="checkbox" id="select-all">
-                                                <span class="checkmarks"></span>
-                                        </label>
+                                <label class="checkboxs">
+                                <input type="checkbox" id="select-all">
+                                <span class="checkmarks"></span>
+                                </label>
                                 </th>
                                 <th>Date</th>
                                 <th>Customer Name</th>
@@ -75,6 +75,15 @@
                         @endforeach
                 </tbody>
         </table>
-</div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            
+            {{ $invoices->links('pagination') }}
+              
+
+        </div>
+    </div>
 
 </div>

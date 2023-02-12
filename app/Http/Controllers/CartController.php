@@ -19,6 +19,14 @@ class CartController extends Controller
         
     }
 
+    public function sales()
+    {
+        
+        return view('sales.sales');
+        
+    }
+
+
    
 
     public function pos()

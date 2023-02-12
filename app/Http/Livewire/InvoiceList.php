@@ -5,23 +5,18 @@ namespace App\Http\Livewire;
 use App\Models\Invoice;
 use Livewire\Component;
 use Carbon\Carbon;
+use WithPagination;
 use App\Models\SalesPayment;
+
 
 class InvoiceList extends Component
 {
-    public $invoices, $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes ;
+    public $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes ;
 
     public $payment_type='1';
 
     public $updateMode = false;
 
-
-    public function mount()
-    {
-        $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
-
-        $this->payment_date=Carbon::now()->format('Y-m-d');
-    }
     
     protected $rules = [
         'payment_amount' => 'required',
@@ -76,7 +71,12 @@ class InvoiceList extends Component
 
     public function render()
     {
-        
-        return view('livewire.invoice-list');
+       // $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
+
+        $this->payment_date=Carbon::now()->format('Y-m-d');   
+        //return view('livewire.invoice-list');
+        return view('livewire.invoice-list', [
+            'invoices' => Invoice::with(['user'])->orderBy('id')->paginate(10),
+        ]);
     }
 }

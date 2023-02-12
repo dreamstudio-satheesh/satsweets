@@ -52,7 +52,7 @@
                        
                        
                         <!-- /Filter -->
-                        @livewire('invoice-list')
+                        @livewire('sales')
                 </div>
         </div>
         <!-- /product list -->
