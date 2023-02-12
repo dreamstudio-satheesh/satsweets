@@ -1,7 +1,12 @@
 <div>
         @include('livewire.addPayment')
     
-       
+        <div class="card">
+                <div class="card-body"> 
+                    {{ $invoices->links('pagination') }}  
+                </div>
+                Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
+            </div>
     
         <div class="table-responsive">
             <table class="table">
@@ -84,7 +89,7 @@
                 {{ $invoices->links('pagination') }}  
             </div>
             Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
-            </div>
+        </div>
     
     </div>
     
