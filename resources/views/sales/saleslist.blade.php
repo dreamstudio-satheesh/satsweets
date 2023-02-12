@@ -32,6 +32,10 @@
                 window.livewire.on('close_payment_modal', () => {
                     $('#createpayment').modal('hide');
                 });
+
+                window.livewire.on('close_show_payment_modal', () => {
+                    $('#showpayment').modal('hide');
+                });
             </script>
     
 @endpush
