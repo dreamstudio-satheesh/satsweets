@@ -103,8 +103,14 @@
                         </div>
                     </div>
                     <!-- /Filter -->
+                    <div class="card">
+                        <div class="card-body"> 
+                            {{ $products->links('pagination') }}  
+                        </div>
+                        
+                    </div>
                     <div class="table-responsive">
-                        <table class="table  datanew">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>
@@ -156,6 +162,12 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    </div>
+                    <div class="card">
+                        <div class="card-body"> 
+                            {{ $products->links('pagination') }}  
+                        </div>
+                        Total Records: {{ $products->total() }}   per page :{{ $products->perPage() }} 
                     </div>
                 </div>
             </div>

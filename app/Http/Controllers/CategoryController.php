@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(10);
 
         return view('categories.index', compact('categories'));
     }
@@ -100,7 +100,7 @@ class CategoryController extends Controller
             $category->addMediaFromRequest('photo')->toMediaCollection('categories');               
         } 
 
-        return redirect('categories')->withSuccess('Category Updated');
+        return redirect()->back()->withSuccess('category updated'); 
     }
 
     /**

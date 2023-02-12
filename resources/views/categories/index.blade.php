@@ -106,8 +106,15 @@
                         </div>
                     </div>
                     <!-- /Filter -->
+                    <div class="card">
+                        <div class="card-body"> 
+                            {{ $categories->links('pagination') }}  
+                        </div>
+                        
+                    </div>
+                    
                     <div class="table-responsive">
-                        <table class="table  datanew">
+                        <table class="table">
                             <thead>
                                 <tr>
                                     <th>

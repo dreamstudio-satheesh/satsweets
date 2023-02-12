@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(20);
         $categories = Category::all();
         return view('products.index', compact('products','categories'));
     }
@@ -23,7 +23,7 @@ class ProductController extends Controller
 
     public function show($id)
     {
-        $products = Product::where('category_id',$id)->get();
+        $products = Product::where('category_id',$id)->paginate(20);
         $categories = Category::all();
         return view('products.index', compact('products','categories'));
     }
@@ -136,7 +136,7 @@ class ProductController extends Controller
             $product->addMediaFromRequest('photo')->toMediaCollection('products');                 
         }               
           
-        return redirect('products')->withSuccess('Updated');
+        return redirect()->back()->with('success', 'updated  successfully'); 
     }
 
     /**
