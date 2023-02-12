@@ -25,7 +25,11 @@ return new class extends Migration
             $table->double('amount')->nullable();        
             $table->string('reference')->nullable();
             $table->text('notes')->nullable();
+            $table->unsignedBigInteger('created_by'); 
             $table->timestamps();
+
+
+            $table->foreign('created_by')->references('id')->on('users'); 
         });
     }
 
