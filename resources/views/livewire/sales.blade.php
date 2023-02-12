@@ -82,7 +82,11 @@
             </tbody>
         </table>        
     </div>
-
-  
+    
+    <div class="card">
+        <div class="card-body"> 
+            {{ $invoices->links('pagination') }}
+        </div>
+        </div>
 
 </div>
