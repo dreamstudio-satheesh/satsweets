@@ -19,7 +19,7 @@ return new class extends Migration
            
             
 
-            $table->foreign('created_by')->references('created_by')->on('users'); 
+            //$table->foreign('created_by')->references('id')->on('users'); 
         });
     }
 
