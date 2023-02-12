@@ -8,10 +8,14 @@
 
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="{{ url('') }}/assets/css/bootstrap-datetimepicker.min.css">
+
+        @livewireStyles
     
 @endpush
 
 @push('scripts')
+
+        @livewireScripts
 
         <!-- Select2 JS -->
         <script src="{{ url('') }}/assets/plugins/select2/js/select2.min.js"></script>
