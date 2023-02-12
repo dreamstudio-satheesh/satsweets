@@ -75,7 +75,7 @@ class InvoiceList extends Component
         $this->payment_date=Carbon::now()->format('Y-m-d');   
         //return view('livewire.invoice-list');
         return view('livewire.invoice-list', [
-            'invoices' => Invoice::with(['user'])->orderBy('id')->paginate(20),
+            'invoices' => Invoice::with(['user'])->orderBy('id', 'DESC')->paginate(20),
         ]);
     }
 }
