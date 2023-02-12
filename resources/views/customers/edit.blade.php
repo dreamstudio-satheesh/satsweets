@@ -41,7 +41,7 @@
     
                         <select name="line_id" id="line" " class="form-control" >
                             @foreach ($lines as $line)
-                            <option value="{{ $line->id }}">{{ $line->name }}</option>
+                            <option value="{{ $line->id }}" {{ ($line->id == $customer->line_id) ? "selected":"" }}>{{ $line->name }}</option>
                             @endforeach
                           </select>
                        
