@@ -1,11 +1,7 @@
 <div>
         @include('livewire.addPayment')
     
-        <div class="card">
-            <div class="card-body">            
-                {{ $invoices->links('pagination') }}  
-            </div>
-        </div>
+       
     
         <div class="table-responsive">
             <table class="table">
