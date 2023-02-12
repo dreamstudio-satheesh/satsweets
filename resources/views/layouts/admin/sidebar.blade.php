@@ -12,7 +12,7 @@
                                     <li><a class="{{ (request()->is('products/create')) ? 'active' : '' }}" href="{{ url('products/create') }}">Add Product</a></li>
                                     <li><a class="{{ (request()->is('categories')) ? 'active' : '' }}" href="{{ url('categories') }}">Category List</a></li>
                                     <li><a class="{{ (request()->is('categories/create')) ? 'active' : '' }}" href="{{ url('categories/create') }}">Add Category</a></li>
-                                    <li><a href="javascript:void(0);">Import Products</a></li>
+                                    
                                     <li><a href="javascript:void(0);">Print Barcode</a></li>
                                 </ul>
                             </li>
@@ -31,7 +31,6 @@
                                 <ul>
                                     <li><a href="{{ url('purchaselist') }}">Purchase List</a></li>
                                     <li><a href="{{ url('addpurchase') }}">Add Purchase</a></li>
-                                    <li><a href="{{ url('importpurchase') }}">Import Purchase</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
