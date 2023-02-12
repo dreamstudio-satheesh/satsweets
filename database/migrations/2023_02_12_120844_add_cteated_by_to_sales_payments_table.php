@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('sales_payments', function (Blueprint $table) {
 
-            $table->unsignedInteger('created_by'); 
+            $table->unsignedBigInteger('created_by'); 
            
             
         });
