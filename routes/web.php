@@ -51,9 +51,7 @@ Route::view('expenselist', 'expense.expenselist')->name('expenselist');
 Route::view('addexpense', 'expense.addexpense')->name('addexpense');
 Route::view('expensecategory', 'expense.expensecategory')->name('expensecategory');
 
-//Quotation
-Route::view('quotationlist', 'quotation.quotationlist')->name('quotationlist');
-Route::view('addquotation', 'quotation.addquotation')->name('addquotation');
+
 
 //Return
 Route::view('salesreturnlists', 'return.salesreturnlists')->name('salesreturnlists');

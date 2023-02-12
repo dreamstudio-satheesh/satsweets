@@ -42,14 +42,7 @@
                                     <li><a href="{{ url('expensecategory') }}">Expense Category</a></li>
                                 </ul>
                             </li>
-                            <li class="submenu">
-                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/quotation1.svg') }}" alt="img"><span> Quotation</span> <span class="menu-arrow"></span></a>
-                                <ul>
-                                    <li><a href="{{ url('quotationlist') }}">Quotation List</a></li>
-                                    <li><a href="{{ url('addquotation') }}">Add Quotation</a></li>
-                                </ul>
-                            </li>
-                           
+                          
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
                                 <ul>
