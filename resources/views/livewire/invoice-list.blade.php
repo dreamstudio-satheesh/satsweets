@@ -81,8 +81,9 @@
         
         <div class="card">
             <div class="card-body"> 
-                {{ $invoices->links('pagination') }}
+                {{ $invoices->links('pagination') }}  
             </div>
+            Total Records: {{ $invoices->total() }}
             </div>
     
     </div>
