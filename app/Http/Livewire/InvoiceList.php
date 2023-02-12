@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Invoice;
 use Livewire\Component;
 use Carbon\Carbon;
-use WithPagination;
+use Livewire\WithPagination;
 use App\Models\SalesPayment;
 
 
