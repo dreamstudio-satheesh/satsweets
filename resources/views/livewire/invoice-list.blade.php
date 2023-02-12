@@ -55,15 +55,18 @@
                                                 <li>
                                                         <a href="{{url('invoice/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/eye1.svg') }}" class="me-2" alt="img">View Invoice</a>
                                                 </li>
-                                                <li>
+                                               {{--  <li>
                                                         <a href="{{url('thermal/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/eye1.svg') }}" class="me-2" alt="img">Thermal Print</a>
-                                                </li>
+                                                </li> --}}
                                                 <li>
                                                         <a href="{{url('editinvoice/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/edit.svg') }}" class="me-2" alt="img">Edit Sale</a>
                                                 </li>
+                                                @if ($invoice->status !='Unpaid')
                                                 <li>
                                                         <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" wire:click="showpayment({{ $invoice->invoice_number }})" data-bs-target="#showpayment"><img src="{{ url('/assets/img/icons/dollar-square.svg') }}" class="me-2" alt="img">Show Payments</a>
-                                                </li>
+                                                </li>  
+                                                @endif
+                                                
                                                 <li>
                                                         <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal"  wire:click="createpayment({{ $invoice->id }})" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                                 </li>
