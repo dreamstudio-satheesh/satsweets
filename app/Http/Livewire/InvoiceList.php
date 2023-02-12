@@ -2,15 +2,17 @@
 
 namespace App\Http\Livewire;
 
+use Carbon\Carbon;
 use App\Models\Invoice;
 use Livewire\Component;
-use Carbon\Carbon;
 use App\Models\SalesPayment;
+use Illuminate\Support\Facades\Auth;
 
 
 class InvoiceList extends Component
 {
-    public $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes ;
+    public $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes;
+    public $payments=array();
 
     public $payment_type='1';
 
@@ -35,7 +37,8 @@ class InvoiceList extends Component
             'payment_type' => $this->payment_type,
             'amount' => $this->payment_amount,
             'reference' => $this->reference,
-            'notes' => $this->notes,
+            'notes' => $this->notes,            
+            'created_by' => Auth::user()->id
         ]); 
 
        $invoice= Invoice::where('invoice_number',$this->invoice_number)->first();
@@ -63,13 +66,13 @@ class InvoiceList extends Component
 
     public function closeshowpayment()
     {
-        $this->reset(['amount_to_pay', 'payment_amount','invoice_number']);
+        $this->reset(['payments', 'payment_amount','invoice_number']);
         $this->emit('close_show_payment_modal');
     }
 
-    public function showpayment($id)
+    public function showpayment($invoice_number)
     {
-
+       $this->payments= SalesPayment::with(['user'])->where('invoice_num', $invoice_number)->get();
     }
     
     public function createpayment($id)

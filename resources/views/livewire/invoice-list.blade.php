@@ -62,7 +62,7 @@
                                                         <a href="{{url('editinvoice/')}}/{{$invoice->id}}" class="dropdown-item"><img src="{{ url('/assets/img/icons/edit.svg') }}" class="me-2" alt="img">Edit Sale</a>
                                                 </li>
                                                 <li>
-                                                        <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" wire:click="showpayment({{ $invoice->id }})" data-bs-target="#showpayment"><img src="{{ url('/assets/img/icons/dollar-square.svg') }}" class="me-2" alt="img">Show Payments</a>
+                                                        <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" wire:click="showpayment({{ $invoice->invoice_number }})" data-bs-target="#showpayment"><img src="{{ url('/assets/img/icons/dollar-square.svg') }}" class="me-2" alt="img">Show Payments</a>
                                                 </li>
                                                 <li>
                                                         <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal"  wire:click="createpayment({{ $invoice->id }})" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>

@@ -22,20 +22,18 @@
 									</tr>
 								</thead>
 								<tbody>
-									@foreach ($payments as $item)
 									<tr>
-										<td>{{  $item->payment_date }}</td>
-										<td>{{  $item->reference }}</td>
-										<td>{{  $item->amount }}</td>
-										<td>CASH</td>
-										<td>{{  $item->user->name }}</td>
+										<td>John</td>
+										<td>Doe</td>
+										<td>Doe</td>
+										<td>Doe</td>
+										<td>Doe</td>
 										<td>
 											<a href="#" class=""><img src="{{ url('assets/img/icons/edit.svg')}}" class="me-2" alt="img"></a>
 											<a href="javascript:void(0);" class="delete-set"><img src="{{ url('assets/img/icons/delete.svg')}}" alt="svg"></a>
 										</td>
 									</tr>
-										
-									@endforeach									
+									
 								</tbody>
 							</table>
 							
