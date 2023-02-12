@@ -3,7 +3,7 @@
     
         <div class="card">
                 <div class="card-body"> 
-                    {{ $invoices->links() }}  
+                    {{ $invoices->links('pagination') }}  
                 </div>
                 
         </div>
@@ -86,7 +86,7 @@
         
         <div class="card">
             <div class="card-body"> 
-                {{ $invoices->links() }}  
+                {{ $invoices->links('pagination') }}  
             </div>
             Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
         </div>
