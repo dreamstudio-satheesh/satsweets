@@ -7,22 +7,7 @@
 
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-datetimepicker.min.css') }}">
-
-        <style>
-           
-            .sminput {
-                border: none; 
-                border-width: 0; 
-                box-shadow: none;
-                background: transparent;
-                width: 44px; /*new width*/
-                height: 24px; /*new width*/
-            }         
-            .sminput.focus {
-              outline: none;!important;
-            }
-          </style>
-
+        @livewireStyles
     
 @endpush
 
@@ -35,7 +20,7 @@
 		<script src="{{ asset('assets/js/moment.min.js') }}"></script>
 		<script src="{{ asset('assets/js/bootstrap-datetimepicker.min.js') }}"></script>
 
-      
+        @livewireScripts
     
 @endpush
 
@@ -45,7 +30,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-sm-12 tabs_wrapper" >
                         
-                        @livewire('edit-cart', ['invoice' => $invoice])
+                        @livewire('edit-cart', ['invoice_id' => $id])
                     </div>
                     
                 </div>

@@ -1,6 +1,6 @@
 <div>
 
-    <form class="form"  wire:submit.prevent="addcart">
+    <form wire:submit.prevent="addcart" >
         <div class="row">
             <div class="col-lg-3 col-sm-4 col-12">
                 <label for="barcode">Scan/Enter  Barcode...</label>
@@ -71,9 +71,9 @@
                                 <th>Product Name</th>
                                 <th>Qty</th>
                                 <th>Net Unit Price(₹)</th>                                
-                                <th>Tax Rate	</th>
-                                <th>Tax Amount</th>
-                                <th class="text-end">Subtotal (₹)</th>
+                                <th>Tax Rate</th>
+                                <th>Tax</th>
+                                <th class="text-end">Total</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -81,26 +81,24 @@
                          @if($cartlist)
                              @foreach ($cartlist as $item) 
                                                              
-                                <tr>
-                                    <td class="productimgname">                                    
-                                        <img src="{{ asset('assets/img/product/product7.jpg') }}" alt="product">
-                                        {{ $item['name'] }}
-                                    </td>
-                                    <form method="post"></form>
-                                    <td><input class="sminput" wire:model="cartlist.{{ $item['code'] }}.quantity" type="number" min="1" max="200"></td>
-                                    <td><input name="price" wire:model="cartlist.{{ $item['code'] }}.price" class="sminput" type="text" ></td>                                    
-                                    <td> {{ $item['gst'] }} %</td>
-                                    <td>  {{ $item['gstamount']*$item['quantity'] }} </td>
-                                    <td class="text-end"> 
-                                        {{ $item['total'] -$item['gstamount']*$item['quantity'] }}
-                                     </td>
-                                    <td>                                        
-                                        <a href="javascript:void(0);" class="delete-set"><img src="{{ asset('assets/img/icons/delete.svg') }}" alt="svg"></a>
-                                    </td>
-                                </form>
-                                </tr>  
+                             <tr>
+                                <td class="productimgname">                                    
+                                    
+                                    {{ $item['name'] }}
+                                </td>
+                                <form method="post"></form>
+                                <td><input class="sminput"   wire:model="cartlist.{{ $item['code'] }}.quantity" type="number" min="1" max="200"></td>
+                                <td><input class="sminput"  name="price"  wire:model="cartlist.{{ $item['code'] }}.price"  type="text" ></td>                                    
+                                <td> {{ $item['gst'] }} %</td>
+                                <td>   {{  $item['gstamount'] }}  </td>
+                                <td class="text-end"> {{  $item['total']}}</td>
+                                <td>                                        
+                                    <a href="javascript:void(0);" wire:click="delete_cart({{ $item['id']}})" class="delete-set"><img src="{{ asset('assets/img/icons/delete.svg') }}" alt="svg"></a>
+                                </td>
+                            </form>
+                            </tr>  
                                                                    
-                                @endforeach                           
+                            @endforeach                           
                             @else
                             <tr>
                                 <td colspan="7" style="text-align: center;">
@@ -152,8 +150,8 @@
                     
                 </div>
                 <div class="col-lg-6 float-md-right">
-                    <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
-                    <a href="quotationList.html"  class="btn btn-cancel">Cancel</a>
+                   {{--  <a href="javascript:void(0);" class="btn btn-submit me-2">Submit</a>
+                    <a href="javascript:void(0);"  class="btn btn-cancel">Cancel</a> --}}
                 </div>
             </div>
         </div>

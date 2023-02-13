@@ -2,82 +2,69 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
+use App\Models\Invoice;
 
 use App\Models\Product;
+
+use Livewire\Component;
+use App\Models\Invoice_item;
 
 class EditCart extends Component
 {
     public $barcode = '';
 
-    public $invoice;
+    public $invoice, $invoice_id,$invoice_items;
 
     public $cartlist= array( );
-
- 
-
-    protected $rules = [
-      'cartlist.*.quantity' => 'required|string|min:1',
-      'cartlist.*.price' => 'required|string|min:1',
-  ];
 
 
 
     public function mount()
     {
-      foreach ($this->invoice->invoice_items as  $item) {
-
-        $this->cartlist[$item->product_code] = array(
-          'code' => $item->product_code, // inique row ID
-          'name' => $item->name,
-          'price' => $item->price,
-          'gstamount' => $item->gstamount,
-          'gst' => $item->gst,
-          'quantity' => $item->quantity,
-          'total' => $item->total,                        
-          'product_id' => $item->product_id,                        
-          'invoice_id' => $item->invoice_id,                        
-        );
-       
-      }
-        
-    }
-
-    public function updating($name, $value)
-    {
-      if (empty($value)) {
-        $this->validate();
-        dd($value);
-        
-      }
-    }
+      $this->invoice = Invoice::with(['invoice_items','customer'])->where('id',$this->invoice_id)->first();
     
-
+      foreach ($this->invoice->invoice_items as  $item) {
+        $this->addcartlist($item);
+      }
+      //dd($this->cartlist);
+    }
     public function updated($name, $value)
-    {
-     
-      if ($name !='barcode' && preg_match('/^[0-9]*$/', $value)) {        
-
-        $arraykey= explode('.',$name)[1];
-        $unitname= explode('.',$name)[2];
-
-        if (array_key_exists($arraykey,$this->cartlist)) 
+    {  
+      if (strpos($name, '.')) {       
+        $code= explode('.',$name)[1]; 
+        $itemname= explode('.',$name)[2];
+        if ($value && is_numeric($code))
         { 
-          //dd($name);
-          $total= $this->cartlist[$arraykey]['total']; 
-          $price=$this->cartlist[$arraykey]['price'];
-          $gst=$this->cartlist[$arraykey]['gst'];
-          $this->cartlist[$arraykey]['gstamount']=round($price-( $price *100/(100+$gst)),2);  
-          if ($unitname =='quantity') {
-                $this->cartlist[$arraykey]['total']= $price* (int)$value;                              
-              }
-              elseif ($unitname =='price') {                
-                $this->cartlist[$arraykey]['total']=$this->cartlist[$arraykey]['quantity']* (int)$value;                
-              }
+
+          $price=(int)$this->cartlist[$code]['price'];
+          $quantity=(int)$this->cartlist[$code]['quantity'];
+          $total=($price)*($quantity);
+          $this->cartlist[$code]['total']=$total;
+          $item= Invoice_item::find($this->cartlist[$code]['id']);
+          $item->update([
+            'quantity' => $quantity, 
+            'price' => $price,  
+            'total' => $total,  
+          ]);
+          
+          $this->updatecart(); 
         }
-        
-      } 
-      
+      }
+    }
+
+    private function addcartlist($item)
+    {
+      $this->cartlist[$item->product_code] = array(
+        'id' => $item->id,
+        'code' => $item->product_code, // inique row ID
+        'name' => $item->name,
+        'price' => $item->price,
+        'gstamount' => $item->gstamount,
+        'gst' => $item->gst,
+        'quantity' =>$item->quantity,
+        'total' => $item->total,                   
+        'invoice_id' => $item->invoice_id,                        
+      );
     }
 
     public function addcart()
@@ -85,30 +72,73 @@ class EditCart extends Component
         $product = Product::where('code',$this->barcode)->first();
         if ($product) {
 
-          /*   if (array_key_exists($this->barcode,$this->cartlist))
+          if (array_key_exists($this->barcode,$this->cartlist))
             {
-               
-            } */
-            $this->cartlist[$product->code] = array(
-                        'product_id' => $product->id, 
-                        'invoice_id' => $this->invoice->id, 
-                        'code' => $product->code, 
-                        'name' => $product->name,
-                        'price' => $product->price,
-                        'gstamount' =>round($product->price-($product->price *100/(100+$product->gst))),
-                        'gst' => $product->gst,
-                        'quantity' => 1,
-                        'total' => $product->price,                        
-                      );
-               
-              
-            
-          //dd($this->cartlist);
+               dd('aaray exit');
+            }
+            else
+            {              
+             $item= Invoice_item::create([
+                'name' => $product->name,
+                'price' => $product->price,                
+                'total' => $product->price,
+                'gst' => $product->gst,                
+                'quantity' => "1", 
+                'gstamount' =>round($product->price *((100+$product->gst)/100),2)-$product->price ,
+                'product_code' => $product->code,
+                'hsncode' => $product->hsncode,                
+                'invoice_id' => $this->invoice->id,
+              ]); 
+
+              $this->addcartlist($item); 
+              $this->updatecart();  
+             
+            }
+          
         }
 
         $this->barcode='';
 
     }
+
+    public function updatecart()
+    {       
+       $total=0;
+       $taxamount=0;
+
+        foreach ($this->cartlist  as $item) {
+            $total +=(int) $item['total'];
+            if(is_numeric($item['quantity'])){
+                $taxamount+=$item['gstamount'] *$item['quantity'];
+            }
+        } 
+        $sub_total=$total-$taxamount;
+        
+        $invoice = Invoice::find($this->invoice->id);
+        $invoice->update([
+          'total' => $total,
+          'sub_total' => $sub_total ,
+          'taxamount' => $taxamount,
+        ]);
+
+        $this->invoice->total= $total;        
+        $this->invoice->taxamount= $taxamount;
+        $this->invoice->sub_total= $sub_total;
+
+
+    }
+
+
+  
+
+    public function delete_cart($id)
+    {
+      $item=Invoice_item::find($id);
+      unset($this->cartlist[$item->product_code]);
+      $item->delete();
+      $this->updatecart();
+    }
+
 
     
     public function render()
