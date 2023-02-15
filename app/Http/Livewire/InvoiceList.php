@@ -88,14 +88,15 @@ class InvoiceList extends Component
     public function render()
     {
        // $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
+       $links=true;
 
         $this->payment_date=Carbon::now()->format('Y-m-d');
         if (is_numeric($this->search)) {
-            
+            $links=false;
             $invoices = Invoice::Where('invoice_number','like', (int)$this->search)->with(['customer'])->orderBy('id', 'DESC')->limit(100)->get();
         }elseif($this->search) {        
             $name=$this->search;
-           
+            $links=false;
             $invoices = Invoice::whereHas('customer', function ($query) use ($name) { 
                 $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->limit(100)->get();
   
@@ -103,6 +104,6 @@ class InvoiceList extends Component
         $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(50);
         }
         
-        return view('livewire.invoice-list', compact('invoices'));
+        return view('livewire.invoice-list', compact('invoices','links'));
     }
 }
