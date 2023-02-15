@@ -101,7 +101,7 @@
         </div>
         @if ($links))
         <div class="card">
-                <div class="card-body"> 
+                <div wire:ignore class="card-body"> 
                         {{ $invoices->links() }}  
                 </div>
                 Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }}            
