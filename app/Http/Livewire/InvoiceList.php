@@ -100,8 +100,7 @@ class InvoiceList extends Component
                 $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->paginate(20);
   
         }else{
-        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->get();
-        
+        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(10);
         }
         
         return view('livewire.invoice-list', compact('invoices'));

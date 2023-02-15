@@ -14,10 +14,7 @@
                         </div>
                      <div  wire:ignore>
                         <br>
-                        @if (!empty($invoices->links))
-                            
                         {{ $invoices->links('pagination') }}  
-                        @endif
                       </div>   
                    
                 </div>
