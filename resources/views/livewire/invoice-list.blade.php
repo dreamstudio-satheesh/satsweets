@@ -102,11 +102,14 @@
         
         <div class="card">
                 @if ($search)
+                <div class="card-body"> 
+                        {{ $invoices->links() }}  
+                </div>
                     
                 @else
                 <div class="card-body" wire:ignore> 
                         {{ $invoices->links() }}  
-                    </div>
+                </div>
                     
                 @endif
             
