@@ -99,22 +99,13 @@
                 </tbody>
             </table>        
         </div>
-        
+        @if ($search)
         <div class="card">
-                @if ($search)
                 <div class="card-body"> 
                         {{ $invoices->links() }}  
                 </div>
-                    
-                @else
-                <div class="card-body" wire:ignore> 
-                        {{ $invoices->links() }}  
-                </div>
-                    
-                @endif
-            
-            Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
+                Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }}            
         </div>
-    
+        @endif
     </div>
     
