@@ -129,7 +129,7 @@
               <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
             </tr>
-		  </tf oot>
+		  </tfoot>
         </table>
       </div>
     </div>
@@ -149,7 +149,7 @@
     <?php $unpaid_amount += ($items->total- $items->paid_amount); ?>
     @endforeach
 
-   <strong> Unpaid amount:{{ $unpaid_amount}} </strong>
+    Unpaid : <strong>₹ {{ $unpaid_amount}} </strong>
     
   </p>
 
