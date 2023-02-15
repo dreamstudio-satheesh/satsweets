@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Carbon\Carbon;
 use App\Models\Invoice;
 use Livewire\Component;
+use App\Models\Customer;
 use App\Models\SalesPayment;
 use Illuminate\Support\Facades\Auth;
 
@@ -88,12 +89,20 @@ class InvoiceList extends Component
     {
        // $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
 
-        $this->payment_date=Carbon::now()->format('Y-m-d'); 
-        if ($this->search) {
+        $this->payment_date=Carbon::now()->format('Y-m-d');
+        if (is_numeric($this->search)) {
+            
             $invoices = Invoice::Where('invoice_number','like', $this->search)->with(['customer'])->orderBy('id', 'DESC')->paginate(20);
+        }elseif($this->search) {        
+            $name=$this->search;
+           
+            $invoices = Invoice::whereHas('customer', function ($query) use ($name) { 
+                $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->paginate(20);
+  
         }else{
-            $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(20);
+        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(20);
         }
+        
         return view('livewire.invoice-list', compact('invoices'));
     }
 }
