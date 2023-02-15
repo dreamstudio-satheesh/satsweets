@@ -77,6 +77,9 @@ class CartList extends Component
             if(is_numeric($item['quantity'])){
                 $taxamount+=$item['gstamount'] *$item['quantity'];
             }
+            else{
+                sleep(1);
+            }
         }
         
         $this->total= $totalnum;

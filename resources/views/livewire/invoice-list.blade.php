@@ -4,8 +4,18 @@
         @include('livewire.showPayment')
     
         <div class="card">
-                <div class="card-body" wire:ignore> 
-                    {{ $invoices->links('pagination') }}  
+                <div class="card-body"> 
+
+                        <div class="search-set">
+                               
+                                <div class="search-input">
+                                        <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
+                                <div  class="dataTables_filter"><label> <input type="search" wire:model="search" class="form-control form-control-sm" placeholder="Search..." ></label></div></div>
+                        </div>
+                     <div  wire:ignore>
+                        {{ $invoices->links('pagination') }}  
+                      </div>   
+                   
                 </div>
                 
         </div>

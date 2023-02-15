@@ -30,12 +30,12 @@ class EditCart extends Component
     }
     public function updated($name, $value)
     {  
+      sleep(1);
       if (strpos($name, '.')) {       
         $code= explode('.',$name)[1]; 
         $itemname= explode('.',$name)[2];
         if ($value && is_numeric($code))
         { 
-
           $price=(int)$this->cartlist[$code]['price'];
           $quantity=(int)$this->cartlist[$code]['quantity'];
           $total=($price)*($quantity);
