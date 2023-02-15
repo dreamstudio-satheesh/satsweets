@@ -12,10 +12,12 @@
                                         <a class="btn btn-searchset"><img src="assets/img/icons/search-white.svg" alt="img"></a>
                                 <div  class="dataTables_filter"><label> <input type="search" wire:model="search" class="form-control form-control-sm" placeholder="Search..." ></label></div></div>
                         </div>
-                     <div>
+                
                         <br>
-                        {{ $invoices->withQueryString()->links('pagination') }}  
-                      </div>   
+                        <div class="d-flex justify-content-center">
+                                {!! $invoices->links() !!}
+                        </div>
+                    
                    
                 </div>
                 
@@ -105,7 +107,9 @@
         
         <div class="card">
             <div class="card-body"> 
-                {{ $invoices->withQueryString()->links('pagination') }}  
+                <div class="d-flex justify-content-center">
+                        {!! $invoices->links() !!}
+                </div>
             </div>
             Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
         </div>
