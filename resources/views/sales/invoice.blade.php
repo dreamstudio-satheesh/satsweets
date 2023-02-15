@@ -142,7 +142,12 @@
   </div>
   <footer class="text-center mt-4">
     <br>
-  {{-- <p class="text-1"><strong>NOTE :</strong> This is computer generated receipt and does not require physical signature.</p> --}}
+  <p class="text-1">
+    @foreach ($unpaid as $list)
+    {{ str_pad($list->invoice_number, 4, '0', STR_PAD_LEFT)}} - ₹{{$list->total- $list-paid}} &
+    @endforeach
+    
+  </p>
 
   <div class="btn-group btn-group-sm d-print-none"><button onclick="window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</button> <a href="" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> </div>
   
