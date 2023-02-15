@@ -14,7 +14,7 @@
                         </div>
                      <div>
                         <br>
-                        {{ $invoices->links('pagination') }}  
+                        {{ $invoices->withQueryString()->links() }}  
                       </div>   
                    
                 </div>
@@ -105,7 +105,7 @@
         
         <div class="card">
             <div class="card-body"> 
-                {{ $invoices->links('pagination') }}  
+                {{ $invoices->withQueryString()->links() }}  
             </div>
             Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
         </div>
