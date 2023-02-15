@@ -142,10 +142,14 @@
   </div>
   <footer class="text-center mt-4">
     <br>
-  <p class="text-1">
-    @foreach ($unpaid as $list)
-    {{ str_pad($list->invoice_number, 4, '0', STR_PAD_LEFT)}} - ₹{{$list->total- $list-paid}} &
+  <p class="text-1">Pending Invoices :
+    <?php $unpaid_amount=0; ?>
+    @foreach ($unpaid as $items)
+    {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}} 
+    <?php $unpaid_amount += ($items->total- $items->paid_amount); ?>
     @endforeach
+
+   <strong> Unpaid amount:{{ $unpaid_amount}} </strong>
     
   </p>
 

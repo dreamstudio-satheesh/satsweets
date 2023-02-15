@@ -25,8 +25,6 @@ class InvoiceController extends Controller
                 }
             }
             $unpaid= Invoice::select('invoice_number','total','paid_amount')->where('status','Unpaid')->orwhere('status','Partial')->where('customer_id' ,$invoice->customer_id )->get();
-           
-            
 
              return view('sales.invoice',compact('invoice','fivegst','twelvegst','unpaid'));
         }
