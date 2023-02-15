@@ -99,7 +99,7 @@
                 </tbody>
             </table>        
         </div>
-        @if ($search)
+        @if (is_empty($search))
         <div class="card">
                 <div class="card-body"> 
                         {{ $invoices->links() }}  
