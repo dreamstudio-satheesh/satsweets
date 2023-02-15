@@ -13,6 +13,7 @@
                                 <div  class="dataTables_filter"><label> <input type="search" wire:model="search" class="form-control form-control-sm" placeholder="Search..." ></label></div></div>
                         </div>
                      <div  wire:ignore>
+                        <br>
                         {{ $invoices->links('pagination') }}  
                       </div>   
                    
