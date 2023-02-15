@@ -101,6 +101,7 @@ class InvoiceList extends Component
   
         }else{
         $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->get();
+        
         }
         
         return view('livewire.invoice-list', compact('invoices'));
