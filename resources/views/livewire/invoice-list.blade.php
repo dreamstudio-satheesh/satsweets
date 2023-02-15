@@ -14,7 +14,7 @@
                         </div>
                      <div  wire:ignore>
                         <br>
-                        @if ($invoices->links)
+                        @if (isset($invoices->links))
                             
                         {{ $invoices->links('pagination') }}  
                         @endif
