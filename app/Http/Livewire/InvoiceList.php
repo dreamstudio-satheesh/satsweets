@@ -92,15 +92,15 @@ class InvoiceList extends Component
         $this->payment_date=Carbon::now()->format('Y-m-d');
         if (is_numeric($this->search)) {
             
-            $invoices = Invoice::Where('invoice_number','like', $this->search)->with(['customer'])->orderBy('id', 'DESC')->paginate(20);
+            $invoices = Invoice::Where('invoice_number','like', $this->search)->with(['customer'])->orderBy('id', 'DESC')->paginate(10);
         }elseif($this->search) {        
             $name=$this->search;
            
             $invoices = Invoice::whereHas('customer', function ($query) use ($name) { 
-                $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->paginate(20);
+                $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->paginate(10);
   
         }else{
-        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(10);
+        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(20);
         }
         
         return view('livewire.invoice-list', compact('invoices'));

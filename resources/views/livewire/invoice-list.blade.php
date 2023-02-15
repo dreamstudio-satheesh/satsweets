@@ -101,9 +101,15 @@
         </div>
         
         <div class="card">
-            <div class="card-body" wire:ignore> 
-                {{ $invoices->links() }}  
-            </div>
+                @if ($search)
+                    
+                @else
+                <div class="card-body" wire:ignore> 
+                        {{ $invoices->links() }}  
+                    </div>
+                    
+                @endif
+            
             Total Records: {{ $invoices->total() }}   per page :{{ $invoices->perPage() }} 
         </div>
     
