@@ -129,6 +129,16 @@
               <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
             </tr>
+
+            <tr>
+              <td colspan="6" class="text-end border-bottom-0">Pending Invoices :
+                <?php $unpaid_amount=0; ?>
+                @foreach ($unpaid as $items)
+                {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}}, 
+                <?php $unpaid_amount += ($items->total- $items->paid_amount); ?>
+                @endforeach</td>
+              <td class="text-end border-bottom-0">₹{{ $unpaid_amount}} </td>
+            </tr>
 		  </tfoot>
         </table>
       </div>
@@ -141,17 +151,8 @@
     <p align="right" class="text-2">For SATSWEETS</p>
   </div>
   <footer class="text-center mt-4">
-    <br>
-  <p class="text-1">Pending Invoices :
-    <?php $unpaid_amount=0; ?>
-    @foreach ($unpaid as $items)
-    {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}}, 
-    <?php $unpaid_amount += ($items->total- $items->paid_amount); ?>
-    @endforeach
+ 
 
-    Unpaid : <strong>₹ {{ $unpaid_amount}} </strong>
-    
-  </p>
 
   <div class="btn-group btn-group-sm d-print-none"><button onclick="window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</button> <a href="" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> </div>
   
