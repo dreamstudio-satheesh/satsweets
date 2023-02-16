@@ -126,7 +126,7 @@
           @endif
            
               <tr>
-              <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
+              <td colspan="5" class="text-end border-bottom-0"><strong>Bill Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
             </tr>
 
@@ -138,6 +138,11 @@
                 <?php $unpaid_amount += ($items->total- $items->paid_amount); ?>
                 @endforeach</td>
               <td class="text-end border-bottom-0">₹{{ $unpaid_amount}} </td>
+            </tr>
+
+            <tr>
+              <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
+              <td class="text-end border-bottom-0">₹{{ number_format($invoice->total+$unpaid_amount,2) }} </td>
             </tr>
 		  </tfoot>
         </table>
