@@ -131,7 +131,7 @@
             </tr>
 
             <tr>
-              <td colspan="6" class="text-end border-bottom-0">Pending Invoices :
+              <td colspan="5" class="text-end border-bottom-0">Pending Invoices :
                 <?php $unpaid_amount=0; ?>
                 @foreach ($unpaid as $items)
                 {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}}, 
