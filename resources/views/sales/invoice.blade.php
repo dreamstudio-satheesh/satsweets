@@ -134,8 +134,16 @@
               <td colspan="5" class="text-end border-bottom-0">Pending Invoices :
                 <?php $unpaid_amount=0; ?>
                 @foreach ($unpaid as $items)
-                {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}}, 
-                <?php $unpaid_amount += ($items->total- $items->paid_amount); ?>
+                @if ($invoice->invoice_number != $items->invoice_number)
+                {{ str_pad(, 4, '0', STR_PAD_LEFT)}}, 
+                @endif               
+
+                <?php
+                if ($invoice->invoice_number != $items->invoice_number) {
+                  $unpaid_amount += ($items->total- $items->paid_amount);
+                }
+                 
+                  ?>
                 @endforeach</td>
               <td class="text-end border-bottom-0">₹{{ $unpaid_amount}} </td>
             </tr>
