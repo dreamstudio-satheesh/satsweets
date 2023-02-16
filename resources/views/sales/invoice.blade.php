@@ -126,10 +126,10 @@
           @endif
            
               <tr>
-              <td colspan="5" class="text-end border-bottom-0"><strong>Bill Total:</strong></td>
+              <td colspan="5" class="text-end border-bottom-0"><strong>Total Bill:</strong></td>
               <td class="text-end border-bottom-0">₹{{ number_format($invoice->total,2) }} </td>
             </tr>
-
+            @if ($invoice->status !='Paid')
             <tr>
               <td colspan="5" class="text-end border-bottom-0">Pending Invoices :
                 <?php $unpaid_amount=0; ?>
@@ -145,6 +145,9 @@
                 @endforeach</td>
               <td class="text-end border-bottom-0">₹{{ $unpaid_amount}} </td>
             </tr>
+                
+            @endif
+            
 
             <tr>
               <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
