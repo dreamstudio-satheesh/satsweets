@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class InvoiceList extends Component
 {
-    public $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes;
+    public $invoice_number,  $payment_amount, $payment_date, $reference, $notes;
+    public $amount_to_pay;
     public $payments=array();
 
     public $payment_type='1';
@@ -83,6 +84,8 @@ class InvoiceList extends Component
        $this->invoice_number=$id;
        $invoice =Invoice::where('id', $id)->first();
        $this->amount_to_pay = $invoice->total - $invoice->paid_amount;
+
+       $this->payment_amount = $invoice->total - $invoice->paid_amount;
     }
 
     public function render()
