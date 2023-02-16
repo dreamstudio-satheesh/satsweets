@@ -24,7 +24,11 @@ class InvoiceController extends Controller
                     $twelvegst =$twelvegst+ ($item->gstamount  * $item->quantity );
                 }
             }
-            $unpaid= Invoice::select('invoice_number','total','paid_amount')->where('customer_id' ,$invoice->customer_id )->where('status','Unpaid')->orwhere('status','Partial')->get();
+            if ($invoice->status !='Paid') {
+                $unpaid= Invoice::select('invoice_number','total','paid_amount')->where('customer_id' ,$invoice->customer_id )->where('status','Unpaid')->orwhere('status','Partial')->get();
+            }
+            else $unpaid=false ;
+           
 
              return view('sales.invoice',compact('invoice','fivegst','twelvegst','unpaid'));
         }
