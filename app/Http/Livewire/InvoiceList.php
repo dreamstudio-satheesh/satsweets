@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class InvoiceList extends Component
 {
-    public $invoice_number,  $payment_amount, $payment_date, $reference, $notes;
-    public $amount_to_pay;
+    public $invoice_number, $amount_to_pay, $payment_amount, $payment_date, $reference, $notes;
     public $payments=array();
 
     public $payment_type='1';
@@ -84,8 +83,6 @@ class InvoiceList extends Component
        $this->invoice_number=$id;
        $invoice =Invoice::where('id', $id)->first();
        $this->amount_to_pay = $invoice->total - $invoice->paid_amount;
-
-       $this->payment_amount = $invoice->total - $invoice->paid_amount;
     }
 
     public function render()
@@ -101,10 +98,10 @@ class InvoiceList extends Component
             $name=$this->search;
             $links=false;
             $invoices = Invoice::whereHas('customer', function ($query) use ($name) { 
-                $query->where('name', 'like', '%'.$name.'%'); })->limit(50)->get();
+                $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->limit(100)->get();
   
         }else{
-        $invoices = Invoice::with(['customer'])->paginate(100);
+        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(25);
         }
         
         return view('livewire.invoice-list', compact('invoices','links'));
