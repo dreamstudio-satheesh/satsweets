@@ -31,7 +31,7 @@
                             </div>
                             <div class="dash-widgetcontent">
                                 <h5 >₹<span class="counters" data-count="{{$salesreturn}}">₹{{$salesreturn}}</span></h5>
-                                <h6>Total Return</h6>
+                                <h6>Today Return</h6>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count">
                             <div class="dash-counts">
-                                <h4>100</h4>
+                                <h4>{{$customers}}</h4>
                                 <h5>Customers</h5>
                             </div>
                             <div class="dash-imgs">
@@ -93,7 +93,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das3">
                             <div class="dash-counts">
-                                <h4>105</h4>
+                                <h4>{{$invoicescount}}</h4>
                                 <h5>Sales Invoice</h5>
                             </div>
                             <div class="dash-imgs">
