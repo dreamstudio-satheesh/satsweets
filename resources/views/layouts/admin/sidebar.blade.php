@@ -61,11 +61,8 @@
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/time.svg') }}" alt="img"><span> Report</span> <span class="menu-arrow"></span></a>
                                 <ul>
-                                    <li><a href="{{ url('purchaseorderreport') }}">Purchase order report</a></li>
-                                    <li><a href="{{ url('inventoryreport') }}">Inventory Report</a></li>
                                     <li><a href="{{ url('salesreport') }}">Sales Report</a></li>
                                     <li><a href="{{ url('invoicereport') }}">Invoice Report</a></li>
-                                    <li><a href="{{ url('purchasereport') }}">Purchase Report</a></li>
                                     <li><a href="{{ url('supplierreport') }}">Supplier Report</a></li>
                                     <li><a href="{{ url('customerreport') }}">Customer Report</a></li>
                                 </ul>
