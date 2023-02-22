@@ -26,29 +26,13 @@
                                 </ul>
                             </li>
                             @role('admin')
-                            <li class="submenu">
-                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/purchase1.svg') }}" alt="img"><span> Purchase</span> <span class="menu-arrow"></span></a>
-                                <ul>
-                                    <li><a href="{{ url('purchaselist') }}">Purchase List</a></li>
-                                    <li><a href="{{ url('addpurchase') }}">Add Purchase</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu">
-                                <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/expense1.svg') }}" alt="img"><span> Expense</span> <span class="menu-arrow"></span></a>
-                                <ul>
-                                    <li><a href="{{ url('expenselist') }}">Expense List</a></li>
-                                    <li><a href="{{ url('addexpense') }}">Add Expense</a></li>
-                                    <li><a href="{{ url('expensecategory') }}">Expense Category</a></li>
-                                </ul>
-                            </li>
+                         
                           
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
                                 <ul>
                                     <li><a href="{{ url('salesreturnlist') }}">Sales Return List</a></li>
                                     <li><a href="{{ url('addsalesreturn') }}">Add Sales Return </a></li>
-                                    <li><a href="{{ url('purchasereturnlist') }}">Purchase Return List</a></li>
-                                    <li><a href="{{ url('addpurchasereturn') }}">Add Purchase Return </a></li>
                                 </ul>
                             </li>
                             @endrole
