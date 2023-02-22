@@ -41,13 +41,13 @@
                                 @csrf
 								@method('PUT')
 							<div class="row">                                
-								<div class="col-lg-4 col-sm-6 col-12">
+								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Name</label>
 										<input name="name" type="text" value="{{ old('', $product->name) }}" required>
 									</div>
 								</div>
-                                <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Category</label>
 										<select class="select" name="category_id">
@@ -58,10 +58,16 @@
 										</select>
 									</div>
 								</div>
-                                <div class="col-lg-4 col-sm-6 col-12">
+                                <div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Product Price</label>
 										<input name="price" type="text" value="{{ old('', $product->price) }}" required>
+									</div>
+								</div>
+								<div class="col-lg-3 col-sm-6 col-12">
+									<div class="form-group">
+										<label>Retail Price</label>
+										<input name="retail_price" type="text" value="{{ old('', $product->retail_price) }}" >
 									</div>
 								</div>
 								<div class="col-lg-3 col-sm-6 col-12">
