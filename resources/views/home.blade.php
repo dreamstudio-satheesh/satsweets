@@ -61,7 +61,7 @@
                         <div class="dash-count">
                             <div class="dash-counts">
                                 <h4>{{$customers}}</h4>
-                                <h5>Customers</h5>
+                                <h5>Stores</h5>
                             </div>
                             <div class="dash-imgs">
                                 <i data-feather="user"></i> 
@@ -72,7 +72,7 @@
                         <div class="dash-count das1">
                             <div class="dash-counts">
                                 <h4>100</h4>
-                                <h5>Suppliers</h5>
+                                <h5>Customers</h5>
                             </div>
                             <div class="dash-imgs">
                                 <i data-feather="user-check"></i> 
