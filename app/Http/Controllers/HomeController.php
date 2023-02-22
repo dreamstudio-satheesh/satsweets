@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Invoice;
+use App\Models\Product;
 use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,7 @@ class HomeController extends Controller
     {
          $invoices = Invoice::whereDate('date', Carbon::today())->get();
          $customers = Customer::count();
+         $products = Product::count();
          $invoicescount = Invoice::count();
          $invoicetotal=0;
          $salesreturn=0;
@@ -37,6 +39,6 @@ class HomeController extends Controller
             $salesreturn=$salesreturn+$invoice->salesreturn;
          }
          $customers = Customer::count();
-         return view('home',compact('invoicetotal','salesreturn','invoicescount','customers'));
+         return view('home',compact('invoicetotal','salesreturn','invoicescount','customers','products'));
     }
 }
