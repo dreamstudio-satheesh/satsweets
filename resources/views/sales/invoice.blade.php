@@ -135,10 +135,9 @@
               <td colspan="5" class="text-end border-bottom-0">Pending Invoices :
                
                 @foreach ($unpaid as $items)
-                @if ($invoice->invoice_number != $items->invoice_number)
-                {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}}, 
-                @endif
-               
+                  @if ($invoice->invoice_number != $items->invoice_number)
+                  {{ str_pad($items->invoice_number, 4, '0', STR_PAD_LEFT)}}, 
+                  @endif               
                 <?php
                 if ($invoice->invoice_number != $items->invoice_number) {
                   $unpaid_amount += ($items->total- $items->paid_amount);
@@ -149,11 +148,20 @@
                 
             @endif
             
+            @if ($invoice->salesreturn)
+            <tr>
+              <td colspan="5" class="text-end border-bottom-0">{{$invoice->return_note}}</td>
+              <td class="text-end border-bottom-0">₹ {{$invoice->salesreturn}}</td>
+            </tr>
+                
+            @endif
+            
 
             <tr>
               <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">₹{{ number_format($invoice->total+$unpaid_amount,2) }} </td>
             </tr>
+           
 		  </tfoot>
         </table>
       </div>

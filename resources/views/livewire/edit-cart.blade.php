@@ -120,8 +120,8 @@
             <div class="row ">
                 <div class="col-lg-6">
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control"></textarea>
+                        <label>Sales Return Items:</label>
+                        <textarea wire:model.debounce.2s="return_note" class="form-control"></textarea>
                     </div>
                 </div>
                 <div class="col-lg-6 float-md-right">
@@ -136,9 +136,18 @@
                                 <h4>Tax</h4>
                                 <h5>{{ $invoice->taxamount}}</h5>
                             </li>
+                            <li>
+                                <h4>Sales Return </h4>
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <input class="sminput"  wire:model.debounce.1s="salesreturn"  type="text" >
+                            </li>	
                             <li class="total">
                                 <h4>Grand Total</h4>
+                                @if ($salesreturn)
+                                <h5>₹ {{ $invoice->total - $salesreturn }}</h5>                              
+                                @else                                    
                                 <h5>₹ {{ $invoice->total}}</h5>
+                                @endif
                             </li>
                         </ul>
                     </div>

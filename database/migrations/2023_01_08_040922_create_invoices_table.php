@@ -21,10 +21,10 @@ return new class extends Migration
             $table->double('sub_total')->nullable();
             $table->double('total')->nullable();
             $table->double('taxamount')->nullable();
-            $table->double('discount')->nullable();
+            $table->double('salesreturn')->nullable();
             $table->double('paid_amount')->nullable();
             $table->string('status')->default('Unpaid');
-            $table->text('note')->nullable();
+            $table->text('return_note')->nullable();
             $table->foreignId('customer_id')->unsigned();
             $table
             ->foreign('customer_id')

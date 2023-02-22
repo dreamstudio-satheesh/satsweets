@@ -13,25 +13,39 @@ class EditCart extends Component
 {
     public $barcode = '';
 
-    public $invoice, $invoice_id,$invoice_items;
+    public $invoice, $invoice_id, $invoice_items, $salesreturn, $return_note;
 
     public $cartlist= array( );
 
-
-
     public function mount()
     {
-      $this->invoice = Invoice::with(['invoice_items','customer'])->where('id',$this->invoice_id)->first();
-    
-      foreach ($this->invoice->invoice_items as  $item) {
-        $this->addcartlist($item);
+      $invoice=Invoice::with(['invoice_items','customer'])->where('id',$this->invoice_id)->first();
+
+      if ($invoice) {
+        $this->invoice = $invoice;
+        $this->salesreturn= $invoice->salesreturn;
+        $this->return_note= $invoice->return_note;
+      
+        foreach ($invoice->invoice_items as  $item)
+        {
+          $this->addcartlist($item);
+        }
       }
-      //dd($this->cartlist);
+
     }
     public function updated($name, $value)
     {  
-      sleep(1);
-      if (strpos($name, '.')) {       
+      if ( ($name='salesreturn')  || ($name='return_note')) {
+
+          $invoice = Invoice::find($this->invoice->id);
+                  
+          $invoice->update([
+            'salesreturn' => $this->salesreturn,
+            'return_note' => $this->return_note, 
+          ]);
+      }
+      elseif (strpos($name, '.')) {  
+        
         $code= explode('.',$name)[1]; 
         $itemname= explode('.',$name)[2];
         if ($value && is_numeric($code))
@@ -44,7 +58,7 @@ class EditCart extends Component
           $item->update([
             'quantity' => $quantity, 
             'price' => $price,  
-            'total' => $total,  
+            'total' => $total,
           ]);
           
           $this->updatecart(); 
@@ -143,6 +157,15 @@ class EditCart extends Component
     
     public function render()
     {
+      
+        if($this->invoice){
         return view('livewire.edit-cart');
+        } else {
+          dd('Error :Invoice not exits');
+        }
+
+        
+      
+       
     }
 }
