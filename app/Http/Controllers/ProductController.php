@@ -63,6 +63,8 @@ class ProductController extends Controller
             'category_id' => 'required',
         ]);
         
+        return $request->all();
+        
          $product = Product::create([
             'name'=>$request->name,
             'code'=>$request->code,

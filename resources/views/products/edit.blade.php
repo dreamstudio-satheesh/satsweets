@@ -67,7 +67,7 @@
 								<div class="col-lg-3 col-sm-6 col-12">
 									<div class="form-group">
 										<label>Retail Price</label>
-										<input name="retail_price" type="text" value="{{ old('', $product->retail_price) }}" >
+										<input name="retail_price" type="text" value="{{ old('', $product->retail_price ) }}" >
 									</div>
 								</div>
 								<div class="col-lg-3 col-sm-6 col-12">
