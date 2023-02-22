@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\Invoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,10 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-         $user = Auth::user();
-        if ($user->hasRole('user')) {
-           return redirect('pos');
-        }
-        return view('home');
+         $invoices = Invoice::whereDate('date', Carbon::today())->get();
+         $invoicetotal=0;
+         $salesreturn=0;
+         foreach ($invoices as  $invoice) {
+            $invoicetotal=$invoicetotal+$invoice->total;
+            $salesreturn=$salesreturn+$invoice->salesreturn;
+         }
+        return view('home',compact('invoicetotal','salesreturn'));
     }
 }
