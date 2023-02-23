@@ -30,7 +30,8 @@ class HomeController extends Controller
     {
          $invoices = Invoice::whereDate('date', Carbon::today())->get();
          $customers = Customer::count();
-         $products = Product::count();
+         $productscount = Product::count();
+         $products=Product::orderBy('id', 'DESC')->limit(5)->get();
          $invoicescount = Invoice::count();
          $invoicetotal=0;
          $salesreturn=0;
@@ -39,6 +40,6 @@ class HomeController extends Controller
             $salesreturn=$salesreturn+$invoice->salesreturn;
          }
          $customers = Customer::count();
-         return view('home',compact('invoicetotal','salesreturn','invoicescount','customers','products'));
+         return view('home',compact('invoicetotal','salesreturn','invoicescount','customers','products','productscount'));
     }
 }

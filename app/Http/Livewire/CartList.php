@@ -47,7 +47,7 @@ class CartList extends Component
             if ($name && is_numeric($id)) { $this->updatecart($id); }
         }
 
-        if (!empty($this->cartlist) && !empty($this->customer_id) && !empty($this->invoice_date)) {          
+        if ( !empty($this->customer_id) && !empty($this->invoice_date)) {          
             $this->checkout = true;
         }
         else{  $this->checkout = false;}

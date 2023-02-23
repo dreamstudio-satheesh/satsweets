@@ -82,7 +82,7 @@
                     <div class="col-lg-3 col-sm-6 col-12 d-flex">
                         <div class="dash-count das2">
                             <div class="dash-counts">
-                                <h4>{{ $products}}</h4>
+                                <h4>{{ $productscount}}</h4>
                                 <h5>Products</h5>
                             </div>
                             <div class="dash-imgs">
@@ -171,46 +171,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($products as $item)
                                             <tr>
-                                                <td>1</td>
+                                                <td>{{$item->id }}</td>
                                                 <td class="productimgname">
                                                     <a href="productlist.html" class="product-img">
                                                         <img src="{{ asset('assets/img/product/product22.jpg') }}" alt="product">
                                                     </a>
-                                                    <a href="productlist.html">Palkova</a>
+                                                    <a href="productlist.html">{{$item->name }}</a>
                                                 </td>
-                                                <td>₹891</td>
+                                                <td>₹{{$item->price }}</td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="{{ asset('assets/img/product/product23.jpg') }}" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Laddu</a>
-                                                </td>
-                                                <td>₹668</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="{{ asset('assets/img/product/product24.jpg') }}" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Mixture</a>
-                                                </td>
-                                                <td>₹522</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td class="productimgname">
-                                                    <a href="productlist.html" class="product-img">
-                                                        <img src="{{ asset('assets/img/product/product6.jpg') }}" alt="product">
-                                                    </a>
-                                                    <a href="productlist.html">Heart Biscuit</a>
-                                                </td>
-                                                <td>₹291</td>
-                                            </tr>
+                                                
+                                            @endforeach                                          
+                                         
                                         </tbody>
                                     </table>
                                 </div>
