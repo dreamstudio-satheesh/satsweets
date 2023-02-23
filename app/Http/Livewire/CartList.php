@@ -11,7 +11,6 @@ use App\Traits\Invoices;
 class CartList extends Component
 {
     use Invoices; 
-    public $checkout = false;
     public $total_count= 0;
     public $customers;
     public $cartlist= array();
@@ -47,10 +46,7 @@ class CartList extends Component
             if ($name && is_numeric($id)) { $this->updatecart($id); }
         }
 
-        if ( !empty($this->customer_id) && !empty($this->invoice_date)) {          
-            $this->checkout = true;
-        }
-        else{  $this->checkout = false;}
+      
 
     }
 

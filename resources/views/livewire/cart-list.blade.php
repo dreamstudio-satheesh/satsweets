@@ -83,11 +83,11 @@
                     </li>
                 </ul>
             </div>
-            @if ($checkout)
+           
             <div class="btn-totallabel" wire:click="checkout()">
                 <h5>Checkout</h5>
             </div>	
-            @endif             						
+                  						
             
         </div>
     </div>
