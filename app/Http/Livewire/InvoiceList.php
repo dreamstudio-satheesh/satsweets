@@ -33,7 +33,7 @@ class InvoiceList extends Component
       
  
         // Execution doesn't reach here if validation fails.
- dd(Auth::user()->id);
+ dd(auth()->user()->id);
         SalesPayment::create([
             'invoice_num' => $this->invoice_number,
             'payment_date' => $this->payment_date,
@@ -41,7 +41,7 @@ class InvoiceList extends Component
             'amount' => $this->payment_amount,
             'reference' => $this->reference,
             'notes' => $this->notes,            
-            'created_by' => Auth::user()->id
+            'created_by' => auth()->user()->id
         ]); 
 
        $invoice= Invoice::where('invoice_number',$this->invoice_number)->first();
