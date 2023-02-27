@@ -106,6 +106,6 @@ class UnpaidInvoicelist extends Component
         //->orderBy('id', 'DESC')
         }
         
-        return view('livewire.invoice-list', compact('invoices','links'));
+        return view('livewire.unpaid-invoicelist', compact('invoices','links'));
     }
 }
