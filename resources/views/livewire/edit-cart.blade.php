@@ -142,10 +142,7 @@
                                 <input class="sminput"  wire:model.debounce.1s="salesreturn"  type="text" >
                             </li>	
                             <li class="total">
-                                <h4>Grand Total</h4>
-                                @if ($salesreturn)
-                                <h5>₹ {{ $invoice->total - $salesreturn }}</h5>                              
-                                @else                                    
+                                <h4>Grand Total</h4>                                                                
                                 <h5>₹ {{ $invoice->total}}</h5>
                                 @endif
                             </li>
