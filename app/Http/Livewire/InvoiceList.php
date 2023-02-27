@@ -63,13 +63,13 @@ class InvoiceList extends Component
 
     public function close()
     {
-        $this->reset(['amount_to_pay', 'payment_amount','invoice_number']);
+        $this->reset(['amount_to_pay', 'payment_amount','payment_amount','invoice_number']);
         $this->emit('close_payment_modal');
     }
 
     public function closeshowpayment()
     {
-        $this->reset(['payments', 'payment_amount','invoice_number']);
+        $this->reset(['payments', 'payment_amount','payment_amount','invoice_number']);
         $this->emit('close_show_payment_modal');
     }
 
@@ -83,6 +83,7 @@ class InvoiceList extends Component
        $this->invoice_number=$id;
        $invoice =Invoice::where('id', $id)->first();
        $this->amount_to_pay = $invoice->total - $invoice->paid_amount;
+       $this->payment_amount = $invoice->total - $invoice->paid_amount;
     }
 
     public function render()
