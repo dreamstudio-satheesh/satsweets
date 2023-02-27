@@ -161,7 +161,6 @@
               <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">
                 ₹{{ number_format($invoice->total+$unpaid_amount,2) }}
-                @endif
                </td>
             </tr>
            
