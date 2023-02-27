@@ -44,7 +44,7 @@ class EditCart extends Component
                $total +=(int) $item['total'];
               
            } 
-           $total = $total ;
+           $total = $total-$this->salesreturn;
                   
           $invoice->update([
             'salesreturn' => $this->salesreturn,
