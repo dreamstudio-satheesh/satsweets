@@ -33,7 +33,7 @@ class InvoiceList extends Component
       
  
         // Execution doesn't reach here if validation fails.
-
+ 
         SalesPayment::create([
             'invoice_num' => $this->invoice_number,
             'payment_date' => $this->payment_date,
@@ -41,7 +41,7 @@ class InvoiceList extends Component
             'amount' => $this->payment_amount,
             'reference' => $this->reference,
             'notes' => $this->notes,            
-            'created_by' => '1',
+            'created_by' => 1
         ]); 
 
        $invoice= Invoice::where('invoice_number',$this->invoice_number)->first();
@@ -63,13 +63,13 @@ class InvoiceList extends Component
 
     public function close()
     {
-        $this->reset(['amount_to_pay', 'payment_amount','payment_amount','invoice_number']);
+        $this->reset(['amount_to_pay', 'payment_amount','invoice_number']);
         $this->emit('close_payment_modal');
     }
 
     public function closeshowpayment()
     {
-        $this->reset(['payments', 'payment_amount','payment_amount','invoice_number']);
+        $this->reset(['payments', 'payment_amount','invoice_number']);
         $this->emit('close_show_payment_modal');
     }
 
@@ -83,7 +83,6 @@ class InvoiceList extends Component
        $this->invoice_number=$id;
        $invoice =Invoice::where('id', $id)->first();
        $this->amount_to_pay = $invoice->total - $invoice->paid_amount;
-       $this->payment_amount = $invoice->total - $invoice->paid_amount;
     }
 
     public function render()
@@ -102,8 +101,7 @@ class InvoiceList extends Component
                 $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->limit(100)->get();
   
         }else{
-        $invoices = Invoice::Where('status','Unpaid')->with(['customer'])->paginate(25);
-        //->orderBy('id', 'DESC')
+        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(25);
         }
         
         return view('livewire.invoice-list', compact('invoices','links'));
