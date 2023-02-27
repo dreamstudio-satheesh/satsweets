@@ -39,7 +39,7 @@
                     </tr>
             </thead>
             <tbody>
-
+                <?php $counter = 1; ?>
                     @foreach ($invoices as $invoice)
                     <tr>
                             <td>
@@ -77,7 +77,9 @@
 
                                             @if ($invoice->status !='Paid')
                                             <li>
-                                                    <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal"  wire:click="createpayment({{ $invoice->id }})" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
+                                                    <a href="javascript:void(0);" class="dropdown-item" data-bs-toggle="modal" @if ($counter == 1)
+                                                    accesskey="c"  
+                                                    @endif wire:click="createpayment({{ $invoice->id }})" data-bs-target="#createpayment"><img src="{{ url('') }}/assets/img/icons/plus-circle.svg" class="me-2" alt="img">Create Payment</a>
                                             </li>
                                             @endif
                                             
@@ -95,6 +97,7 @@
                                     </ul>
                             </td>
                     </tr>  
+                    <?php  $counter = $counter + 1; ?>
                     @endforeach
             </tbody>
         </table>        
