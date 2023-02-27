@@ -41,7 +41,8 @@ class EditCart extends Component
                   
           $invoice->update([
             'salesreturn' => $this->salesreturn,
-            'return_note' => $this->return_note, 
+            'return_note' => $this->return_note,
+            'total' => $this->invoice->total -$this->salesreturn, 
           ]);
       }
       elseif (strpos($name, '.')) {  
