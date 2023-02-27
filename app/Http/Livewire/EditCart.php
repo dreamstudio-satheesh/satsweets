@@ -38,11 +38,18 @@ class EditCart extends Component
       if ( ($name='salesreturn')  || ($name='return_note')) {
 
           $invoice = Invoice::find($this->invoice->id);
+
+          $total=0;   
+           foreach ($this->cartlist  as $item) {
+               $total +=(int) $item['total'];
+              
+           } 
+           $total = $total -$this->salesreturn;
                   
           $invoice->update([
             'salesreturn' => $this->salesreturn,
             'return_note' => $this->return_note,
-            'total' => $this->invoice->total -$this->salesreturn, 
+            'total' =>  $total, 
           ]);
       }
       elseif (strpos($name, '.')) {  
