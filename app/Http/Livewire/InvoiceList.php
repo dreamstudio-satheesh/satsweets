@@ -33,7 +33,7 @@ class InvoiceList extends Component
       
  
         // Execution doesn't reach here if validation fails.
- 
+ dd(Auth::user()->id);
         SalesPayment::create([
             'invoice_num' => $this->invoice_number,
             'payment_date' => $this->payment_date,
