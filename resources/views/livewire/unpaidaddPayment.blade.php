@@ -52,13 +52,13 @@
 							<div class="col-lg-12">
 								<div class="form-group mb-0">
 									<label>Note</label>
-									<textarea class="form-control" wire:model="notes"></textarea>
+									<textarea autofocus class="form-control" wire:model="notes"></textarea>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<input type="submit" autofocus class="btn btn-submit" value="Submit">
+						<input type="submit"  class="btn btn-submit" value="Submit">
 						<button type="button" class="btn btn-cancel" wire:click="close">Close</button>
 					</div>
 				</form>
