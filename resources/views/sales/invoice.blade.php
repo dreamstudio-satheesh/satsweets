@@ -161,7 +161,7 @@
               <td colspan="5" class="text-end border-bottom-0"><strong>Total:</strong></td>
               <td class="text-end border-bottom-0">
                 @if ($invoice->salesreturn)                
-                ₹{{ number_format(($invoice->total+$unpaid_amount+$invoice->salesreturn),2) }}   
+                ₹{{ number_format(($invoice->total+$unpaid_amount+$unpaid_amount-$invoice->salesreturn),2) }}   
                 @else
                 ₹{{ number_format($invoice->total+$unpaid_amount,2) }}
                 @endif
