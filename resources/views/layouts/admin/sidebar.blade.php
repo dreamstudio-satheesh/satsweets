@@ -31,6 +31,7 @@
                             <li class="submenu">
                                 <a href="javascript:void(0);"><img src="{{ asset('assets/img/icons/return1.svg') }}" alt="img"><span> Return</span> <span class="menu-arrow"></span></a>
                                 <ul>
+                                    <li><a href="{{ url('unpaidsaleslist') }}">Unpaid Sales </a></li>
                                     <li><a href="{{ url('salesreturnlist') }}">Sales Return List</a></li>
                                     <li><a href="{{ url('addsalesreturn') }}">Add Sales Return </a></li>
                                 </ul>
