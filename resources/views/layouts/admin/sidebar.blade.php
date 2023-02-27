@@ -21,6 +21,7 @@
                                 <ul>
                                     <li><a href="{{ url('saleslist') }}">Sales List</a></li>
                                     <li><a href="{{ url('pos') }}">New Sales</a></li>
+                                    <li><a href="{{ url('unpaidsaleslist') }}">Unpaid Sales </a></li>
                                     <li><a href="{{ url('salesreturnlist') }}">Sales Return List</a></li>
                                     <li><a href="{{ url('newsalesreturn') }}">New Sales Return</a></li>
                                 </ul>
