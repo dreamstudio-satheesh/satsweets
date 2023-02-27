@@ -19,6 +19,13 @@ class CartController extends Controller
         
     }
 
+    public function unpaidsaleslist()
+    {
+        
+        return view('sales.unpaidsaleslist');
+        
+    }
+
     public function sales()
     {
         
