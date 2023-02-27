@@ -150,7 +150,7 @@
             
             @if ($invoice->salesreturn)
             <tr>
-              <td colspan="5" class="text-end border-bottom-0">{{$invoice->return_note}}</td>
+              <td colspan="5" class="text-end border-bottom-0">Return :{{$invoice->return_note}}</td>
               <td class="text-end border-bottom-0">₹ {{$invoice->salesreturn}}</td>
             </tr>
                 
