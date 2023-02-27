@@ -135,6 +135,7 @@ class EditCart extends Component
             }
         } 
         $sub_total=$total-$taxamount;
+        $total = $total-$this->salesreturn;
         
         $invoice = Invoice::find($this->invoice->id);
         $invoice->update([
