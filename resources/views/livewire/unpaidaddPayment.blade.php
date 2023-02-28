@@ -4,7 +4,7 @@
 			<div class="modal-dialog modal-lg modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title">Create Payment</h5>
+						<h5 class="modal-title">Create Payment #{{$invoice_number}}</h5>
 						<button type="button" class="btn-close" aria-label="Close"><span wire:click="close" aria-hidden="true">×</span></button>
 					</div>
 					<div class="modal-body">
