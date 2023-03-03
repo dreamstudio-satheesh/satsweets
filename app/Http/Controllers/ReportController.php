@@ -14,10 +14,10 @@ class ReportController extends Controller
      */
     public function sales()
     {
-        $date='2023-02-29';
+        $date='2023-03-02';
        
         return Customer::with(['invoices'=> function($q)use($date){
-            $q->where('date','2023-02-29');
+            $q->where('date', $date);
         }])->where('line_id',11)->get();
     }
 
