@@ -28,7 +28,7 @@
 
 @section('content')
 
-<div class="content">
+<div id="printable" class="content">
         <div class="page-header">
                 <div class="page-title">
                         <h4>Sales Report</h4>

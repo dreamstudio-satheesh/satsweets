@@ -66,11 +66,12 @@ Route::view('addsupplier', 'people.addsupplier')->name('addsuppliers');
 //Report
 Route::view('purchaseorderreport', 'report.purchaseorderreport')->name('purchaseorderreport');
 Route::view('inventoryreport', 'report.inventoryreport')->name('inventoryreport');
-Route::view('salesreport', 'report.salesreport')->name('salesreport');
+Route::view('salesreporta', 'report.salesreport')->name('salesreporta');
 Route::view('invoicereport', 'report.invoicereport')->name('invoicereport');
 Route::view('purchasereport', 'report.purchasereport')->name('purchasereport');
 Route::view('supplierreport', 'report.supplierreport')->name('supplierreport');
 Route::view('customerreport', 'report.customerreport')->name('customerreport');
+Route::get('/salesreport',  [App\Http\Controllers\ReportController::class, 'sales']);
 
 //Settings
 Route::view('generalsettings', 'settings.generalsettings')->name('generalsettings');

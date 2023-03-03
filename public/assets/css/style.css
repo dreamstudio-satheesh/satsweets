@@ -6747,4 +6747,13 @@ span.select2-container.select2-container--default.select2-container--open {
   right: 10px;
 }
 
+
+@media print {
+  .header,.sidebar, .wordset, .search-set , h6  { display:none; }
+  .page-wrapper {
+    margin: 0;
+    padding: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
