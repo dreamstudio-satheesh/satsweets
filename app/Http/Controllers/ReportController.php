@@ -16,9 +16,11 @@ class ReportController extends Controller
     {
         $date='2023-03-02';
        
-        return Customer::with(['invoices'=> function($q)use($date){
+        $customers= Customer::with(['invoices'=> function($q)use($date){
             $q->where('date', $date);
         }])->where('line_id',11)->get();
+
+        return view('report.salesreport',compact('customers'));
     }
 
 }

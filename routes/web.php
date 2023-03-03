@@ -66,7 +66,6 @@ Route::view('addsupplier', 'people.addsupplier')->name('addsuppliers');
 //Report
 Route::view('purchaseorderreport', 'report.purchaseorderreport')->name('purchaseorderreport');
 Route::view('inventoryreport', 'report.inventoryreport')->name('inventoryreport');
-Route::view('salesreporta', 'report.salesreport')->name('salesreporta');
 Route::view('invoicereport', 'report.invoicereport')->name('invoicereport');
 Route::view('purchasereport', 'report.purchasereport')->name('purchasereport');
 Route::view('supplierreport', 'report.supplierreport')->name('supplierreport');

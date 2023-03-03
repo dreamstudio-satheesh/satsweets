@@ -99,7 +99,7 @@
                 </tbody>
             </table>        
         </div>
-        @if ($links))
+        @if ($links)
         <div class="card">
                 <div wire:ignore class="card-body"> 
                         {{ $invoices->links() }}  
