@@ -14,7 +14,7 @@ class ReportController extends Controller
      */
     public function sales()
     {
-        return Customer::where('line_id',11)->get();
+        return Customer::with('invoices')->where('line_id',11)->get();
     }
 
 }
