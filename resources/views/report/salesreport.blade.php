@@ -110,7 +110,7 @@
                         </div>
                         <!-- /Filter -->
                         <div class="table-responsive">
-                                <table class="table">
+                                <table class="table datanew">
                                         <thead>
                                                 <tr>
                                                         <th>S.No</th>
