@@ -14,7 +14,7 @@ class ReportController extends Controller
      */
     public function sales()
     {
-        $date='2023-03-03';
+        $date='2023-03-02';
        
          $customers= Customer::with(['invoices'=> function($q)use($date){
             $q->where('date', $date);
