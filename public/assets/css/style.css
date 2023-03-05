@@ -6754,6 +6754,13 @@ span.select2-container.select2-container--default.select2-container--open {
     margin: 0;
     padding: 0;
   }
+
+  table, th, td {
+    border: 1px solid #E9ECEF;
+    }
+  th, td {
+  padding: 10px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
