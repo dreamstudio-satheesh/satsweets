@@ -130,16 +130,16 @@
                                         <tr>
                                                 <td>{{ $i }}</td>      
                                                 <td>{{ $item->name }}</td>                                               
-                                                <td>{{ Str::limit($item->address, 25) }}</td>  
+                                                <td>{{ Str::limit($item->address, 20) }}</td>  
                                                 <td>{{ $item->contact1 }}</td>
                                                <td>         
                                                  @foreach ($item->invoices as $invoice)
-                                                  {{ $invoice->total }}
+                                                  {{ number_format($invoice->total,2) }}
                                                 @endforeach
                                                </td> 
                                                <td>         
                                                 @foreach ($item->invoices as $invoice)
-                                                 {{ $invoice->paid_amount }}
+                                                 {{ number_format($invoice->paid_amount,2) }}
                                                @endforeach
                                               </td>  
                                                
