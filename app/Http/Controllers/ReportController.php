@@ -13,9 +13,17 @@ class ReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function sales($id=1)
+    public function sales(Request $request)
     {
-        $date='2023-03-02';
+        if ($request->all()) {
+            $id=$request->id;
+            $date=$request->date;
+        }else{
+            $id=1;
+            $date=date("Y-m-d");
+        }
+        
+        
 
         $lines=Line::all();
        

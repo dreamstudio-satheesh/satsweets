@@ -31,13 +31,7 @@
         <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalert2.all.min.js"></script>
         <script src="{{ url('') }}/assets/plugins/sweetalert/sweetalerts.min.js"></script>
 
-        <script type="text/javascript">
-                $(document).ready(function () {
-                 $("#selectbox").change(function () {                   
-                    location.href = "{{ url('salesreport/')}}/"+$(this).val();
-                 })
-             });
-             </script>
+  
     
 @endpush
 
@@ -81,38 +75,53 @@
                         <!-- /Filter -->
                         <div class="card" id="filter_inputs">
                                 <div class="card-body pb-0">
-                                        <div class="row">
-
-                                                <div class="col-lg-2 col-sm-6 col-12">
-                                                     
-                                                        <div class="form-group">
-                                                            <select class="form-control nested"  id="selectbox">
-                                                                
-                                                                <optgroup label="line A">
-                                                                        @foreach ($lines as $line)
-                                                                        @if ($line->line == 1)
-                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
-                                                                        @endif
-                                                                        @endforeach                                                                      
-                                                                </optgroup>
-                                                                <optgroup label="line E">
-                                                                        @foreach ($lines as $line)
-                                                                        @if ($line->line == 5)
-                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
-                                                                        @endif
-                                                                        @endforeach 
-                                                                </optgroup>
-
-                                                              
-                                                                
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                             
-                                             
+                                        <form method="post" action="">
+                                                @csrf
+                                                <div class="row">
                                                 
-                                        </div>
+                                                        <div class="col-lg col-sm-6 col-12">
+                                                                <div class="form-group">
+                                                                        <input required name='date' type="date" class="form-control">
+                                                                </div>
+                                                        </div>
+
+                                                        <div class="col-lg col-sm-6 col-12">
+                                                                <div class="form-group">
+                                                                        <select required name='id' class="form-control nested"  id="selectbox">
+                                                                        
+                                                                                <optgroup label="line A">
+                                                                                        @foreach ($lines as $line)
+                                                                                        @if ($line->line == 1)
+                                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
+                                                                                        @endif
+                                                                                        @endforeach                                                                      
+                                                                                </optgroup>
+                                                                                <optgroup label="line E">
+                                                                                        @foreach ($lines as $line)
+                                                                                        @if ($line->line == 5)
+                                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
+                                                                                        @endif
+                                                                                        @endforeach 
+                                                                                </optgroup>
+                
+                                                                        
+                                                                                
+                                                                        </select>
+                                                                </div>
+                                                        </div>
+                                                        
+                                                        <div class="col-lg-1 col-sm-6 col-12">
+                                                                <div class="form-group">
+                                                                        <button type="submit" class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></button>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                      
+                                        </form>
+                                      
                                 </div>
+                   
+                         </div>
                         </div>
                         <!-- /Filter -->
                         <div class="table-responsive">
