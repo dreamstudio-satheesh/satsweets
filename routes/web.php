@@ -71,6 +71,7 @@ Route::view('purchasereport', 'report.purchasereport')->name('purchasereport');
 Route::view('supplierreport', 'report.supplierreport')->name('supplierreport');
 Route::view('customerreport', 'report.customerreport')->name('customerreport');
 Route::get('/salesreport',  [App\Http\Controllers\ReportController::class, 'sales']);
+Route::get('/salesreport/{id}',  [App\Http\Controllers\ReportController::class, 'sales']);
 
 //Settings
 Route::view('generalsettings', 'settings.generalsettings')->name('generalsettings');
