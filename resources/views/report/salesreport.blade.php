@@ -110,16 +110,18 @@
                                                 <td>{{ $item->name }}</td>                                               
                                                 <td>{{ Str::limit($item->address, 25) }}</td>  
                                                 <td>{{ $item->contact1 }}</td>
-                                                @if ($item->invoices)
-                                                <td>
-                                                @foreach ($item->invoices as $invoice)
-                                                {{ $invoice->total }}
+                                               <td>         
+                                                 @foreach ($item->invoices as $invoice)
+                                                  {{ $invoice->total }}
                                                 @endforeach
-                                                </td> 
-                                                @else
-                                                <td>nill</td> 
-                                                @endif
-                                                <td></td>                                                                                                
+                                               </td> 
+                                               <td>         
+                                                @foreach ($item->invoices as $invoice)
+                                                 {{ $invoice->paid_amount }}
+                                               @endforeach
+                                              </td>  
+                                               
+                                                                                                                                              
                                                 
                                                 <td></td>
                                         </tr>
