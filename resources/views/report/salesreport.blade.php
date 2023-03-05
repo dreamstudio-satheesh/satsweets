@@ -88,7 +88,7 @@
                         </div>
                         <!-- /Filter -->
                         <div class="table-responsive">
-                                <table class="table datanew">
+                                <table class="table">
                                         <thead>
                                                 <tr>
                                                         <th>S.No</th>
@@ -121,8 +121,6 @@
                                                @endforeach
                                               </td>  
                                                
-                                                                                                                                              
-                                                
                                                 <td></td>
                                         </tr>
 
