@@ -11,7 +11,8 @@
         <style>
         .table {
                 border-collapse: separate;
-                }
+                border-spacing:0 20px;
+        }
         </style>
     
 @endpush
