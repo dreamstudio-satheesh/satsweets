@@ -81,13 +81,13 @@
                                                 
                                                         <div class="col-lg col-sm-6 col-12">
                                                                 <div class="form-group">
-                                                                        <input required name='date' type="date" class="form-control">
+                                                                        <input required name='curdate' type="date" value="{{ date("Y-m-d") }}" class="form-control">
                                                                 </div>
                                                         </div>
 
                                                         <div class="col-lg col-sm-6 col-12">
                                                                 <div class="form-group">
-                                                                        <select required name='id' class="form-control nested"  id="selectbox">
+                                                                        <select required name='lineid' class="form-control nested"  id="selectbox">
                                                                         
                                                                                 <optgroup label="line A">
                                                                                         @foreach ($lines as $line)

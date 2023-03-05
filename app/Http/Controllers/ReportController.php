@@ -16,8 +16,8 @@ class ReportController extends Controller
     public function sales(Request $request)
     {
         if ($request->all()) {
-            $id=$request->id;
-            $date=$request->date;
+            $id=$request->lineid;
+            $date=$request->curdate;
         }else{
             $id=1;
             $date=date("Y-m-d");
