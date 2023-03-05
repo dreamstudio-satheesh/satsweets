@@ -95,9 +95,9 @@
                                                         <th>Store Name</th>                                                        
                                                         <th>Place</th>
                                                         <th>Phone</th>
-                                                        <th>Sold amount</th>
-                                                        <th>Sold qty</th>
-                                                        <th>Instock qty</th>
+                                                        <th>Bill amount</th>
+                                                        <th>Paid</th>
+                                                        <th>Gpay</th>
                                                 </tr>
                                         </thead>
                                         <tbody>
@@ -119,9 +119,9 @@
                                                 @else
                                                 <td>nill</td> 
                                                 @endif
-                                                <td>qty</td>                                                                                                
+                                                <td></td>                                                                                                
                                                 
-                                                <td>1356</td>
+                                                <td></td>
                                         </tr>
 
                                         @php($i++)
