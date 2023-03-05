@@ -78,11 +78,26 @@
                                         <div class="row">
 
                                                 <div class="col-lg-2 col-sm-6 col-12">
+                                                     
                                                         <div class="form-group">
-                                                            <select class="select"  id="selectbox">
-                                                                @foreach ($lines as $line)
-                                                                <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
-                                                                @endforeach
+                                                            <select class="form-control nested"  id="selectbox">
+                                                                
+                                                                <optgroup label="line A">
+                                                                        @foreach ($lines as $line)
+                                                                        @if ($line->line == 1)
+                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
+                                                                        @endif
+                                                                        @endforeach                                                                      
+                                                                </optgroup>
+                                                                <optgroup label="line E">
+                                                                        @foreach ($lines as $line)
+                                                                        @if ($line->line == 5)
+                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
+                                                                        @endif
+                                                                        @endforeach 
+                                                                </optgroup>
+
+                                                              
                                                                 
                                                             </select>
                                                         </div>
