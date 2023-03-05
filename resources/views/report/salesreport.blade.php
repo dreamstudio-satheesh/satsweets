@@ -87,8 +87,8 @@
                                 </div>
                         </div>
                         <!-- /Filter -->
-                       
-                                <table class="table table-bordered">
+                        <div class="table-responsive">
+                                <table class="table">
                                         <thead>
                                                 <tr>
                                                         <th>S.No</th>
@@ -132,7 +132,7 @@
                                         </tbody>
                                         
                                 </table>
-                        
+                        </div>
                 </div>
         </div>
         <!-- /product list -->
