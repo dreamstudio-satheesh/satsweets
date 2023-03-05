@@ -8,6 +8,12 @@
 
         <!-- Datetimepicker CSS -->
         <link rel="stylesheet" href="{{ url('') }}/assets/css/bootstrap-datetimepicker.min.css">
+        <style>
+        .table {
+                border-collapse: separate;
+                border-spacing:0 20px;
+                }
+        </style>
     
 @endpush
 
