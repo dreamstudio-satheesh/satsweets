@@ -78,11 +78,7 @@
                                                                 </div>
                                                         </div>
                                                 </div>
-                                                <div class="col-lg-1 col-sm-6 col-12 ms-auto">
-                                                        <div class="form-group">
-                                                                <a class="btn btn-filters ms-auto"><img src="assets/img/icons/search-whites.svg" alt="img"></a>
-                                                        </div>
-                                                </div>
+                                                
                                         </div>
                                 </div>
                         </div>
