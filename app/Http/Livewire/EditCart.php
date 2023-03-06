@@ -35,7 +35,10 @@ class EditCart extends Component
     }
     public function updated($name, $value)
     {  
-      if ( ($name='salesreturn')  || ($name='return_note')) {
+     
+      
+      if ( $name == 'salesreturn'  || $name =='return_note') {
+
 
           $invoice = Invoice::find($this->invoice->id);
 
@@ -53,8 +56,10 @@ class EditCart extends Component
           ]);
       }
       elseif (strpos($name, '.')) {  
+
         
         $code= explode('.',$name)[1]; 
+
         $itemname= explode('.',$name)[2];
         if ($value && is_numeric($code))
         { 
