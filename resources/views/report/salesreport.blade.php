@@ -146,7 +146,7 @@
                                         <tr>
                                                 <td>{{ $i }}</td>      
                                                 <td>{{ $item->name }}</td>                                               
-                                                <td>{{ Str::limit($item->address, 20) }}</td>  
+                                                <td>{{ Str::limit($item->address, 15) }}</td>  
                                                 <td>{{ $item->contact1 }}</td>
                                                 <td>         
                                                         @foreach ($item->invoices as $invoice)
