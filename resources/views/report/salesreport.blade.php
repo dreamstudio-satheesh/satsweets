@@ -44,7 +44,7 @@
                         <span class="print-only">
                                 @foreach ($lines as $line)
                                 @if ($line->id == $id)
-                                    {{$line->name }} Line
+                                    {{$line->name }} Line -- {{ \Carbon\Carbon::parse($date)->format('d/m/Y')}}
                                 @endif                                    
                                 @endforeach
                         </span>
