@@ -120,6 +120,7 @@ $(document).ready(function(){
 			"sDom": 'fBtlpi',  
 			'pagingType': 'numbers', 
 			"ordering": true,
+			"pageLength": 100,
 			"language": {
 				search: ' ',
 				sLengthMenu: '_MENU_',
