@@ -6747,9 +6747,15 @@ span.select2-container.select2-container--default.select2-container--open {
   right: 10px;
 }
 
+.print-only {
+  display: none;
+}
+
 
 @media print {
-   .header, .sidebar, .wordset, .search-set, .dataTables_filter, .dataTables_paginate , h6  { display:none; }
+   .header, .sidebar, .wordset, .search-set, .dataTables_filter, .dataTables_paginate   { display:none; }
+   .no-print{ display: none;}
+   .print-only{ display: block;}
   .page-wrapper {
     margin: 0;
     padding: 0;

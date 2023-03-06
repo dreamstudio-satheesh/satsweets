@@ -40,8 +40,15 @@
 <div id="printable" class="content">
         <div class="page-header">
                 <div class="page-title">
-                        <h4>Sales Report</h4>
-                        <h6>Manage your Sales Report</h6>
+                        <h4>Sales Report <span class="print-only">
+                                @foreach ($lines as $line)
+                                @if ($line->id == $id)
+                                     {{$line->name }}
+                                @endif                                    
+                                @endforeach
+                        </span></h4>
+                        <h6 class="no-print">Manage your Sales Report</h6>
+
                 </div>
         </div>
 
