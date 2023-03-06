@@ -132,9 +132,10 @@
                                                         <th>Store Name</th>                                                        
                                                         <th>Place</th>
                                                         <th>Phone</th>
+                                                        <th>Inv No</th>
                                                         <th>Bill amount</th>
                                                         <th>Paid</th>
-                                                        <th>Gpay</th>
+                                                        
                                                 </tr>
                                         </thead>
                                         <tbody>
@@ -147,16 +148,17 @@
                                                 <td>{{ $item->name }}</td>                                               
                                                 <td>{{ Str::limit($item->address, 20) }}</td>  
                                                 <td>{{ $item->contact1 }}</td>
+                                                <td>         
+                                                        @foreach ($item->invoices as $invoice)
+                                                        #{{ str_pad($invoice->invoice_number, 4, '0', STR_PAD_LEFT) }} &nbsp;&nbsp;                                                         
+                                                       @endforeach
+                                                      </td>  
                                                <td>         
                                                  @foreach ($item->invoices as $invoice)
                                                   {{ number_format($invoice->total,2) }}
                                                 @endforeach
                                                </td> 
-                                               <td>         
-                                                @foreach ($item->invoices as $invoice)
-                                                 {{ number_format($invoice->paid_amount,2) }}
-                                               @endforeach
-                                              </td>  
+                                              
                                                
                                                 <td></td>
                                         </tr>
