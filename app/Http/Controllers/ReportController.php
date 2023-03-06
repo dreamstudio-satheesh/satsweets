@@ -23,7 +23,6 @@ class ReportController extends Controller
             $date=date("Y-m-d");
         }
         
-        
 
         $lines=Line::all();
        
@@ -31,7 +30,7 @@ class ReportController extends Controller
             $q->where('date', $date);
         }])->where('line_id',$id)->get();
 
-        return view('report.salesreport',compact('customers','lines'));
+        return view('report.salesreport',compact('customers','lines','id','date'));
     }
 
 }

@@ -81,7 +81,7 @@
                                                 
                                                         <div class="col-lg col-sm-6 col-12">
                                                                 <div class="form-group">
-                                                                        <input required name='curdate' type="date" value="{{ date("Y-m-d") }}" class="form-control">
+                                                                        <input required name='curdate' type="date"  value="{{ $date }}"  class="form-control">
                                                                 </div>
                                                         </div>
 
@@ -92,14 +92,14 @@
                                                                                 <optgroup label="line A">
                                                                                         @foreach ($lines as $line)
                                                                                         @if ($line->line == 1)
-                                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
+                                                                                        <option value="{{ $line->id}}" {{ ($id == $line->id) ? 'selected':''  }}>{{ $line->name}}</option>
                                                                                         @endif
                                                                                         @endforeach                                                                      
                                                                                 </optgroup>
                                                                                 <optgroup label="line E">
                                                                                         @foreach ($lines as $line)
                                                                                         @if ($line->line == 5)
-                                                                                        <option value="{{ $line->id}}" selected>{{ $line->name}}</option>
+                                                                                        <option value="{{ $line->id}}"  {{ ($id == $line->id) ? 'selected':'' }} >{{ $line->name}}</option>
                                                                                         @endif
                                                                                         @endforeach 
                                                                                 </optgroup>
