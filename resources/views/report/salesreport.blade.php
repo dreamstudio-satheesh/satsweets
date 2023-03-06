@@ -51,14 +51,15 @@
         <div class="card">
                 <div class="card-body">
                         <div class="table-top">
+                                <span class="print-only">
+                                        @foreach ($lines as $line)
+                                        @if ($line->id == $id)
+                                            {{$line->name }} Line -- {{ \Carbon\Carbon::parse($date)->format('d/m/Y')}}
+                                        @endif                                    
+                                        @endforeach
+                                </span>
                                 <div class="search-set">
-                                        <span class="print-only">
-                                                @foreach ($lines as $line)
-                                                @if ($line->id == $id)
-                                                    {{$line->name }} Line -- {{ \Carbon\Carbon::parse($date)->format('d/m/Y')}}
-                                                @endif                                    
-                                                @endforeach
-                                        </span>
+                                        
                                         <div class="search-path">
                                                 <a class="btn btn-filter" id="filter_search">
                                                         <img src="{{ url('') }}/assets/img/icons/filter.svg" alt="img">
