@@ -114,6 +114,16 @@ $(document).ready(function(){
 		});
 	}
 
+	if($('.salesreport').length > 0) {
+		$('.salesreport').DataTable({
+			"bFilter": true,
+			"sDom": 'fBtlpi',  
+			'pagingType': 'numbers', 
+			"ordering": true,
+			
+		});
+	}
+
 	// image file upload image
 	function readURL(input) {
 		if (input.files && input.files[0]) {

@@ -125,7 +125,7 @@
                         </div>
                         <!-- /Filter -->
                         <div class="table-responsive">
-                                <table class="table datanew">
+                                <table class="table salesreport">
                                         <thead>
                                                 <tr>
                                                         <th>S.No</th>
