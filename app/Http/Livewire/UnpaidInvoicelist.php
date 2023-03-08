@@ -41,7 +41,7 @@ class UnpaidInvoicelist extends Component
             'amount' => $this->payment_amount,
             'reference' => $this->reference,
             'notes' => $this->notes,            
-            'created_by' => '1',
+            'created_by' => Auth::user()->id,
         ]); 
 
        $invoice= Invoice::where('invoice_number',$this->invoice_number)->first();
