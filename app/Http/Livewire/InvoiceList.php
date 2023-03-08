@@ -89,6 +89,7 @@ class InvoiceList extends Component
     {
        // $this->invoices = Invoice::with(['user'])->orderBy('id')->get();
        $links=true;
+       $user=Auth::user();
 
         $this->payment_date=Carbon::now()->format('Y-m-d');
         if (is_numeric($this->search)) {
@@ -97,11 +98,27 @@ class InvoiceList extends Component
         }elseif($this->search) {        
             $name=$this->search;
             $links=false;
+            if ($user->hasRole('admin')) {
             $invoices = Invoice::whereHas('customer', function ($query) use ($name) { 
                 $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->limit(100)->get();
+            } else {
+
+                $invoices = Invoice::where('created_by',$user->id )->whereHas('customer', function ($query) use ($name) { 
+                    $query->where('name', 'like', '%'.$name.'%'); })->orderBy('id', 'DESC')->limit(100)->get();
+
+            }
   
         }else{
-        $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(25);
+
+           
+        if ($user->hasRole('admin')) {
+            $invoices = Invoice::with(['customer'])->orderBy('id', 'DESC')->paginate(25);
+        } else {
+            $invoices = Invoice::where('created_by',$user->id )->with(['customer'])->orderBy('id', 'DESC')->paginate(25);
+        }
+        
+    
+       
         }
         
         return view('livewire.invoice-list', compact('invoices','links'));

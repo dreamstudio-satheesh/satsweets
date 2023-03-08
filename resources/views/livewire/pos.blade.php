@@ -29,7 +29,7 @@
 					<div class="row ">
                         @foreach ($products as $item)
 
-                        <div class="col-lg-2 col-sm-3 col-xs-4 d-flex " wire:click="$emit('cartAdded',{{ $item->id }})">
+                        <div class="col-lg-2 col-sm-3 col-xs-4 d-flex " >
 							<div class="productset flex-fill">
 								<div class="productsetimg" >
 									
