@@ -29,9 +29,17 @@ class CartController extends Controller
         
        // return view('sales.sales');
 
-       $invoices=Invoice::where('invoice_number','<','1392')->get();
+       $invoices=Invoice::where('invoice_number','<','2392')->get();
 
        foreach ($invoices as  $invoice) {
+
+        SalesPayment::create([
+            'invoice_num' => $invoice->invoice_number,
+            'payment_date' => $invoice->date,
+            'payment_type' => '1',
+            'amount' => $invoice->total,      
+            'created_by' => Auth::user()->id,
+        ]); 
        
         $invoice= Invoice::where('invoice_number',$invoice->invoice_number)->first();
 
