@@ -11,6 +11,11 @@ use LaravelDaily\Invoices\Invoice as PDFinvoice;
 
 class CartController extends Controller
 {
+    public function __construct() 
+    {
+      $this->middleware('auth');
+    }
+
     public function saleslist()
     {
         
