@@ -11,11 +11,6 @@ use LaravelDaily\Invoices\Invoice as PDFinvoice;
 
 class CartController extends Controller
 {
-    public function __construct() 
-    {
-      $this->middleware('auth');
-    }
-
     public function saleslist()
     {
         
@@ -33,7 +28,12 @@ class CartController extends Controller
     public function sales()
     {
         
-        return view('sales.sales');
+       // return view('sales.sales');
+
+       $invoice= Invoice::where('invoice_number',$invoice->invoice_number)->first();
+
+            $invoice->update([
+                'paid_amount' => $invoice->total ]);
         
     }
 
