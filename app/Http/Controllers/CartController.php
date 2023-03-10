@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Invoice;
 use App\Models\Category;
 //use Illuminate\Http\Request;
+use App\Models\SalesPayment;
+use Illuminate\Support\Facades\Auth;
 use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use LaravelDaily\Invoices\Invoice as PDFinvoice;
+
 class CartController extends Controller
 {
     public function saleslist()
