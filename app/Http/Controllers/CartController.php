@@ -8,7 +8,6 @@ use App\Models\Category;
 use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use LaravelDaily\Invoices\Invoice as PDFinvoice;
-.
 class CartController extends Controller
 {
     public function saleslist()
