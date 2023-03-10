@@ -8,7 +8,7 @@ use App\Models\Category;
 use LaravelDaily\Invoices\Classes\Buyer;
 use LaravelDaily\Invoices\Classes\InvoiceItem;
 use LaravelDaily\Invoices\Invoice as PDFinvoice;
-
+.
 class CartController extends Controller
 {
     public function saleslist()
@@ -30,10 +30,17 @@ class CartController extends Controller
         
        // return view('sales.sales');
 
-       $invoice= Invoice::where('invoice_number',$invoice->invoice_number)->first();
+       $invoices=Invoice::where('invoice_number','<','1392')->get();
 
-            $invoice->update([
-                'paid_amount' => $invoice->total ]);
+       foreach ($invoices as  $invoice) {
+       
+        $invoice= Invoice::where('invoice_number',$invoice->invoice_number)->first();
+
+        $invoice->update([
+            'paid_amount' => $invoice->total ]);
+       }
+
+      
         
     }
 
